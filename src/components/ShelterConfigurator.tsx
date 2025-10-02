@@ -425,40 +425,31 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                     onClick={handleDeployToggle}
                     style={{
                       background: configState.isDeployed 
-                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)'
-                  : 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                  ? 'rgba(255, 255, 255, 0.1)'
+                  : 'transparent',
                 color: '#ffffff',
-                      border: configState.isDeployed
-                  ? '2px solid rgba(255, 255, 255, 0.4)'
-                  : '2px solid rgba(255, 255, 255, 0.15)',
-                borderRadius: '12px',
+                      border: 'none',
+                borderRadius: '8px',
                 padding: '16px 24px',
-                fontSize: '1rem',
-                fontWeight: '700',
+                fontSize: '0.95rem',
+                fontWeight: '500',
                       cursor: 'pointer',
-                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: configState.isDeployed
-                  ? '0 8px 32px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
-                  : '0 8px 32px rgba(0, 0, 0, 0.3)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
-                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                      backdropFilter: 'blur(10px)',
+                      transition: 'all 0.3s ease',
+                boxShadow: 'none',
+                      textTransform: 'none',
+                      letterSpacing: '0.02em',
+                      fontFamily: '"Inter", "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
                       position: 'relative',
                       overflow: 'hidden'
                     }}
                     onMouseEnter={(e) => {
                 if (!configState.isDeployed) {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)';
-                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.3)';
-                  e.currentTarget.style.transform = 'scale(1.02)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
                 }
                     }}
                     onMouseLeave={(e) => {
                 if (!configState.isDeployed) {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)';
-                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.15)';
-                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.background = 'transparent';
                 }
                     }}
                   >
@@ -469,40 +460,31 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                     onClick={handleInteriorViewToggle}
                     style={{
                       background: configState.isInteriorView 
-                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)'
-                  : 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                  ? 'rgba(255, 255, 255, 0.1)'
+                  : 'transparent',
                 color: '#ffffff',
-                      border: configState.isInteriorView
-                  ? '2px solid rgba(255, 255, 255, 0.4)'
-                  : '2px solid rgba(255, 255, 255, 0.15)',
-                borderRadius: '12px',
+                      border: 'none',
+                borderRadius: '8px',
                 padding: '16px 24px',
-                fontSize: '1rem',
-                fontWeight: '700',
+                fontSize: '0.95rem',
+                fontWeight: '500',
                       cursor: 'pointer',
-                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: configState.isInteriorView
-                  ? '0 8px 32px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
-                  : '0 8px 32px rgba(0, 0, 0, 0.3)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
-                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                      backdropFilter: 'blur(10px)',
+                      transition: 'all 0.3s ease',
+                boxShadow: 'none',
+                      textTransform: 'none',
+                      letterSpacing: '0.02em',
+                      fontFamily: '"Inter", "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
                       position: 'relative',
                       overflow: 'hidden'
                     }}
                     onMouseEnter={(e) => {
                 if (!configState.isInteriorView) {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)';
-                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.3)';
-                  e.currentTarget.style.transform = 'scale(1.02)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
                 }
                     }}
                     onMouseLeave={(e) => {
                 if (!configState.isInteriorView) {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)';
-                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.15)';
-                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.background = 'transparent';
                 }
                     }}
                   >
@@ -517,44 +499,35 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                     }}
                     style={{
                       background: configState.showConstructionWorker 
-                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)'
-                  : 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                  ? 'rgba(255, 255, 255, 0.1)'
+                  : 'transparent',
                 color: '#ffffff',
-                      border: configState.showConstructionWorker
-                  ? '2px solid rgba(255, 255, 255, 0.4)'
-                  : '2px solid rgba(255, 255, 255, 0.15)',
-                borderRadius: '12px',
+                      border: 'none',
+                borderRadius: '8px',
                 padding: '16px 24px',
-                fontSize: '1rem',
-                fontWeight: '700',
+                fontSize: '0.95rem',
+                fontWeight: '500',
                       cursor: 'pointer',
-                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: configState.showConstructionWorker
-                  ? '0 8px 32px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
-                  : '0 8px 32px rgba(0, 0, 0, 0.3)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
-                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                      backdropFilter: 'blur(10px)',
+                      transition: 'all 0.3s ease',
+                boxShadow: 'none',
+                      textTransform: 'none',
+                      letterSpacing: '0.02em',
+                      fontFamily: '"Inter", "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
                       position: 'relative',
                       overflow: 'hidden'
                     }}
                     onMouseEnter={(e) => {
                 if (!configState.showConstructionWorker) {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)';
-                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.3)';
-                  e.currentTarget.style.transform = 'scale(1.02)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
                 }
                     }}
                     onMouseLeave={(e) => {
                 if (!configState.showConstructionWorker) {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)';
-                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.15)';
-                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.background = 'transparent';
                 }
                     }}
                   >
-              👤 Human Scale
+              Human Scale
                   </button>
 
                   {/* Environment Dropdown */}
@@ -571,20 +544,19 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                         }));
                       }}
                       style={{
-                        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
-                        border: '2px solid rgba(255, 255, 255, 0.15)',
-                        borderRadius: '12px',
+                        background: 'transparent',
+                        border: 'none',
+                        borderRadius: '8px',
                         padding: '16px 24px',
-                        fontSize: '1rem',
-                        fontWeight: '700',
+                        fontSize: '0.95rem',
+                        fontWeight: '500',
                         color: '#ffffff',
                         cursor: 'pointer',
-                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em',
-                        fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                        backdropFilter: 'blur(10px)',
+                        transition: 'all 0.3s ease',
+                        boxShadow: 'none',
+                        textTransform: 'none',
+                        letterSpacing: '0.02em',
+                        fontFamily: '"Inter", "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
                         position: 'relative',
                         overflow: 'hidden',
                         width: '100%',
@@ -597,16 +569,16 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                         paddingRight: '40px'
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'rgba(249, 115, 22, 0.2)';
+                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.background = 'transparent';
                       }}
                     >
-                      <option value="none" style={{ background: '#1e293b', color: 'white' }}>🌍 Environment</option>
-                      <option value="forest" style={{ background: '#1e293b', color: 'white' }}>🌲 Forest View</option>
-                      <option value="sand" style={{ background: '#1e293b', color: 'white' }}>🏜️ Sand View</option>
-                      <option value="arctic" style={{ background: '#1e293b', color: 'white' }}>❄️ Arctic View</option>
+                      <option value="none" style={{ background: '#1e293b', color: 'white' }}>Environment</option>
+                      <option value="forest" style={{ background: '#1e293b', color: 'white' }}>Forest View</option>
+                      <option value="sand" style={{ background: '#1e293b', color: 'white' }}>Sand View</option>
+                      <option value="arctic" style={{ background: '#1e293b', color: 'white' }}>Arctic View</option>
                     </select>
                   </div>
                 </div>
