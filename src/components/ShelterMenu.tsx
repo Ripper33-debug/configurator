@@ -270,7 +270,7 @@ export default function ShelterMenu() {
             textTransform: 'uppercase',
             marginBottom: '16px'
           }}>
-            Weatherhaven
+            WEATHERHAVEN
           </div>
         <h1 style={{
           fontSize: 'clamp(2.5rem, 5vw, 4rem)',
@@ -279,9 +279,20 @@ export default function ShelterMenu() {
           marginBottom: '20px',
             textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
             letterSpacing: '-0.01em',
-            lineHeight: '1.2'
+            lineHeight: '1.2',
+            position: 'relative'
         }}>
           Weatherhaven Configurator
+          <div style={{
+            position: 'absolute',
+            bottom: '-10px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '60px',
+            height: '3px',
+            background: 'linear-gradient(90deg, transparent, #ffffff, transparent)',
+            borderRadius: '2px'
+          }}></div>
         </h1>
         </div>
       </motion.div>
@@ -298,7 +309,10 @@ export default function ShelterMenu() {
           marginBottom: '50px',
           flexWrap: 'wrap',
           position: 'relative',
-          zIndex: 1
+          zIndex: 1,
+          padding: '20px 0',
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
         }}
       >
         {categories.map((category) => (
@@ -348,10 +362,11 @@ export default function ShelterMenu() {
         transition={{ duration: 0.4 }}
         style={{
           display: 'flex',
-          justifyContent: 'center',
+          justifyContent: 'flex-start',
           gap: '40px',
           maxWidth: '1800px',
           margin: '0 auto',
+          padding: '0 40px',
           position: 'relative',
           zIndex: 1
         }}
@@ -365,14 +380,14 @@ export default function ShelterMenu() {
             whileHover={{ y: -12, scale: 1.03 }}
             style={{
               background: 'rgba(0, 0, 0, 0.95)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
               borderRadius: '8px',
               padding: '24px',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
               position: 'relative',
               overflow: 'hidden',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05)',
               transform: 'translateY(0)',
               transformStyle: 'preserve-3d',
               width: '600px',
@@ -477,7 +492,7 @@ export default function ShelterMenu() {
 
             {/* Shelter Info */}
             <div style={{ position: 'relative', zIndex: 1 }}>
-              <div style={{ marginBottom: '20px' }}>
+              <div style={{ marginBottom: '20px', position: 'relative' }}>
                 <h3 style={{
                   fontSize: '2rem',
                   fontWeight: '900',
@@ -488,12 +503,23 @@ export default function ShelterMenu() {
                 }}>
                   TRECC
                 </h3>
+                <div style={{
+                  position: 'absolute',
+                  bottom: '0',
+                  left: '0',
+                  width: '40px',
+                  height: '2px',
+                  background: 'rgba(255, 255, 255, 0.6)',
+                  borderRadius: '1px'
+                }}></div>
               </div>
               
               {/* Product Specifications */}
               <div style={{
                 marginBottom: '24px',
-                padding: '16px 0'
+                padding: '16px 0',
+                borderLeft: '2px solid rgba(255, 255, 255, 0.2)',
+                paddingLeft: '16px'
               }}>
                 <div style={{
                   fontSize: '0.9rem',
@@ -501,10 +527,22 @@ export default function ShelterMenu() {
                   lineHeight: '1.6',
                   fontWeight: '600'
                 }}>
-                  <div style={{ marginBottom: '8px' }}>• Capacity: 6</div>
-                  <div style={{ marginBottom: '8px' }}>• Deployment time: 3 min</div>
-                  <div style={{ marginBottom: '8px' }}>• Temperature: -30 to 50 degrees</div>
-                  <div>• ALL climates</div>
+                  <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '8px' }}>•</span>
+                    Capacity: 6
+                  </div>
+                  <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '8px' }}>•</span>
+                    Deployment time: 3 min
+                  </div>
+                  <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '8px' }}>•</span>
+                    Temperature: -30 to 50 degrees
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '8px' }}>•</span>
+                    ALL climates
+                  </div>
                 </div>
               </div>
 
