@@ -971,10 +971,11 @@ export default function ShelterMenu() {
         </div>
 
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '30px',
-          marginBottom: '40px'
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '20px',
+          marginBottom: '40px',
+          flexWrap: 'wrap'
         }}>
           {/* Capacity Spec */}
           <motion.div
@@ -983,11 +984,13 @@ export default function ShelterMenu() {
               background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
               border: '2px solid rgba(255, 255, 255, 0.15)',
               borderRadius: '16px',
-              padding: '32px',
+              padding: '24px',
               backdropFilter: 'blur(10px)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
               position: 'relative',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              minWidth: '200px',
+              flex: '1'
             }}
           >
             <div style={{
@@ -1028,11 +1031,13 @@ export default function ShelterMenu() {
               background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
               border: '2px solid rgba(255, 255, 255, 0.15)',
               borderRadius: '16px',
-              padding: '32px',
+              padding: '24px',
               backdropFilter: 'blur(10px)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
               position: 'relative',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              minWidth: '200px',
+              flex: '1'
             }}
           >
             <div style={{
@@ -1073,11 +1078,13 @@ export default function ShelterMenu() {
               background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
               border: '2px solid rgba(255, 255, 255, 0.15)',
               borderRadius: '16px',
-              padding: '32px',
+              padding: '24px',
               backdropFilter: 'blur(10px)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
               position: 'relative',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              minWidth: '200px',
+              flex: '1'
             }}
           >
             <div style={{
@@ -1118,11 +1125,13 @@ export default function ShelterMenu() {
               background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
               border: '2px solid rgba(255, 255, 255, 0.15)',
               borderRadius: '16px',
-              padding: '32px',
+              padding: '24px',
               backdropFilter: 'blur(10px)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
               position: 'relative',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              minWidth: '200px',
+              flex: '1'
             }}
           >
             <div style={{
@@ -1154,6 +1163,248 @@ export default function ShelterMenu() {
             }}>
               Extreme weather protection
             </p>
+          </motion.div>
+        </div>
+
+        {/* Cool Feature Showcase Section */}
+        <div style={{
+          width: '100%',
+          maxWidth: '1200px',
+          margin: '80px auto 0 auto',
+          padding: '60px 20px'
+        }}>
+          <div style={{
+            textAlign: 'center',
+            marginBottom: '60px'
+          }}>
+            <h2 style={{
+              fontSize: '3rem',
+              fontWeight: '900',
+              color: '#ffffff',
+              marginBottom: '20px',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase'
+            }}>
+              Why Choose TRECC?
+            </h2>
+            <p style={{
+              fontSize: '1.2rem',
+              color: '#cccccc',
+              fontWeight: '300',
+              letterSpacing: '0.05em'
+            }}>
+              Cutting-edge technology meets military-grade reliability.
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+            gap: '40px',
+            marginBottom: '60px'
+          }}>
+            {/* Military Grade Card */}
+            <motion.div
+              whileHover={{ scale: 1.05, y: -12 }}
+              style={{
+                background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0.7) 100%)',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '20px',
+                padding: '40px',
+                backdropFilter: 'blur(15px)',
+                boxShadow: '0 12px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              <div style={{
+                fontSize: '4rem',
+                marginBottom: '20px',
+                textAlign: 'center'
+              }}>🛡️</div>
+              <h3 style={{
+                fontSize: '1.8rem',
+                fontWeight: '700',
+                color: '#ffffff',
+                marginBottom: '16px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                textAlign: 'center'
+              }}>
+                Military Grade
+              </h3>
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#cccccc',
+                lineHeight: '1.6',
+                fontWeight: '300',
+                textAlign: 'center'
+              }}>
+                Built to NATO standards with extreme weather protection and battlefield-tested durability.
+              </p>
+            </motion.div>
+
+            {/* Rapid Deployment Card */}
+            <motion.div
+              whileHover={{ scale: 1.05, y: -12 }}
+              style={{
+                background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0.7) 100%)',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '20px',
+                padding: '40px',
+                backdropFilter: 'blur(15px)',
+                boxShadow: '0 12px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              <div style={{
+                fontSize: '4rem',
+                marginBottom: '20px',
+                textAlign: 'center'
+              }}>⚡</div>
+              <h3 style={{
+                fontSize: '1.8rem',
+                fontWeight: '700',
+                color: '#ffffff',
+                marginBottom: '16px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                textAlign: 'center'
+              }}>
+                Rapid Deployment
+              </h3>
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#cccccc',
+                lineHeight: '1.6',
+                fontWeight: '300',
+                textAlign: 'center'
+              }}>
+                Set up in just 3 minutes with minimal personnel. Perfect for emergency response and quick operations.
+              </p>
+            </motion.div>
+
+            {/* Modular Design Card */}
+            <motion.div
+              whileHover={{ scale: 1.05, y: -12 }}
+              style={{
+                background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0.7) 100%)',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '20px',
+                padding: '40px',
+                backdropFilter: 'blur(15px)',
+                boxShadow: '0 12px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              <div style={{
+                fontSize: '4rem',
+                marginBottom: '20px',
+                textAlign: 'center'
+              }}>🔧</div>
+              <h3 style={{
+                fontSize: '1.8rem',
+                fontWeight: '700',
+                color: '#ffffff',
+                marginBottom: '16px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                textAlign: 'center'
+              }}>
+                Modular Design
+              </h3>
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#cccccc',
+                lineHeight: '1.6',
+                fontWeight: '300',
+                textAlign: 'center'
+              }}>
+                Multiple configurations for different missions. Adapt to any environment with our flexible system.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            style={{
+              textAlign: 'center',
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
+              border: '2px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '24px',
+              padding: '60px 40px',
+              backdropFilter: 'blur(20px)',
+              boxShadow: '0 16px 64px rgba(0, 0, 0, 0.3)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          >
+            <h3 style={{
+              fontSize: '2.5rem',
+              fontWeight: '900',
+              color: '#ffffff',
+              marginBottom: '20px',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase'
+            }}>
+              Ready to Configure?
+            </h3>
+            <p style={{
+              fontSize: '1.3rem',
+              color: '#cccccc',
+              fontWeight: '300',
+              letterSpacing: '0.05em',
+              marginBottom: '40px',
+              maxWidth: '600px',
+              margin: '0 auto 40px auto'
+            }}>
+              Experience the future of deployable shelter technology with our interactive 3D configurator.
+            </p>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '20px',
+              flexWrap: 'wrap'
+            }}>
+              <div style={{
+                fontSize: '1.1rem',
+                color: '#ffffff',
+                fontWeight: '600',
+                padding: '12px 24px',
+                background: 'rgba(255, 255, 255, 0.1)',
+                borderRadius: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.2)'
+              }}>
+                ✓ Real-time 3D Preview
+              </div>
+              <div style={{
+                fontSize: '1.1rem',
+                color: '#ffffff',
+                fontWeight: '600',
+                padding: '12px 24px',
+                background: 'rgba(255, 255, 255, 0.1)',
+                borderRadius: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.2)'
+              }}>
+                ✓ Instant Pricing
+              </div>
+              <div style={{
+                fontSize: '1.1rem',
+                color: '#ffffff',
+                fontWeight: '600',
+                padding: '12px 24px',
+                background: 'rgba(255, 255, 255, 0.1)',
+                borderRadius: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.2)'
+              }}>
+                ✓ Export Configurations
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
