@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo, lazy, Suspense } from 'react';
+import Link from 'next/link';
 // ModelViewerScene now lazy loaded
 import ErrorBoundary from './ErrorBoundary';
 import { preloadModel, getAvailableModels, testAWSConnection } from '../lib/aws';
@@ -421,30 +422,6 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
               {configState.isDeployed ? 'STOWED' : 'DEPLOYED'}
                   </button>
 
-                  <button
-                    onClick={handleInteriorViewToggle}
-                    style={{
-                      background: configState.isInteriorView 
-                  ? 'rgba(255, 255, 255, 0.1)'
-                  : 'transparent',
-                color: '#ffffff',
-                      border: 'none',
-                borderRadius: '8px',
-                padding: '16px 24px',
-                fontSize: '1rem',
-                fontWeight: '300',
-                      cursor: 'pointer',
-                      transition: 'all 0.3s ease',
-                boxShadow: 'none',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.1em',
-                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                      position: 'relative',
-                      overflow: 'hidden'
-                    }}
-                  >
-              INTERIOR
-                  </button>
 
                   <button
                     onClick={() => {
@@ -474,6 +451,31 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                   >
               SCALE
                   </button>
+
+                  <Link href="/360-interior" style={{ textDecoration: 'none' }}>
+                    <button
+                      style={{
+                        background: 'transparent',
+                        color: '#ffffff',
+                        border: 'none',
+                        borderRadius: '8px',
+                        padding: '16px 24px',
+                        fontSize: '1rem',
+                        fontWeight: '300',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        boxShadow: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.1em',
+                        fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        width: '100%'
+                      }}
+                    >
+                      360 INTERIOR
+                    </button>
+                  </Link>
 
                   {/* Environment Dropdown */}
                   <div style={{ position: 'relative' }}>
@@ -517,8 +519,6 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                     >
                       <option value="none" style={{ background: '#1e293b', color: 'white' }}>ENVIRONMENT</option>
                       <option value="forest" style={{ background: '#1e293b', color: 'white' }}>FOREST</option>
-                      <option value="sand" style={{ background: '#1e293b', color: 'white' }}>SAND</option>
-                      <option value="arctic" style={{ background: '#1e293b', color: 'white' }}>ARCTIC</option>
                     </select>
                   </div>
                 </div>
