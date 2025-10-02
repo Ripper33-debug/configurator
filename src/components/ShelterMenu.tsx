@@ -376,7 +376,7 @@ export default function ShelterMenu() {
               transform: 'translateY(0)',
               transformStyle: 'preserve-3d',
               width: '600px',
-              minHeight: '400px'
+              minHeight: '350px'
             }}
           >
 
@@ -402,10 +402,10 @@ export default function ShelterMenu() {
               </div>
             </div>
 
-            {/* Minimal Preview Section */}
+            {/* Picture Section */}
             <div style={{
               width: '100%',
-              height: '180px',
+              height: '200px',
               background: 'rgba(0, 0, 0, 0.5)',
               borderRadius: '6px',
               marginBottom: '20px',
@@ -477,77 +477,38 @@ export default function ShelterMenu() {
 
             {/* Shelter Info */}
             <div style={{ position: 'relative', zIndex: 1 }}>
-              <div style={{ marginBottom: '16px' }}>
+              <div style={{ marginBottom: '20px' }}>
                 <h3 style={{
-                  fontSize: '1.5rem',
+                  fontSize: '2rem',
                   fontWeight: '900',
                   color: '#ffffff',
-                  marginBottom: '4px',
+                  marginBottom: '8px',
                   letterSpacing: '-0.02em',
-                  lineHeight: '1.2'
+                  lineHeight: '1.1'
                 }}>
-                  {shelter.name}
+                  TRECC
                 </h3>
-                <div style={{
-                  fontSize: '0.7rem',
-                  fontWeight: '500',
-                  color: '#cccccc',
-                  letterSpacing: '0.05em',
-                  textTransform: 'uppercase'
-                }}>
-                  Shelter Configurator
-                </div>
               </div>
               
-              <p style={{
-                color: '#ffffff',
-                lineHeight: '1.4',
-                marginBottom: '20px',
-                fontSize: '0.9rem',
-                fontWeight: '500'
-              }}>
-                {shelter.description}
-              </p>
-
-              {/* Simple Deployment Info */}
+              {/* Product Specifications */}
               <div style={{
-                marginBottom: '16px',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                padding: '8px 0',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
-              }}>
-                <span style={{
-                  fontSize: '0.8rem',
-                  fontWeight: '600',
-                  color: '#ffffff'
-                }}>
-                  Deployment: {formatDuration(shelter.deploymentTime)}
-                </span>
-                <span style={{
-                  fontSize: '0.8rem',
-                  fontWeight: '600',
-                  color: '#ffffff'
-                }}>
-                  Capacity: {shelter.capacity}
-                </span>
-              </div>
-
-
-              {/* Features */}
-              <div style={{
-                marginBottom: '20px'
+                marginBottom: '24px',
+                padding: '16px 0'
               }}>
                 <div style={{
-                  fontSize: '0.8rem',
-                  color: '#cccccc',
-                  lineHeight: '1.4',
-                  fontWeight: '500'
+                  fontSize: '0.9rem',
+                  color: '#ffffff',
+                  lineHeight: '1.6',
+                  fontWeight: '600'
                 }}>
-                  {shelter.features.slice(0, 3).join(' • ')}
+                  <div style={{ marginBottom: '8px' }}>• Capacity: 6</div>
+                  <div style={{ marginBottom: '8px' }}>• Deployment time: 3 min</div>
+                  <div style={{ marginBottom: '8px' }}>• Temperature: -30 to 50 degrees</div>
+                  <div>• ALL climates</div>
                 </div>
               </div>
+
+
 
 
               {/* Action Buttons */}
