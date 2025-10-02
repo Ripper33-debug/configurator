@@ -238,7 +238,8 @@ export default function ShelterMenu() {
             letterSpacing: '0.25em',
             lineHeight: '1.0',
             position: 'relative',
-            fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+            fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+            textTransform: 'uppercase'
         }}>
           Configure TRECC
           <div style={{
@@ -344,8 +345,8 @@ export default function ShelterMenu() {
             <motion.div 
               whileHover={{ scale: 1.03, y: -12 }}
               style={{
-                width: '100%',
-                maxWidth: '1400px',
+                width: '100vw',
+                maxWidth: 'none',
                 height: '700px',
                 background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
                 borderRadius: '24px',
