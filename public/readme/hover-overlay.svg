@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <rect x="150" y="120" width="900" height="435" rx="14" fill="rgba(255,255,255,0.9)"/>
+  <rect x="170" y="140" width="420" height="200" rx="10" fill="#e2e8f0"/>
+  <text x="390" y="260" fill="#1e293b" font-size="20" font-family="Inter, Arial, sans-serif" text-anchor="middle">Shelter Image Placeholder</text>
+  <rect x="620" y="160" width="380" height="240" rx="10" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="810" y="200" fill="#1e3a8a" font-size="22" font-family="Inter, Arial, sans-serif" text-anchor="middle">Hover Details</text>
+  <text x="810" y="235" fill="#334155" font-size="16" font-family="Inter, Arial, sans-serif" text-anchor="middle">Specs • Use Cases • Actions</text>
+  <rect x="640" y="310" width="160" height="40" rx="8" fill="#6c757d"/>
+  <text x="720" y="335" fill="#fff" font-size="16" font-family="Inter, Arial, sans-serif" text-anchor="middle">Compare</text>
+  <rect x="810" y="310" width="160" height="40" rx="8" fill="#f97316"/>
+  <text x="890" y="335" fill="#fff" font-size="16" font-family="Inter, Arial, sans-serif" text-anchor="middle">Configure</text>
+</svg>
+
