@@ -282,7 +282,7 @@ export default function ShelterMenu() {
             lineHeight: '1.2',
             position: 'relative'
         }}>
-          Weatherhaven Configurator
+          TRECC CONFIGURATOR
           <div style={{
             position: 'absolute',
             bottom: '-10px',
@@ -377,53 +377,90 @@ export default function ShelterMenu() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 * index }}
-            whileHover={{ y: -12, scale: 1.03 }}
             style={{
-              background: 'rgba(0, 0, 0, 0.95)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              borderRadius: '8px',
-              padding: '24px',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              position: 'relative',
-              overflow: 'hidden',
-              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05)',
-              transform: 'translateY(0)',
-              transformStyle: 'preserve-3d',
-              width: '600px',
-              minHeight: '350px'
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '30px',
+              width: '100%',
+              maxWidth: '800px'
             }}
           >
 
-            {/* Minimal Status Indicator */}
+            {/* Large Configure Button */}
+            <Link href={`/configurator/${shelter.id}`}>
+              <motion.button
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                style={{
+                  width: '100%',
+                  padding: '24px 40px',
+                  background: 'rgba(0, 0, 0, 0.95)',
+                  border: '2px solid rgba(255, 255, 255, 0.3)',
+                  borderRadius: '12px',
+                  color: '#ffffff',
+                  fontWeight: '900',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}
+              >
+                Configure TRECC
+                <div style={{
+                  position: 'absolute',
+                  top: '0',
+                  left: '0',
+                  right: '0',
+                  height: '2px',
+                  background: 'linear-gradient(90deg, transparent, #ffffff, transparent)',
+                  opacity: '0.8'
+                }}></div>
+              </motion.button>
+            </Link>
+
+            {/* Bullet Points Section */}
             <div style={{
-              position: 'absolute',
-              top: '20px',
-              right: '20px',
-              zIndex: 2
+              background: 'rgba(0, 0, 0, 0.8)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '8px',
+              padding: '24px',
+              marginBottom: '20px'
             }}>
               <div style={{
-                padding: '6px 12px',
-                background: 'rgba(34, 197, 94, 0.2)',
-                border: '1px solid rgba(34, 197, 94, 0.3)',
-                borderRadius: '8px',
-                fontSize: '0.75rem',
-                fontWeight: '500',
-                color: '#22c55e',
-                textTransform: 'uppercase',
-                letterSpacing: '0.5px'
+                fontSize: '1rem',
+                color: '#ffffff',
+                lineHeight: '1.8',
+                fontWeight: '600'
               }}>
-                {shelter.availability}
+                <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center' }}>
+                  <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '12px', fontSize: '1.2rem' }}>•</span>
+                  Capacity: 6
+                </div>
+                <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center' }}>
+                  <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '12px', fontSize: '1.2rem' }}>•</span>
+                  Deployment time: 3 min
+                </div>
+                <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center' }}>
+                  <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '12px', fontSize: '1.2rem' }}>•</span>
+                  Temperature: -30 to 50 degrees
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '12px', fontSize: '1.2rem' }}>•</span>
+                  ALL climates
+                </div>
               </div>
             </div>
 
-            {/* Picture Section */}
+            {/* Large Picture Section */}
             <div style={{
               width: '100%',
-              height: '200px',
+              height: '400px',
               background: 'rgba(0, 0, 0, 0.5)',
-              borderRadius: '6px',
-              marginBottom: '20px',
+              borderRadius: '8px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -431,277 +468,46 @@ export default function ShelterMenu() {
               position: 'relative',
               overflow: 'hidden'
             }}>
-              
-              {/* Shelter Photo */}
-              <div style={{
-                width: '100%',
-                height: '100%',
-                position: 'relative',
-                zIndex: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden',
-                borderRadius: '12px'
-              }}>
-                {/* Optimized image with priority loading and blur placeholder */}
-                <img 
-                  src="https://d3kx2t94cz9q1y.cloudfront.net/Picture_of_trecc.jpg"
-                  alt={`${shelter.name} deployed shelter system`}
-                  loading="eager" // Priority loading for above-the-fold
-                  decoding="async"
-                  fetchPriority="high"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    borderRadius: '6px',
-                    background: 'rgba(0, 0, 0, 0.8)',
-                    transition: 'opacity 0.3s ease'
-                  }}
-                  onLoad={(e) => {
-                    e.currentTarget.style.opacity = '1';
-                  }}
-                  onError={(e) => {
-                    // Fallback to a simple placeholder if image fails to load
-                    e.currentTarget.style.display = 'none';
-                    const fallback = e.currentTarget.parentElement;
-                    if (fallback) {
-                      fallback.innerHTML = `
-                        <div style="
-                          width: 100%;
-                          height: 100%;
-                          background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-                          border-radius: 12px;
-                          display: flex;
-                          flex-direction: column;
-                          align-items: center;
-                          justify-content: center;
-                          border: 1px solid rgba(59, 130, 246, 0.2);
-                        ">
-                          <div style="font-size: 2rem; color: #fff; margin-bottom: 8px;">🏠</div>
-                          <div style="font-size: 0.9rem; font-weight: 500; color: #cbd5e1; text-align: center;">${shelter.name}</div>
-                        </div>
-                      `;
-                    }
-                  }}
-                />
-              </div>
-              
-            </div>
-
-            {/* Shelter Info */}
-            <div style={{ position: 'relative', zIndex: 1 }}>
-              <div style={{ marginBottom: '20px', position: 'relative' }}>
-                <h3 style={{
-                  fontSize: '2rem',
-                  fontWeight: '900',
-                  color: '#ffffff',
-                  marginBottom: '8px',
-                  letterSpacing: '-0.02em',
-                  lineHeight: '1.1'
-                }}>
-                  TRECC
-                </h3>
-                <div style={{
-                  position: 'absolute',
-                  bottom: '0',
-                  left: '0',
-                  width: '40px',
-                  height: '2px',
-                  background: 'rgba(255, 255, 255, 0.6)',
-                  borderRadius: '1px'
-                }}></div>
-              </div>
-              
-              {/* Product Specifications */}
-              <div style={{
-                marginBottom: '24px',
-                padding: '16px 0',
-                borderLeft: '2px solid rgba(255, 255, 255, 0.2)',
-                paddingLeft: '16px'
-              }}>
-                <div style={{
-                  fontSize: '0.9rem',
-                  color: '#ffffff',
-                  lineHeight: '1.6',
-                  fontWeight: '600'
-                }}>
-                  <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '8px' }}>•</span>
-                    Capacity: 6
-                  </div>
-                  <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '8px' }}>•</span>
-                    Deployment time: 3 min
-                  </div>
-                  <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '8px' }}>•</span>
-                    Temperature: -30 to 50 degrees
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '8px' }}>•</span>
-                    ALL climates
-                  </div>
-                </div>
-              </div>
-
-
-
-
-              {/* Action Buttons */}
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <Link href={`/configurator/${shelter.id}`} style={{ flex: 1 }}>
-                  <motion.button
-                    whileHover={{ scale: 1.01 }}
-                    whileTap={{ scale: 0.99 }}
-                    style={{
-                      width: '100%',
-                      padding: '12px 20px',
-                      background: 'rgba(255, 255, 255, 0.1)',
-                      color: 'white',
-                      border: '1px solid rgba(255, 255, 255, 0.2)',
-                      borderRadius: '6px',
-                      fontWeight: '700',
-                      fontSize: '0.9rem',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s ease'
-                    }}
-                  >
-                    Configure {shelter.name}
-                  </motion.button>
-                </Link>
-                
-                <motion.button
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.99 }}
-                  onClick={() => {
-                    // Open walkthrough video modal
-                    const videoPath = '/videos/trecc-walkthrough.mp4';
-                    if (videoPath) {
-                      const modal = document.createElement('div');
-                      modal.style.cssText = `
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        background: rgba(0, 0, 0, 0.9);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        z-index: 1000;
-                        backdrop-filter: blur(10px);
-                      `;
-                      
-                      const videoContainer = document.createElement('div');
-                      videoContainer.style.cssText = `
-                        position: relative;
-                        width: 90%;
-                        max-width: 1200px;
-                        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-                        border-radius: 20px;
-                        padding: 40px;
-                        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-                        border: 1px solid rgba(255, 255, 255, 0.1);
-                      `;
-                      
-                      const closeButton = document.createElement('button');
-                      closeButton.innerHTML = '×';
-                      closeButton.style.cssText = `
-                        position: absolute;
-                        top: 20px;
-                        right: 20px;
-                        background: rgba(255, 255, 255, 0.1);
-                        border: none;
-                        border-radius: 50%;
-                        width: 40px;
-                        height: 40px;
-                        color: white;
-                        font-size: 20px;
-                        cursor: pointer;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        transition: all 0.3s ease;
-                      `;
-                      
-                      const videoTitle = document.createElement('div');
-                      videoTitle.innerHTML = 'TRECC Walkthrough Video';
-                      videoTitle.style.cssText = `
-                        text-align: center;
-                        margin-bottom: 30px;
-                        color: white;
-                        font-size: 24px;
-                        font-weight: 700;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                      `;
-                      
-                      const videoWrapper = document.createElement('div');
-                      videoWrapper.style.cssText = `
-                        position: relative;
-                        width: 100%;
-                        height: 0;
-                        padding-bottom: 56.25%;
-                        background: #000;
-                        border-radius: 10px;
-                        overflow: hidden;
-                      `;
-                      
-                      const video = document.createElement('video');
-                      video.controls = true;
-                      video.style.cssText = `
-                        position: absolute;
-                        top: 0;
-                        left: 0;
+              <img 
+                src="https://d3kx2t94cz9q1y.cloudfront.net/Picture_of_trecc.jpg"
+                alt="TRECC deployed shelter system"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '8px',
+                  background: 'rgba(0, 0, 0, 0.8)',
+                  transition: 'opacity 0.3s ease'
+                }}
+                onLoad={(e) => {
+                  e.currentTarget.style.opacity = '1';
+                }}
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const fallback = e.currentTarget.parentElement;
+                  if (fallback) {
+                    fallback.innerHTML = `
+                      <div style="
                         width: 100%;
                         height: 100%;
-                        object-fit: cover;
-                      `;
-                      video.src = videoPath;
-                      video.poster = '/videos/trecc-poster.jpg';
-                      
-                      video.onerror = () => {
-                        alert('Sorry, this video is currently unavailable.');
-                        document.body.removeChild(modal);
-                      };
-                      
-                      closeButton.onclick = () => document.body.removeChild(modal);
-                      modal.onclick = (e) => {
-                        if (e.target === modal) document.body.removeChild(modal);
-                      };
-                      
-                      videoWrapper.appendChild(video);
-                      videoContainer.appendChild(closeButton);
-                      videoContainer.appendChild(videoTitle);
-                      videoContainer.appendChild(videoWrapper);
-                      modal.appendChild(videoContainer);
-                      document.body.appendChild(modal);
-                    } else {
-                      alert('Video walkthrough is not available for this shelter.');
-                    }
-                  }}
-                  style={{
-                    padding: '12px 16px',
-                    background: 'rgba(255, 255, 255, 0.05)',
-                    color: 'white',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    borderRadius: '6px',
-                    fontWeight: '600',
-                    fontSize: '0.85rem',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px',
-                    minWidth: '100px'
-                  }}
-                >
-                  🎥 Walkthrough
-                </motion.button>
-              </div>
+                        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                        border-radius: 8px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                      ">
+                        <div style="font-size: 4rem; color: #fff; margin-bottom: 16px;">🏠</div>
+                        <div style="font-size: 1.2rem; font-weight: 700; color: #ffffff; text-align: center;">TRECC</div>
+                      </div>
+                    `;
+                  }
+                }}
+              />
             </div>
 
           </motion.div>
