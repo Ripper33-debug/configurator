@@ -215,41 +215,6 @@ export default function ShelterMenu() {
     }}>
       
       
-      {/* Breadcrumb Navigation */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          marginBottom: '20px'
-        }}
-      >
-        <nav style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          fontSize: '0.9rem',
-          color: 'rgba(255, 255, 255, 0.8)',
-          maxWidth: '1200px',
-          margin: '0 auto',
-          padding: '0 20px'
-        }}>
-          <Link href="/" style={{ 
-            color: '#f97316', 
-            textDecoration: 'none',
-            transition: 'color 0.2s ease'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.color = '#ea580c'}
-          onMouseLeave={(e) => e.currentTarget.style.color = '#f97316'}
-          >
-            Home
-          </Link>
-          <span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>›</span>
-          <span style={{ color: 'rgba(255, 255, 255, 1)', fontWeight: '800' }}>Shelter Configurator</span>
-        </nav>
-      </motion.div>
 
       {/* Header */}
       <motion.div
@@ -264,19 +229,9 @@ export default function ShelterMenu() {
         }}
       >
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <div style={{
-            fontSize: '14px',
-            fontWeight: '900',
-            color: '#ffffff',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            marginBottom: '16px'
-          }}>
-            WEATHERHAVEN
-          </div>
         <h1 style={{
           fontSize: 'clamp(3rem, 6vw, 5rem)',
-            fontWeight: '100',
+            fontWeight: '900',
             color: '#ffffff',
           marginBottom: '20px',
             textShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
