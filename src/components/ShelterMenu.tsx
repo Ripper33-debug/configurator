@@ -134,28 +134,10 @@ export default function ShelterMenu() {
   const categories = ['all', ...Array.from(new Set(shelters.map(s => s.category)))];
   
   const filteredShelters = shelters.filter(shelter => {
-    // Category filter
+    // Category filter only
     const categoryMatch = selectedCategory === 'all' || shelter.category === selectedCategory;
     
-    // Deployment time filter
-    const deploymentMatch = filters.deploymentTime === 'all' || 
-      (filters.deploymentTime === 'fast' && shelter.deploymentTime <= 1) ||
-      (filters.deploymentTime === 'moderate' && shelter.deploymentTime > 1 && shelter.deploymentTime <= 2) ||
-      (filters.deploymentTime === 'extended' && shelter.deploymentTime > 2);
-    
-    // Capacity filter
-    const capacityMatch = filters.capacity === 'all' ||
-      (filters.capacity === 'small' && shelter.capacity <= 30) ||
-      (filters.capacity === 'medium' && shelter.capacity > 30 && shelter.capacity <= 50) ||
-      (filters.capacity === 'large' && shelter.capacity > 50);
-    
-    // Weather rating filter
-    const weatherMatch = filters.weatherRating === 'all' ||
-      (filters.weatherRating === 'extreme' && shelter.weatherRating >= 5) ||
-      (filters.weatherRating === 'high' && shelter.weatherRating >= 4) ||
-      (filters.weatherRating === 'moderate' && shelter.weatherRating >= 3);
-    
-    return categoryMatch && deploymentMatch && capacityMatch && weatherMatch;
+    return categoryMatch;
   });
 
   const handleCategoryChange = (category: string) => {
@@ -282,8 +264,8 @@ export default function ShelterMenu() {
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <div style={{
             fontSize: '14px',
-            fontWeight: '600',
-            color: '#94a3b8',
+            fontWeight: '900',
+            color: '#ffffff',
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
             marginBottom: '16px'
@@ -301,16 +283,6 @@ export default function ShelterMenu() {
         }}>
           Weatherhaven Configurator
         </h1>
-        <p style={{
-            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-            color: '#ffffff',
-          maxWidth: '700px',
-          margin: '0 auto',
-            lineHeight: '1.5',
-            fontWeight: '600'
-        }}>
-          Professional-grade deployable shelter solutions for military, emergency response, and remote operations
-        </p>
         </div>
       </motion.div>
 
@@ -366,191 +338,7 @@ export default function ShelterMenu() {
         ))}
       </motion.div>
 
-      {/* Specification Filters */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '20px',
-          marginBottom: '40px',
-          flexWrap: 'wrap',
-          position: 'relative',
-          zIndex: 1
-        }}
-      >
-        {/* Deployment Time Filter */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <label style={{ fontSize: '0.9rem', fontWeight: '700', color: '#ffffff' }}>
-            Deployment Time
-          </label>
-          <select
-            value={filters.deploymentTime}
-            onChange={(e) => handleFilterChange('deploymentTime', e.target.value)}
-            disabled={isFiltering}
-            style={{
-              padding: '8px 12px',
-              border: '1px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '6px',
-              background: isFiltering ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.9)',
-              color: '#ffffff',
-              fontSize: '0.9rem',
-              cursor: isFiltering ? 'not-allowed' : 'pointer',
-              minWidth: '120px',
-              opacity: isFiltering ? 0.7 : 1,
-              transition: 'all 0.2s ease',
-              fontWeight: '600'
-            }}
-          >
-            <option value="all">All Times</option>
-            <option value="fast">≤ 1 Hour</option>
-            <option value="moderate">1-2 Hours</option>
-            <option value="extended">&gt; 2 Hours</option>
-          </select>
-        </div>
 
-        {/* Capacity Filter */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <label style={{ fontSize: '0.9rem', fontWeight: '700', color: '#ffffff' }}>
-            Capacity
-          </label>
-          <select
-            value={filters.capacity}
-            onChange={(e) => handleFilterChange('capacity', e.target.value)}
-            disabled={isFiltering}
-            style={{
-              padding: '8px 12px',
-              border: '1px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '6px',
-              background: isFiltering ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.9)',
-              color: '#ffffff',
-              fontSize: '0.9rem',
-              cursor: isFiltering ? 'not-allowed' : 'pointer',
-              minWidth: '120px',
-              opacity: isFiltering ? 0.7 : 1,
-              transition: 'all 0.2s ease',
-              fontWeight: '600'
-            }}
-          >
-            <option value="all">All Sizes</option>
-            <option value="small">≤ 30 Personnel</option>
-            <option value="medium">31-50 Personnel</option>
-            <option value="large">&gt; 50 Personnel</option>
-          </select>
-        </div>
-
-        {/* Weather Rating Filter */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <label style={{ fontSize: '0.9rem', fontWeight: '700', color: '#ffffff' }}>
-            Weather Rating
-          </label>
-          <select
-            value={filters.weatherRating}
-            onChange={(e) => handleFilterChange('weatherRating', e.target.value)}
-            disabled={isFiltering}
-            style={{
-              padding: '8px 12px',
-              border: '1px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '6px',
-              background: isFiltering ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.9)',
-              color: '#ffffff',
-              fontSize: '0.9rem',
-              cursor: isFiltering ? 'not-allowed' : 'pointer',
-              minWidth: '120px',
-              opacity: isFiltering ? 0.7 : 1,
-              transition: 'all 0.2s ease',
-              fontWeight: '600'
-            }}
-          >
-            <option value="all">All Ratings</option>
-            <option value="extreme">★★★★★ Extreme</option>
-            <option value="high">★★★★ High</option>
-            <option value="moderate">★★★ Moderate</option>
-          </select>
-        </div>
-
-        {/* Clear Filters Button */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <label style={{ fontSize: '0.9rem', fontWeight: '700', color: '#ffffff', opacity: 0 }}>
-            Actions
-          </label>
-          <button
-            onClick={() => setFilters({ deploymentTime: 'all', capacity: 'all', weatherRating: 'all' })}
-            style={{
-              padding: '8px 16px',
-              border: '1px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '6px',
-              background: 'rgba(0, 0, 0, 0.9)',
-              color: '#ffffff',
-              fontSize: '0.9rem',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              fontWeight: '700'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(0, 0, 0, 1)';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(0, 0, 0, 0.9)';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-            }}
-          >
-            Clear Filters
-          </button>
-        </div>
-      </motion.div>
-
-      {/* Loading Indicator */}
-      {isFiltering && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          style={{
-            textAlign: 'center',
-            marginBottom: '20px',
-            color: '#0d6efd',
-            fontSize: '0.9rem',
-            position: 'relative',
-            zIndex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px'
-          }}
-        >
-          <div style={{
-            width: '16px',
-            height: '16px',
-            border: '2px solid #e9ecef',
-            borderTop: '2px solid #0d6efd',
-            borderRadius: '50%',
-            animation: 'spin 1s linear infinite'
-          }}></div>
-          Filtering shelters...
-        </motion.div>
-      )}
-
-      {/* Results Count */}
-      {!isFiltering && filteredShelters.length !== shelters.length && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          style={{
-            textAlign: 'center',
-            marginBottom: '20px',
-            color: '#6c757d',
-            fontSize: '0.9rem',
-            position: 'relative',
-            zIndex: 1
-          }}
-        >
-          Showing {filteredShelters.length} of {shelters.length} shelter{filteredShelters.length !== 1 ? 's' : ''}
-        </motion.div>
-      )}
 
       {/* Shelter Grid */}
       <motion.div
