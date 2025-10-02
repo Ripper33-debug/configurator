@@ -234,7 +234,6 @@ export default function ShelterMenu() {
             fontWeight: '200',
             color: '#ffffff',
           marginBottom: '30px',
-            textShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
             letterSpacing: '0.25em',
             lineHeight: '1.0',
             position: 'relative',
@@ -242,18 +241,21 @@ export default function ShelterMenu() {
             textTransform: 'uppercase'
         }}>
           Configure TRECC
-          <div style={{
-            position: 'absolute',
-            bottom: '-15px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '200px',
-            height: '2px',
-            background: 'linear-gradient(90deg, transparent, #ffffff, #ffffff, #ffffff, transparent)',
-            borderRadius: '1px',
-            boxShadow: '0 0 10px rgba(255, 255, 255, 0.6)'
-          }}></div>
         </h1>
+        
+        {/* Sexy Divider Line */}
+        <motion.div 
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+          style={{
+            width: '300px',
+            height: '2px',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%)',
+            margin: '0 auto 40px auto',
+            borderRadius: '1px'
+          }}
+        />
         </div>
       </motion.div>
 
@@ -387,18 +389,28 @@ export default function ShelterMenu() {
                   textTransform: 'uppercase',
                   position: 'relative',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  textShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
                   background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%)',
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  padding: '20px 40px',
-                  textDecoration: 'underline',
-                  textDecorationColor: 'rgba(255, 255, 255, 0.6)',
-                  textDecorationThickness: '2px',
-                  textUnderlineOffset: '8px'
+                  padding: '24px 48px',
+                  border: '2px solid rgba(255, 255, 255, 0.2)',
+                  borderRadius: '16px',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}>
                   Launch Configurator
+                  {/* Subtle inner glow */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '0',
+                    left: '0',
+                    right: '0',
+                    height: '1px',
+                    background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)'
+                  }}></div>
                 </div>
                 <div style={{
                   position: 'absolute',
@@ -683,6 +695,225 @@ export default function ShelterMenu() {
                     fontWeight: '300'
                   }}>
                     View detailed specifications including dimensions, capacity, and deployment time.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Sexy Specifications Section */}
+            <div style={{
+              width: '100%',
+              maxWidth: '1200px',
+              margin: '80px auto 0 auto',
+              padding: '60px 20px'
+            }}>
+              <div style={{
+                textAlign: 'center',
+                marginBottom: '60px'
+              }}>
+                <h2 style={{
+                  fontSize: '3rem',
+                  fontWeight: '900',
+                  color: '#ffffff',
+                  marginBottom: '20px',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase'
+                }}>
+                  TRECC Specifications
+                </h2>
+                <p style={{
+                  fontSize: '1.2rem',
+                  color: '#cccccc',
+                  fontWeight: '300',
+                  letterSpacing: '0.05em'
+                }}>
+                  Advanced deployable shelter system with military-grade specifications.
+                </p>
+              </div>
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '30px',
+                marginBottom: '40px'
+              }}>
+                {/* Capacity Spec */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                    border: '2px solid rgba(255, 255, 255, 0.15)',
+                    borderRadius: '16px',
+                    padding: '32px',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}
+                >
+                  <div style={{
+                    fontSize: '3rem',
+                    fontWeight: '900',
+                    color: '#ffffff',
+                    marginBottom: '12px',
+                    textAlign: 'center'
+                  }}>
+                    6
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#ffffff',
+                    marginBottom: '8px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    textAlign: 'center'
+                  }}>
+                    Capacity
+                  </h3>
+                  <p style={{
+                    fontSize: '1rem',
+                    color: '#cccccc',
+                    lineHeight: '1.6',
+                    fontWeight: '300',
+                    textAlign: 'center'
+                  }}>
+                    Maximum personnel capacity
+                  </p>
+                </motion.div>
+
+                {/* Deployment Time Spec */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                    border: '2px solid rgba(255, 255, 255, 0.15)',
+                    borderRadius: '16px',
+                    padding: '32px',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}
+                >
+                  <div style={{
+                    fontSize: '3rem',
+                    fontWeight: '900',
+                    color: '#ffffff',
+                    marginBottom: '12px',
+                    textAlign: 'center'
+                  }}>
+                    3
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#ffffff',
+                    marginBottom: '8px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    textAlign: 'center'
+                  }}>
+                    Minutes
+                  </h3>
+                  <p style={{
+                    fontSize: '1rem',
+                    color: '#cccccc',
+                    lineHeight: '1.6',
+                    fontWeight: '300',
+                    textAlign: 'center'
+                  }}>
+                    Rapid deployment time
+                  </p>
+                </motion.div>
+
+                {/* Temperature Range Spec */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                    border: '2px solid rgba(255, 255, 255, 0.15)',
+                    borderRadius: '16px',
+                    padding: '32px',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}
+                >
+                  <div style={{
+                    fontSize: '2.5rem',
+                    fontWeight: '900',
+                    color: '#ffffff',
+                    marginBottom: '12px',
+                    textAlign: 'center'
+                  }}>
+                    -30°C to +50°C
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#ffffff',
+                    marginBottom: '8px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    textAlign: 'center'
+                  }}>
+                    Temperature
+                  </h3>
+                  <p style={{
+                    fontSize: '1rem',
+                    color: '#cccccc',
+                    lineHeight: '1.6',
+                    fontWeight: '300',
+                    textAlign: 'center'
+                  }}>
+                    Operating temperature range
+                  </p>
+                </motion.div>
+
+                {/* All Climates Spec */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                    border: '2px solid rgba(255, 255, 255, 0.15)',
+                    borderRadius: '16px',
+                    padding: '32px',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}
+                >
+                  <div style={{
+                    fontSize: '2.5rem',
+                    fontWeight: '900',
+                    color: '#ffffff',
+                    marginBottom: '12px',
+                    textAlign: 'center'
+                  }}>
+                    ALL
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#ffffff',
+                    marginBottom: '8px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    textAlign: 'center'
+                  }}>
+                    Climates
+                  </h3>
+                  <p style={{
+                    fontSize: '1rem',
+                    color: '#cccccc',
+                    lineHeight: '1.6',
+                    fontWeight: '300',
+                    textAlign: 'center'
+                  }}>
+                    Extreme weather protection
                   </p>
                 </motion.div>
               </div>
