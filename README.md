@@ -1,3 +1,5 @@
+Update: test commit to trigger deploy
+
 # Weatherhaven Shelter Configurator
 
 A professional interactive 3D configurator for Weatherhaven's deployable shelter systems, built with Next.js, TypeScript, and Three.js. Features a modern military-industrial aesthetic with advanced 3D visualization capabilities.
