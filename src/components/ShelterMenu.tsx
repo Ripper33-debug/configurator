@@ -455,12 +455,12 @@ export default function ShelterMenu() {
                 backdropFilter: 'blur(15px)'
               }}
             >
-              <img 
-                src="https://d3kx2t94cz9q1y.cloudfront.net/Picture_of_trecc.jpg"
-                alt="TRECC deployed shelter system"
-                loading="eager"
-                decoding="async"
-                fetchPriority="high"
+              <video 
+                src="/videos/rotating.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
                 style={{
                   width: '100%',
                   height: '100%',
