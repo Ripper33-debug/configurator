@@ -394,31 +394,6 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
 
           {/* View Options */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{
-              fontSize: '1.2rem',
-              fontWeight: '700',
-              color: '#ffffff',
-              margin: '0 0 20px 0',
-              textAlign: 'left',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-              fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-              position: 'relative',
-              paddingLeft: '12px'
-            }}>
-              <span style={{
-                position: 'absolute',
-                left: '0',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                width: '4px',
-                height: '20px',
-                background: 'linear-gradient(135deg, #ffffff, #cccccc)',
-                borderRadius: '2px',
-                boxShadow: '0 0 8px rgba(255, 255, 255, 0.3)'
-              }}></span>
-              View Options
-            </h3>
             
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '36px' }}>
                   <button
@@ -443,7 +418,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                       overflow: 'hidden'
                     }}
                   >
-              {configState.isDeployed ? 'Stowed View' : 'Deployed View'}
+              {configState.isDeployed ? 'STOWED' : 'DEPLOYED'}
                   </button>
 
                   <button
@@ -468,7 +443,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                       overflow: 'hidden'
                     }}
                   >
-              Interior View
+              INTERIOR
                   </button>
 
                   <button
@@ -497,7 +472,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                       overflow: 'hidden'
                     }}
                   >
-              Human Scale
+              SCALE
                   </button>
 
                   {/* Environment Dropdown */}
@@ -539,10 +514,10 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                         paddingRight: '40px'
                       }}
                     >
-                      <option value="none" style={{ background: '#1e293b', color: 'white' }}>Environment</option>
-                      <option value="forest" style={{ background: '#1e293b', color: 'white' }}>Forest View</option>
-                      <option value="sand" style={{ background: '#1e293b', color: 'white' }}>Sand View</option>
-                      <option value="arctic" style={{ background: '#1e293b', color: 'white' }}>Arctic View</option>
+                      <option value="none" style={{ background: '#1e293b', color: 'white' }}>ENVIRONMENT</option>
+                      <option value="forest" style={{ background: '#1e293b', color: 'white' }}>FOREST</option>
+                      <option value="sand" style={{ background: '#1e293b', color: 'white' }}>SAND</option>
+                      <option value="arctic" style={{ background: '#1e293b', color: 'white' }}>ARCTIC</option>
                     </select>
                   </div>
                 </div>
@@ -551,14 +526,14 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
           {/* Color Options */}
           <div style={{ marginBottom: '32px' }}>
             <h3 style={{
-              fontSize: '18px',
+              fontSize: '1.2rem',
               fontWeight: '700',
-              color: '#e2e8f0',
+              color: '#ffffff',
               margin: '0 0 20px 0',
               textAlign: 'left',
               textTransform: 'uppercase',
-              letterSpacing: '1px',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+              letterSpacing: '0.1em',
+              fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
               position: 'relative',
               paddingLeft: '12px'
             }}>
@@ -569,8 +544,9 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                 transform: 'translateY(-50%)',
                 width: '4px',
                 height: '20px',
-                background: 'linear-gradient(135deg, #f97316, #ea580c)',
-                borderRadius: '2px'
+                background: 'linear-gradient(135deg, #ffffff, #cccccc)',
+                borderRadius: '2px',
+                boxShadow: '0 0 8px rgba(255, 255, 255, 0.3)'
               }}></span>
               Color Options
             </h3>
@@ -585,14 +561,14 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                 }}
                   style={{
                     background: configState.color === option.value 
-                    ? '#f97316'
+                    ? 'rgba(255, 255, 255, 0.1)'
                     : 'transparent',
-                  color: 'white',
+                  color: '#ffffff',
                     border: 'none',
-                    borderRadius: '0px',
+                    borderRadius: '8px',
                   padding: '16px 24px',
-                  fontSize: '14px',
-                  fontWeight: '600',
+                  fontSize: '1rem',
+                  fontWeight: '300',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
                     boxShadow: 'none',
@@ -602,17 +578,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                   overflow: 'hidden',
                   pointerEvents: 'auto',
                   zIndex: 10,
-                  fontFamily: '"Inter", "SF Pro Display", system-ui, -apple-system, sans-serif'
-                  }}
-                  onMouseEnter={(e) => {
-                    if (configState.color !== option.value) {
-                    e.currentTarget.style.background = 'rgba(249, 115, 22, 0.2)';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (configState.color !== option.value) {
-                    e.currentTarget.style.background = 'transparent';
-                    }
+                  fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
                   }}
                 >
                   <div style={{
