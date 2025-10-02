@@ -200,7 +200,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
         // Use specific deployed models based on color
         if (configState.color === '#B8A082') {
           return "Tanmodelopen.glb"; // Desert Tan open model
-        } else if (configState.color === '#3C3B2E') {
+        } else if (configState.color === '#6B7C32') {
           return "Greenmodelopen.glb"; // Green open model
         } else if (configState.color === '#F8F8F8') {
           return "ArcticWhiteOpenModel.glb"; // Arctic White open model
@@ -209,7 +209,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
       
       // Use pre-colored models based on selected color for stowed view
       const colorModelMap: Record<string, string> = {
-        '#3C3B2E': 'Greenstowedreduced.glb',      // Military Green
+        '#6B7C32': 'Greenstowedreduced.glb',      // Military Green
         '#B8A082': 'Tanstowedreduced.glb', // Desert Tan
         '#F8F8F8': 'Arcticwhitereducedstowed.glb'  // Arctic White
       };
