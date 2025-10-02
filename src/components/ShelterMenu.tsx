@@ -362,9 +362,9 @@ export default function ShelterMenu() {
         transition={{ duration: 0.4 }}
         style={{
           display: 'flex',
-          justifyContent: 'flex-start',
+          justifyContent: 'center',
           gap: '40px',
-          maxWidth: '1800px',
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: '0 40px',
           position: 'relative',
@@ -380,9 +380,10 @@ export default function ShelterMenu() {
             style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '30px',
+              gap: '40px',
               width: '100%',
-              maxWidth: '800px'
+              maxWidth: '1000px',
+              alignItems: 'center'
             }}
           >
 
@@ -393,20 +394,21 @@ export default function ShelterMenu() {
                 whileTap={{ scale: 0.98 }}
                 style={{
                   width: '100%',
-                  padding: '24px 40px',
+                  padding: '32px 60px',
                   background: 'rgba(0, 0, 0, 0.95)',
                   border: '2px solid rgba(255, 255, 255, 0.3)',
                   borderRadius: '12px',
                   color: '#ffffff',
                   fontWeight: '900',
-                  fontSize: '1.5rem',
+                  fontSize: '2rem',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
                   position: 'relative',
                   overflow: 'hidden',
                   boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4)',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.05em'
+                  letterSpacing: '0.05em',
+                  maxWidth: '600px'
                 }}
               >
                 Configure TRECC
@@ -424,32 +426,29 @@ export default function ShelterMenu() {
 
             {/* Bullet Points Section */}
             <div style={{
-              background: 'rgba(0, 0, 0, 0.8)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              borderRadius: '8px',
-              padding: '24px',
+              textAlign: 'center',
               marginBottom: '20px'
             }}>
               <div style={{
-                fontSize: '1rem',
+                fontSize: '1.4rem',
                 color: '#ffffff',
-                lineHeight: '1.8',
-                fontWeight: '600'
+                lineHeight: '2.2',
+                fontWeight: '900'
               }}>
-                <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center' }}>
-                  <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '12px', fontSize: '1.2rem' }}>•</span>
+                <div style={{ marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.6rem' }}>•</span>
                   Capacity: 6
                 </div>
-                <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center' }}>
-                  <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '12px', fontSize: '1.2rem' }}>•</span>
+                <div style={{ marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.6rem' }}>•</span>
                   Deployment time: 3 min
                 </div>
-                <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center' }}>
-                  <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '12px', fontSize: '1.2rem' }}>•</span>
+                <div style={{ marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.6rem' }}>•</span>
                   Temperature: -30 to 50 degrees
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <span style={{ color: 'rgba(255, 255, 255, 0.8)', marginRight: '12px', fontSize: '1.2rem' }}>•</span>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.6rem' }}>•</span>
                   ALL climates
                 </div>
               </div>
@@ -458,9 +457,10 @@ export default function ShelterMenu() {
             {/* Large Picture Section */}
             <div style={{
               width: '100%',
-              height: '400px',
+              maxWidth: '800px',
+              height: '500px',
               background: 'rgba(0, 0, 0, 0.5)',
-              borderRadius: '8px',
+              borderRadius: '12px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -478,7 +478,7 @@ export default function ShelterMenu() {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  borderRadius: '8px',
+                  borderRadius: '12px',
                   background: 'rgba(0, 0, 0, 0.8)',
                   transition: 'opacity 0.3s ease'
                 }}
