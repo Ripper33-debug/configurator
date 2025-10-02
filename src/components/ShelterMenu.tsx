@@ -275,14 +275,18 @@ export default function ShelterMenu() {
             WEATHERHAVEN
           </div>
         <h1 style={{
-          fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-            fontWeight: '900',
+          fontSize: 'clamp(3rem, 6vw, 5rem)',
+            fontWeight: '100',
             color: '#ffffff',
           marginBottom: '20px',
-            textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
-            letterSpacing: '-0.01em',
-            lineHeight: '1.2',
-            position: 'relative'
+            textShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
+            letterSpacing: '0.15em',
+            lineHeight: '1.1',
+            position: 'relative',
+            background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
         }}>
           TRECC CONFIGURATOR
           <div style={{
@@ -414,7 +418,11 @@ export default function ShelterMenu() {
                   background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%)',
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
+                  WebkitTextFillColor: 'transparent',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  borderRadius: '8px',
+                  padding: '20px 40px',
+                  backdropFilter: 'blur(10px)'
                 }}>
                   Configure TRECC
                 </div>
@@ -451,109 +459,6 @@ export default function ShelterMenu() {
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
                 backdropFilter: 'blur(10px)'
-              }}
-              onClick={() => {
-                // Open video modal
-                const modal = document.createElement('div');
-                modal.style.cssText = `
-                  position: fixed;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  background: rgba(0, 0, 0, 0.95);
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  z-index: 1000;
-                  backdrop-filter: blur(20px);
-                `;
-                
-                const videoContainer = document.createElement('div');
-                videoContainer.style.cssText = `
-                  position: relative;
-                  width: 90%;
-                  max-width: 1200px;
-                  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-                  border-radius: 20px;
-                  padding: 40px;
-                  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
-                  border: 1px solid rgba(255, 255, 255, 0.2);
-                `;
-                
-                const closeButton = document.createElement('button');
-                closeButton.innerHTML = '×';
-                closeButton.style.cssText = `
-                  position: absolute;
-                  top: 20px;
-                  right: 20px;
-                  background: rgba(255, 255, 255, 0.1);
-                  border: none;
-                  border-radius: 50%;
-                  width: 40px;
-                  height: 40px;
-                  color: white;
-                  font-size: 20px;
-                  cursor: pointer;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  transition: all 0.3s ease;
-                `;
-                
-                const videoTitle = document.createElement('div');
-                videoTitle.innerHTML = 'TRECC Video';
-                videoTitle.style.cssText = `
-                  text-align: center;
-                  margin-bottom: 30px;
-                  color: white;
-                  font-size: 24px;
-                  font-weight: 700;
-                  text-transform: uppercase;
-                  letter-spacing: 1px;
-                `;
-                
-                const videoWrapper = document.createElement('div');
-                videoWrapper.style.cssText = `
-                  position: relative;
-                  width: 100%;
-                  height: 0;
-                  padding-bottom: 56.25%;
-                  background: #000;
-                  border-radius: 10px;
-                  overflow: hidden;
-                `;
-                
-                const video = document.createElement('video');
-                video.controls = true;
-                video.autoplay = true;
-                video.style.cssText = `
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                `;
-                video.src = '/videos/trecc-walkthrough.mp4';
-                video.poster = 'https://d3kx2t94cz9q1y.cloudfront.net/Picture_of_trecc.jpg';
-                
-                video.onerror = () => {
-                  alert('Video is currently unavailable.');
-                  document.body.removeChild(modal);
-                };
-                
-                closeButton.onclick = () => document.body.removeChild(modal);
-                modal.onclick = (e) => {
-                  if (e.target === modal) document.body.removeChild(modal);
-                };
-                
-                videoWrapper.appendChild(video);
-                videoContainer.appendChild(closeButton);
-                videoContainer.appendChild(videoTitle);
-                videoContainer.appendChild(videoWrapper);
-                modal.appendChild(videoContainer);
-                document.body.appendChild(modal);
               }}
             >
               <img 
@@ -596,27 +501,6 @@ export default function ShelterMenu() {
                   }
                 }}
               />
-              {/* Play Button Overlay */}
-              <div style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: '80px',
-                height: '80px',
-                background: 'rgba(255, 255, 255, 0.9)',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '2rem',
-                color: '#000',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4)'
-              }}>
-                ▶
-              </div>
             </motion.div>
 
             {/* SEXY Bullet Points Section */}
@@ -647,9 +531,15 @@ export default function ShelterMenu() {
                 fontSize: '1.5rem',
                 color: '#ffffff',
                 lineHeight: '2.4',
-                fontWeight: '300',
+                fontWeight: '100',
                 textAlign: 'center',
-                letterSpacing: '0.05em'
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textShadow: '0 0 10px rgba(255, 255, 255, 0.2)'
               }}>
                 <div style={{ 
                   marginBottom: '24px', 
