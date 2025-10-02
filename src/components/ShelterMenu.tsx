@@ -223,7 +223,7 @@ export default function ShelterMenu() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#1a1a2e',
+      background: '#0a0a0a',
       padding: '60px 24px',
       fontFamily: '"Inter", "SF Pro Display", system-ui, -apple-system, sans-serif',
       position: 'relative',
@@ -263,7 +263,7 @@ export default function ShelterMenu() {
             Home
           </Link>
           <span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>›</span>
-          <span style={{ color: 'rgba(255, 255, 255, 0.9)', fontWeight: '500' }}>Shelter Configurator</span>
+          <span style={{ color: 'rgba(255, 255, 255, 1)', fontWeight: '800' }}>Shelter Configurator</span>
         </nav>
       </motion.div>
 
@@ -292,10 +292,10 @@ export default function ShelterMenu() {
           </div>
         <h1 style={{
           fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-            fontWeight: '700',
+            fontWeight: '900',
             color: '#ffffff',
           marginBottom: '20px',
-            textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+            textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
             letterSpacing: '-0.01em',
             lineHeight: '1.2'
         }}>
@@ -303,11 +303,11 @@ export default function ShelterMenu() {
         </h1>
         <p style={{
             fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-            color: '#cbd5e1',
+            color: '#ffffff',
           maxWidth: '700px',
           margin: '0 auto',
             lineHeight: '1.5',
-            fontWeight: '400'
+            fontWeight: '600'
         }}>
           Professional-grade deployable shelter solutions for military, emergency response, and remote operations
         </p>
@@ -338,21 +338,21 @@ export default function ShelterMenu() {
             style={{
               padding: '14px 28px',
               background: selectedCategory === category 
-                ? '#3b82f6' 
-                : 'rgba(255, 255, 255, 0.1)',
+                ? '#1a1a1a' 
+                : 'rgba(0, 0, 0, 0.8)',
               border: selectedCategory === category 
-                ? '1px solid #3b82f6' 
-                : '1px solid rgba(255, 255, 255, 0.2)',
+                ? '2px solid #ffffff' 
+                : '1px solid rgba(255, 255, 255, 0.3)',
               borderRadius: '12px',
-              color: selectedCategory === category ? 'white' : '#e2e8f0',
-              fontWeight: '600',
+              color: '#ffffff',
+              fontWeight: '800',
               cursor: 'pointer',
               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
               textTransform: 'capitalize',
               backdropFilter: 'blur(20px)',
               boxShadow: selectedCategory === category 
-                ? '0 8px 25px rgba(59, 130, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)' 
-                : '0 4px 15px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                ? '0 8px 25px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3)' 
+                : '0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
               position: 'relative',
               overflow: 'hidden',
               fontSize: '15px',
@@ -383,7 +383,7 @@ export default function ShelterMenu() {
       >
         {/* Deployment Time Filter */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <label style={{ fontSize: '0.9rem', fontWeight: '500', color: '#495057' }}>
+          <label style={{ fontSize: '0.9rem', fontWeight: '700', color: '#ffffff' }}>
             Deployment Time
           </label>
           <select
@@ -392,15 +392,16 @@ export default function ShelterMenu() {
             disabled={isFiltering}
             style={{
               padding: '8px 12px',
-              border: '1px solid #dee2e6',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
               borderRadius: '6px',
-              background: isFiltering ? '#f8f9fa' : '#ffffff',
-              color: isFiltering ? '#6c757d' : '#495057',
+              background: isFiltering ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.9)',
+              color: '#ffffff',
               fontSize: '0.9rem',
               cursor: isFiltering ? 'not-allowed' : 'pointer',
               minWidth: '120px',
               opacity: isFiltering ? 0.7 : 1,
-              transition: 'all 0.2s ease'
+              transition: 'all 0.2s ease',
+              fontWeight: '600'
             }}
           >
             <option value="all">All Times</option>
@@ -412,7 +413,7 @@ export default function ShelterMenu() {
 
         {/* Capacity Filter */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <label style={{ fontSize: '0.9rem', fontWeight: '500', color: '#495057' }}>
+          <label style={{ fontSize: '0.9rem', fontWeight: '700', color: '#ffffff' }}>
             Capacity
           </label>
           <select
@@ -421,15 +422,16 @@ export default function ShelterMenu() {
             disabled={isFiltering}
             style={{
               padding: '8px 12px',
-              border: '1px solid #dee2e6',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
               borderRadius: '6px',
-              background: isFiltering ? '#f8f9fa' : '#ffffff',
-              color: isFiltering ? '#6c757d' : '#495057',
+              background: isFiltering ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.9)',
+              color: '#ffffff',
               fontSize: '0.9rem',
               cursor: isFiltering ? 'not-allowed' : 'pointer',
               minWidth: '120px',
               opacity: isFiltering ? 0.7 : 1,
-              transition: 'all 0.2s ease'
+              transition: 'all 0.2s ease',
+              fontWeight: '600'
             }}
           >
             <option value="all">All Sizes</option>
@@ -441,7 +443,7 @@ export default function ShelterMenu() {
 
         {/* Weather Rating Filter */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <label style={{ fontSize: '0.9rem', fontWeight: '500', color: '#495057' }}>
+          <label style={{ fontSize: '0.9rem', fontWeight: '700', color: '#ffffff' }}>
             Weather Rating
           </label>
           <select
@@ -450,15 +452,16 @@ export default function ShelterMenu() {
             disabled={isFiltering}
             style={{
               padding: '8px 12px',
-              border: '1px solid #dee2e6',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
               borderRadius: '6px',
-              background: isFiltering ? '#f8f9fa' : '#ffffff',
-              color: isFiltering ? '#6c757d' : '#495057',
+              background: isFiltering ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.9)',
+              color: '#ffffff',
               fontSize: '0.9rem',
               cursor: isFiltering ? 'not-allowed' : 'pointer',
               minWidth: '120px',
               opacity: isFiltering ? 0.7 : 1,
-              transition: 'all 0.2s ease'
+              transition: 'all 0.2s ease',
+              fontWeight: '600'
             }}
           >
             <option value="all">All Ratings</option>
@@ -470,28 +473,29 @@ export default function ShelterMenu() {
 
         {/* Clear Filters Button */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <label style={{ fontSize: '0.9rem', fontWeight: '500', color: '#495057', opacity: 0 }}>
+          <label style={{ fontSize: '0.9rem', fontWeight: '700', color: '#ffffff', opacity: 0 }}>
             Actions
           </label>
           <button
             onClick={() => setFilters({ deploymentTime: 'all', capacity: 'all', weatherRating: 'all' })}
             style={{
               padding: '8px 16px',
-              border: '1px solid #dee2e6',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
               borderRadius: '6px',
-              background: '#ffffff',
-              color: '#6c757d',
+              background: 'rgba(0, 0, 0, 0.9)',
+              color: '#ffffff',
               fontSize: '0.9rem',
               cursor: 'pointer',
-              transition: 'all 0.2s ease'
+              transition: 'all 0.2s ease',
+              fontWeight: '700'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#f8f9fa';
-              e.currentTarget.style.borderColor = '#adb5bd';
+              e.currentTarget.style.background = 'rgba(0, 0, 0, 1)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#ffffff';
-              e.currentTarget.style.borderColor = '#dee2e6';
+              e.currentTarget.style.background = 'rgba(0, 0, 0, 0.9)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
             }}
           >
             Clear Filters
@@ -572,16 +576,16 @@ export default function ShelterMenu() {
             transition={{ duration: 0.6, delay: 0.1 * index }}
             whileHover={{ y: -12, scale: 1.03 }}
             style={{
-              background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%)',
+              background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%)',
               backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(59, 130, 246, 0.2)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
               borderRadius: '16px',
               padding: '32px',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
               position: 'relative',
               overflow: 'hidden',
-              boxShadow: '0 16px 48px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(59, 130, 246, 0.15)',
+              boxShadow: '0 16px 48px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.3)',
               transform: 'translateY(0)',
               transformStyle: 'preserve-3d',
               width: '480px',
@@ -689,12 +693,12 @@ export default function ShelterMenu() {
               <div style={{ marginBottom: '24px' }}>
                 <h3 style={{
                   fontSize: '1.8rem',
-                  fontWeight: '600',
+                  fontWeight: '900',
                   color: '#ffffff',
                   marginBottom: '4px',
                   letterSpacing: '-0.02em',
                   lineHeight: '1.2',
-                  textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
+                  textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'
                 }}>
                   {shelter.name}
                 </h3>
@@ -710,11 +714,11 @@ export default function ShelterMenu() {
               </div>
               
               <p style={{
-                color: '#cbd5e1',
+                color: '#ffffff',
                 lineHeight: '1.5',
                 marginBottom: '24px',
                 fontSize: '0.95rem',
-                fontWeight: '400'
+                fontWeight: '600'
               }}>
                 {shelter.description}
               </p>
@@ -1269,10 +1273,11 @@ export default function ShelterMenu() {
         }}
       >
         <p style={{
-          color: 'rgba(255, 255, 255, 0.8)',
+          color: '#ffffff',
           fontSize: '0.9rem',
-          textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
-          marginBottom: '20px'
+          textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
+          marginBottom: '20px',
+          fontWeight: '700'
         }}>
           Weatherhaven - Global Leader in Deployable Shelter Solutions
         </p>
