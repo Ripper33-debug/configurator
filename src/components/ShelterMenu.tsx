@@ -404,173 +404,214 @@ export default function ShelterMenu() {
               />
             </motion.div>
 
-            {/* SEXY Bullet Points Section */}
+            {/* What You Can Configure Section */}
             <div style={{
-              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0.08) 100%)',
-              border: '2px solid rgba(255, 255, 255, 0.12)',
-              borderRadius: '20px',
-              padding: '40px',
-              marginBottom: '20px',
-              backdropFilter: 'blur(20px)',
-              boxShadow: '0 16px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-              maxWidth: '900px',
               width: '100%',
-              position: 'relative',
-              overflow: 'hidden'
+              maxWidth: '1200px',
+              margin: '0 auto',
+              padding: '60px 20px'
             }}>
-              {/* Subtle inner glow */}
               <div style={{
-                position: 'absolute',
-                top: '0',
-                left: '0',
-                right: '0',
-                height: '1px',
-                background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)'
-              }}></div>
-              
-              <div style={{
-                fontSize: '1.5rem',
-                color: '#ffffff',
-                lineHeight: '2.4',
-                fontWeight: '400',
                 textAlign: 'center',
-                letterSpacing: '0.05em',
-                textShadow: '0 0 10px rgba(255, 255, 255, 0.3)'
+                marginBottom: '60px'
               }}>
-                <div style={{ 
-                  marginBottom: '24px', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  position: 'relative'
+                <h2 style={{
+                  fontSize: '3rem',
+                  fontWeight: '900',
+                  color: '#ffffff',
+                  marginBottom: '20px',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase'
                 }}>
-                  <div style={{
-                    width: '8px',
-                    height: '8px',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
-                    borderRadius: '50%',
-                    marginRight: '20px',
-                    boxShadow: '0 0 12px rgba(255, 255, 255, 0.4)',
-                    position: 'relative'
-                  }}>
-                    <div style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      width: '4px',
-                      height: '4px',
-                      background: '#ffffff',
-                      borderRadius: '50%',
-                      boxShadow: '0 0 8px rgba(255, 255, 255, 0.6)'
-                    }}></div>
-                  </div>
-                  <span style={{ 
-                    fontWeight: '400',
-                    textShadow: '0 0 10px rgba(255, 255, 255, 0.2)'
-                  }}>Capacity: 6</span>
-                </div>
-                
-                <div style={{ 
-                  marginBottom: '24px', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  position: 'relative'
+                  What You Can Configure
+                </h2>
+                <p style={{
+                  fontSize: '1.2rem',
+                  color: '#cccccc',
+                  fontWeight: '300',
+                  letterSpacing: '0.05em'
                 }}>
-                  <div style={{
-                    width: '8px',
-                    height: '8px',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
-                    borderRadius: '50%',
-                    marginRight: '20px',
-                    boxShadow: '0 0 12px rgba(255, 255, 255, 0.4)',
-                    position: 'relative'
+                  Explore all the customization options available in our 3D configurator.
+                </p>
+              </div>
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '30px',
+                marginBottom: '40px'
+              }}>
+                {/* COLOR Card */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                    border: '2px solid rgba(255, 255, 255, 0.15)',
+                    borderRadius: '16px',
+                    padding: '32px',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}
+                >
+                  <h3 style={{
+                    fontSize: '2rem',
+                    fontWeight: '900',
+                    color: '#ffffff',
+                    marginBottom: '12px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em'
                   }}>
-                    <div style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      width: '4px',
-                      height: '4px',
-                      background: '#ffffff',
-                      borderRadius: '50%',
-                      boxShadow: '0 0 8px rgba(255, 255, 255, 0.6)'
-                    }}></div>
-                  </div>
-                  <span style={{ 
-                    fontWeight: '400',
-                    textShadow: '0 0 10px rgba(255, 255, 255, 0.2)'
-                  }}>Deployment time: 3 min</span>
-                </div>
-                
-                <div style={{ 
-                  marginBottom: '24px', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  position: 'relative'
-                }}>
-                  <div style={{
-                    width: '8px',
-                    height: '8px',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
-                    borderRadius: '50%',
-                    marginRight: '20px',
-                    boxShadow: '0 0 12px rgba(255, 255, 255, 0.4)',
-                    position: 'relative'
+                    COLOR
+                  </h3>
+                  <h4 style={{
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    color: '#ffffff',
+                    marginBottom: '16px',
+                    letterSpacing: '0.05em'
                   }}>
-                    <div style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      width: '4px',
-                      height: '4px',
-                      background: '#ffffff',
-                      borderRadius: '50%',
-                      boxShadow: '0 0 8px rgba(255, 255, 255, 0.6)'
-                    }}></div>
-                  </div>
-                  <span style={{ 
-                    fontWeight: '400',
-                    textShadow: '0 0 10px rgba(255, 255, 255, 0.2)'
-                  }}>Temperature: -30 to 50 degrees</span>
-                </div>
-                
-                <div style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  position: 'relative'
-                }}>
-                  <div style={{
-                    width: '8px',
-                    height: '8px',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
-                    borderRadius: '50%',
-                    marginRight: '20px',
-                    boxShadow: '0 0 12px rgba(255, 255, 255, 0.4)',
-                    position: 'relative'
+                    Color Options
+                  </h4>
+                  <p style={{
+                    fontSize: '1rem',
+                    color: '#cccccc',
+                    lineHeight: '1.6',
+                    fontWeight: '300'
                   }}>
-                    <div style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      width: '4px',
-                      height: '4px',
-                      background: '#ffffff',
-                      borderRadius: '50%',
-                      boxShadow: '0 0 8px rgba(255, 255, 255, 0.6)'
-                    }}></div>
-                  </div>
-                  <span style={{ 
-                    fontWeight: '400',
-                    textShadow: '0 0 10px rgba(255, 255, 255, 0.2)'
-                  }}>ALL climates</span>
-                </div>
+                    Choose from military-grade color schemes including desert tan, olive drab, and arctic white.
+                  </p>
+                </motion.div>
+
+                {/* VIEW Card */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                    border: '2px solid rgba(255, 255, 255, 0.15)',
+                    borderRadius: '16px',
+                    padding: '32px',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}
+                >
+                  <h3 style={{
+                    fontSize: '2rem',
+                    fontWeight: '900',
+                    color: '#ffffff',
+                    marginBottom: '12px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em'
+                  }}>
+                    VIEW
+                  </h3>
+                  <h4 style={{
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    color: '#ffffff',
+                    marginBottom: '16px',
+                    letterSpacing: '0.05em'
+                  }}>
+                    View Modes
+                  </h4>
+                  <p style={{
+                    fontSize: '1rem',
+                    color: '#cccccc',
+                    lineHeight: '1.6',
+                    fontWeight: '300'
+                  }}>
+                    Switch between closed, open, and interior views to see all configurations.
+                  </p>
+                </motion.div>
+
+                {/* 3D Card */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                    border: '2px solid rgba(255, 255, 255, 0.15)',
+                    borderRadius: '16px',
+                    padding: '32px',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}
+                >
+                  <h3 style={{
+                    fontSize: '2rem',
+                    fontWeight: '900',
+                    color: '#ffffff',
+                    marginBottom: '12px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em'
+                  }}>
+                    3D
+                  </h3>
+                  <h4 style={{
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    color: '#ffffff',
+                    marginBottom: '16px',
+                    letterSpacing: '0.05em'
+                  }}>
+                    3D Interaction
+                  </h4>
+                  <p style={{
+                    fontSize: '1rem',
+                    color: '#cccccc',
+                    lineHeight: '1.6',
+                    fontWeight: '300'
+                  }}>
+                    Rotate, zoom, and explore your shelter from every angle in real-time.
+                  </p>
+                </motion.div>
+
+                {/* SPECS Card */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                    border: '2px solid rgba(255, 255, 255, 0.15)',
+                    borderRadius: '16px',
+                    padding: '32px',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}
+                >
+                  <h3 style={{
+                    fontSize: '2rem',
+                    fontWeight: '900',
+                    color: '#ffffff',
+                    marginBottom: '12px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em'
+                  }}>
+                    SPECS
+                  </h3>
+                  <h4 style={{
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    color: '#ffffff',
+                    marginBottom: '16px',
+                    letterSpacing: '0.05em'
+                  }}>
+                    Technical Specs
+                  </h4>
+                  <p style={{
+                    fontSize: '1rem',
+                    color: '#cccccc',
+                    lineHeight: '1.6',
+                    fontWeight: '300'
+                  }}>
+                    View detailed specifications including dimensions, capacity, and deployment time.
+                  </p>
+                </motion.div>
               </div>
             </div>
 
