@@ -260,60 +260,6 @@ export default function ShelterMenu() {
         </div>
       </motion.div>
 
-      {/* Category Filter */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '15px',
-          marginBottom: '50px',
-          flexWrap: 'wrap',
-          position: 'relative',
-          zIndex: 1,
-          padding: '20px 0',
-          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
-        }}
-      >
-        {categories.map((category) => (
-          <motion.button
-            key={category}
-            onClick={() => handleCategoryChange(category)}
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            style={{
-              padding: '14px 28px',
-              background: selectedCategory === category 
-                ? '#1a1a1a' 
-                : 'rgba(0, 0, 0, 0.8)',
-              border: selectedCategory === category 
-                ? '2px solid #ffffff' 
-                : '1px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '12px',
-              color: '#ffffff',
-              fontWeight: '800',
-              cursor: 'pointer',
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-              textTransform: 'capitalize',
-              backdropFilter: 'blur(20px)',
-              boxShadow: selectedCategory === category 
-                ? '0 8px 25px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3)' 
-                : '0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-              position: 'relative',
-              overflow: 'hidden',
-              fontSize: '15px',
-              letterSpacing: '0.025em'
-            }}
-          >
-            <span style={{ position: 'relative', zIndex: 1 }}>
-              {category}
-            </span>
-          </motion.button>
-        ))}
-      </motion.div>
 
 
 
@@ -376,10 +322,11 @@ export default function ShelterMenu() {
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  borderRadius: '8px',
                   padding: '20px 40px',
-                  backdropFilter: 'blur(10px)'
+                  textDecoration: 'underline',
+                  textDecorationColor: 'rgba(255, 255, 255, 0.6)',
+                  textDecorationThickness: '2px',
+                  textUnderlineOffset: '8px'
                 }}>
                   Configure TRECC
                 </div>
@@ -488,15 +435,10 @@ export default function ShelterMenu() {
                 fontSize: '1.5rem',
                 color: '#ffffff',
                 lineHeight: '2.4',
-                fontWeight: '100',
+                fontWeight: '400',
                 textAlign: 'center',
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '0 0 10px rgba(255, 255, 255, 0.2)'
+                letterSpacing: '0.05em',
+                textShadow: '0 0 10px rgba(255, 255, 255, 0.3)'
               }}>
                 <div style={{ 
                   marginBottom: '24px', 
