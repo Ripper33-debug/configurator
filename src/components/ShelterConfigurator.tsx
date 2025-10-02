@@ -341,14 +341,14 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
         {/* Left Side - Lighting Controls (Visible by default) */}
         <div className="left-controls" style={{
           width: '360px',
-          background: 'linear-gradient(145deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%)',
+          background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%)',
           backdropFilter: 'blur(20px)',
-          borderRight: '1px solid rgba(148, 163, 184, 0.2)',
+          borderRight: '2px solid rgba(255, 255, 255, 0.15)',
           padding: '32px 24px',
           display: 'flex',
           flexDirection: 'column',
           gap: '24px',
-          boxShadow: '0 25px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+          boxShadow: '0 25px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
           overflowY: 'auto',
           zIndex: 10,
           position: 'absolute',
@@ -366,22 +366,23 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
             padding: '0'
           }}>
             <h2 style={{
-              fontSize: '28px',
-              fontWeight: '600',
+              fontSize: '2.5rem',
+              fontWeight: '900',
               color: '#ffffff',
               margin: '0',
               textTransform: 'uppercase',
-              letterSpacing: '1px',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif'
+              letterSpacing: '0.15em',
+              fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.3)'
             }}>
               TRECC
             </h2>
             <p style={{
-              fontSize: '12px',
-              color: '#94a3b8',
-              margin: '4px 0 0 0',
-              fontWeight: '400',
-              letterSpacing: '0.5px',
+              fontSize: '1rem',
+              color: '#cccccc',
+              margin: '8px 0 0 0',
+              fontWeight: '300',
+              letterSpacing: '0.1em',
               textTransform: 'uppercase'
             }}>
               SHELTER CONFIGURATOR
@@ -394,14 +395,14 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
           {/* View Options */}
           <div style={{ marginBottom: '32px' }}>
             <h3 style={{
-              fontSize: '18px',
+              fontSize: '1.2rem',
               fontWeight: '700',
-              color: '#e2e8f0',
+              color: '#ffffff',
               margin: '0 0 20px 0',
               textAlign: 'left',
               textTransform: 'uppercase',
-              letterSpacing: '1px',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+              letterSpacing: '0.1em',
+              fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
               position: 'relative',
               paddingLeft: '12px'
             }}>
@@ -412,8 +413,9 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                 transform: 'translateY(-50%)',
                 width: '4px',
                 height: '20px',
-                background: 'linear-gradient(135deg, #3b82f6, #1e40af)',
-                borderRadius: '2px'
+                background: 'linear-gradient(135deg, #ffffff, #cccccc)',
+                borderRadius: '2px',
+                boxShadow: '0 0 8px rgba(255, 255, 255, 0.3)'
               }}></span>
               View Options
             </h3>
@@ -423,29 +425,40 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                     onClick={handleDeployToggle}
                     style={{
                       background: configState.isDeployed 
-                  ? '#f97316'
-                  : 'transparent',
-                color: configState.isDeployed ? 'white' : 'white',
-                      border: 'none',
-                borderRadius: '0px',
+                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)'
+                  : 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                color: '#ffffff',
+                      border: configState.isDeployed
+                  ? '2px solid rgba(255, 255, 255, 0.4)'
+                  : '2px solid rgba(255, 255, 255, 0.15)',
+                borderRadius: '12px',
                 padding: '16px 24px',
-                fontSize: '14px',
-                fontWeight: '600',
+                fontSize: '1rem',
+                fontWeight: '700',
                       cursor: 'pointer',
-                      transition: 'all 0.3s ease',
-                boxShadow: 'none',
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: configState.isDeployed
+                  ? '0 8px 32px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                  : '0 8px 32px rgba(0, 0, 0, 0.3)',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.1em',
-                      fontFamily: '"Inter", "SF Pro Display", system-ui, -apple-system, sans-serif'
+                      letterSpacing: '0.05em',
+                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                      backdropFilter: 'blur(10px)',
+                      position: 'relative',
+                      overflow: 'hidden'
                     }}
                     onMouseEnter={(e) => {
                 if (!configState.isDeployed) {
-                  e.currentTarget.style.background = 'rgba(249, 115, 22, 0.2)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)';
+                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.3)';
+                  e.currentTarget.style.transform = 'scale(1.02)';
                 }
                     }}
                     onMouseLeave={(e) => {
                 if (!configState.isDeployed) {
-                  e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)';
+                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.15)';
+                  e.currentTarget.style.transform = 'scale(1)';
                 }
                     }}
                   >
@@ -456,29 +469,40 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                     onClick={handleInteriorViewToggle}
                     style={{
                       background: configState.isInteriorView 
-                  ? '#f97316'
-                  : 'transparent',
-                color: configState.isInteriorView ? 'white' : 'white',
-                      border: 'none',
-                borderRadius: '0px',
+                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)'
+                  : 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                color: '#ffffff',
+                      border: configState.isInteriorView
+                  ? '2px solid rgba(255, 255, 255, 0.4)'
+                  : '2px solid rgba(255, 255, 255, 0.15)',
+                borderRadius: '12px',
                 padding: '16px 24px',
-                fontSize: '14px',
-                fontWeight: '600',
+                fontSize: '1rem',
+                fontWeight: '700',
                       cursor: 'pointer',
-                      transition: 'all 0.3s ease',
-                boxShadow: 'none',
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: configState.isInteriorView
+                  ? '0 8px 32px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                  : '0 8px 32px rgba(0, 0, 0, 0.3)',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.1em',
-                      fontFamily: '"Inter", "SF Pro Display", system-ui, -apple-system, sans-serif'
+                      letterSpacing: '0.05em',
+                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                      backdropFilter: 'blur(10px)',
+                      position: 'relative',
+                      overflow: 'hidden'
                     }}
                     onMouseEnter={(e) => {
                 if (!configState.isInteriorView) {
-                  e.currentTarget.style.background = 'rgba(249, 115, 22, 0.2)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)';
+                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.3)';
+                  e.currentTarget.style.transform = 'scale(1.02)';
                 }
                     }}
                     onMouseLeave={(e) => {
                 if (!configState.isInteriorView) {
-                  e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)';
+                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.15)';
+                  e.currentTarget.style.transform = 'scale(1)';
                 }
                     }}
                   >
@@ -493,29 +517,40 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                     }}
                     style={{
                       background: configState.showConstructionWorker 
-                  ? '#f97316'
-                  : 'transparent',
-                color: configState.showConstructionWorker ? 'white' : 'white',
-                      border: 'none',
-                borderRadius: '0px',
+                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)'
+                  : 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                color: '#ffffff',
+                      border: configState.showConstructionWorker
+                  ? '2px solid rgba(255, 255, 255, 0.4)'
+                  : '2px solid rgba(255, 255, 255, 0.15)',
+                borderRadius: '12px',
                 padding: '16px 24px',
-                fontSize: '14px',
-                fontWeight: '600',
+                fontSize: '1rem',
+                fontWeight: '700',
                       cursor: 'pointer',
-                      transition: 'all 0.3s ease',
-                boxShadow: 'none',
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: configState.showConstructionWorker
+                  ? '0 8px 32px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                  : '0 8px 32px rgba(0, 0, 0, 0.3)',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.1em',
-                      fontFamily: '"Inter", "SF Pro Display", system-ui, -apple-system, sans-serif'
+                      letterSpacing: '0.05em',
+                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                      backdropFilter: 'blur(10px)',
+                      position: 'relative',
+                      overflow: 'hidden'
                     }}
                     onMouseEnter={(e) => {
                 if (!configState.showConstructionWorker) {
-                  e.currentTarget.style.background = 'rgba(249, 115, 22, 0.2)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)';
+                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.3)';
+                  e.currentTarget.style.transform = 'scale(1.02)';
                 }
                     }}
                     onMouseLeave={(e) => {
                 if (!configState.showConstructionWorker) {
-                  e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)';
+                  e.currentTarget.style.border = '2px solid rgba(255, 255, 255, 0.15)';
+                  e.currentTarget.style.transform = 'scale(1)';
                 }
                     }}
                   >
@@ -536,19 +571,24 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                         }));
                       }}
                       style={{
-                        background: 'transparent',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '0px',
+                        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                        border: '2px solid rgba(255, 255, 255, 0.15)',
+                        borderRadius: '12px',
                         padding: '16px 24px',
-                        fontSize: '14px',
-                        fontWeight: '600',
+                        fontSize: '1rem',
+                        fontWeight: '700',
+                        color: '#ffffff',
                         cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        boxShadow: 'none',
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
                         textTransform: 'uppercase',
-                        letterSpacing: '0.1em',
-                        fontFamily: '"Inter", "SF Pro Display", system-ui, -apple-system, sans-serif',
+                        letterSpacing: '0.05em',
+                        fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                        backdropFilter: 'blur(10px)',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        width: '100%',
+                        outline: 'none'
                         appearance: 'none',
                         backgroundImage: 'url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3e%3cpolyline points=\'6,9 12,15 18,9\'%3e%3c/polyline%3e%3c/svg%3e")',
                         backgroundRepeat: 'no-repeat',
