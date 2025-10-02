@@ -58,7 +58,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
 
   const colorOptions: ColorOption[] = useMemo(() => [
     { name: 'CARC Tan (Desert)', value: '#B8A082' },
-    { name: 'Green', value: '#3C3B2E' },
+    { name: 'Green', value: '#6B7C32' },
     { name: 'Arctic White', value: '#F8F8F8' }
   ], []);
 
@@ -400,9 +400,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                   <button
                     onClick={handleDeployToggle}
                     style={{
-                      background: configState.isDeployed 
-                  ? 'rgba(255, 255, 255, 0.1)'
-                  : 'transparent',
+                      background: 'transparent',
                 color: '#ffffff',
                       border: 'none',
                 borderRadius: '8px',
@@ -416,7 +414,11 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                       letterSpacing: '0.1em',
                       fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
                       position: 'relative',
-                      overflow: 'hidden'
+                      overflow: 'hidden',
+                      textDecoration: configState.isDeployed ? 'underline' : 'none',
+                      textDecorationColor: 'rgba(255, 255, 255, 0.8)',
+                      textDecorationThickness: '2px',
+                      textUnderlineOffset: '4px'
                     }}
                   >
               {configState.isDeployed ? 'STOWED' : 'DEPLOYED'}
@@ -430,9 +432,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                       setConfigState(prev => ({ ...prev, showConstructionWorker: !prev.showConstructionWorker }));
                     }}
                     style={{
-                      background: configState.showConstructionWorker 
-                  ? 'rgba(255, 255, 255, 0.1)'
-                  : 'transparent',
+                      background: 'transparent',
                 color: '#ffffff',
                       border: 'none',
                 borderRadius: '8px',
@@ -446,36 +446,15 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                       letterSpacing: '0.1em',
                       fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
                       position: 'relative',
-                      overflow: 'hidden'
+                      overflow: 'hidden',
+                      textDecoration: configState.showConstructionWorker ? 'underline' : 'none',
+                      textDecorationColor: 'rgba(255, 255, 255, 0.8)',
+                      textDecorationThickness: '2px',
+                      textUnderlineOffset: '4px'
                     }}
                   >
               SCALE
                   </button>
-
-                  <Link href="/360-interior" style={{ textDecoration: 'none' }}>
-                    <button
-                      style={{
-                        background: 'transparent',
-                        color: '#ffffff',
-                        border: 'none',
-                        borderRadius: '8px',
-                        padding: '16px 24px',
-                        fontSize: '1rem',
-                        fontWeight: '300',
-                        cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        boxShadow: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.1em',
-                        fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                        position: 'relative',
-                        overflow: 'hidden',
-                        width: '100%'
-                      }}
-                    >
-                      360 INTERIOR
-                    </button>
-                  </Link>
 
                   {/* Environment Dropdown */}
                   <div style={{ position: 'relative' }}>
@@ -521,6 +500,31 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                       <option value="forest" style={{ background: '#1e293b', color: 'white' }}>FOREST</option>
                     </select>
                   </div>
+
+                  <Link href="/360-interior" style={{ textDecoration: 'none' }}>
+                    <button
+                      style={{
+                        background: 'transparent',
+                        color: '#ffffff',
+                        border: 'none',
+                        borderRadius: '8px',
+                        padding: '16px 24px',
+                        fontSize: '1rem',
+                        fontWeight: '300',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        boxShadow: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.1em',
+                        fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        width: '100%'
+                      }}
+                    >
+                      360 INTERIOR
+                    </button>
+                  </Link>
                 </div>
                 </div>
 

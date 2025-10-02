@@ -1221,7 +1221,7 @@ export default function ShelterMenu() {
                 fontSize: '4rem',
                 marginBottom: '20px',
                 textAlign: 'center'
-              }}>🛡️</div>
+              }}></div>
               <h3 style={{
                 fontSize: '1.8rem',
                 fontWeight: '700',
@@ -1262,7 +1262,7 @@ export default function ShelterMenu() {
                 fontSize: '4rem',
                 marginBottom: '20px',
                 textAlign: 'center'
-              }}>⚡</div>
+              }}></div>
               <h3 style={{
                 fontSize: '1.8rem',
                 fontWeight: '700',
@@ -1303,7 +1303,7 @@ export default function ShelterMenu() {
                 fontSize: '4rem',
                 marginBottom: '20px',
                 textAlign: 'center'
-              }}>🔧</div>
+              }}></div>
               <h3 style={{
                 fontSize: '1.8rem',
                 fontWeight: '700',
