@@ -234,17 +234,13 @@ export default function ShelterMenu() {
             fontWeight: '200',
             color: '#ffffff',
           marginBottom: '30px',
-            textShadow: '0 0 30px rgba(255, 255, 255, 0.4)',
+            textShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
             letterSpacing: '0.25em',
             lineHeight: '1.0',
             position: 'relative',
-            background: 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 30%, #ffffff 70%, #e0e0e0 100%)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
             fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
         }}>
-          TRECC CONFIGURATOR
+          Configure TRECC
           <div style={{
             position: 'absolute',
             bottom: '-15px',
@@ -328,7 +324,7 @@ export default function ShelterMenu() {
                   textDecorationThickness: '2px',
                   textUnderlineOffset: '8px'
                 }}>
-                  Configure TRECC
+                  Launch Configurator
                 </div>
                 <div style={{
                   position: 'absolute',
@@ -349,7 +345,7 @@ export default function ShelterMenu() {
               whileHover={{ scale: 1.03, y: -12 }}
               style={{
                 width: '100%',
-                maxWidth: '1000px',
+                maxWidth: '1400px',
                 height: '700px',
                 background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
                 borderRadius: '24px',
