@@ -431,26 +431,16 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                       border: 'none',
                 borderRadius: '8px',
                 padding: '16px 24px',
-                fontSize: '0.95rem',
-                fontWeight: '500',
+                fontSize: '1rem',
+                fontWeight: '300',
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
                 boxShadow: 'none',
-                      textTransform: 'none',
-                      letterSpacing: '0.02em',
-                      fontFamily: '"Inter", "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
                       position: 'relative',
                       overflow: 'hidden'
-                    }}
-                    onMouseEnter={(e) => {
-                if (!configState.isDeployed) {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                }
-                    }}
-                    onMouseLeave={(e) => {
-                if (!configState.isDeployed) {
-                  e.currentTarget.style.background = 'transparent';
-                }
                     }}
                   >
               {configState.isDeployed ? 'Stowed View' : 'Deployed View'}
@@ -466,26 +456,16 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                       border: 'none',
                 borderRadius: '8px',
                 padding: '16px 24px',
-                fontSize: '0.95rem',
-                fontWeight: '500',
+                fontSize: '1rem',
+                fontWeight: '300',
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
                 boxShadow: 'none',
-                      textTransform: 'none',
-                      letterSpacing: '0.02em',
-                      fontFamily: '"Inter", "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
                       position: 'relative',
                       overflow: 'hidden'
-                    }}
-                    onMouseEnter={(e) => {
-                if (!configState.isInteriorView) {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                }
-                    }}
-                    onMouseLeave={(e) => {
-                if (!configState.isInteriorView) {
-                  e.currentTarget.style.background = 'transparent';
-                }
                     }}
                   >
               Interior View
@@ -505,26 +485,16 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                       border: 'none',
                 borderRadius: '8px',
                 padding: '16px 24px',
-                fontSize: '0.95rem',
-                fontWeight: '500',
+                fontSize: '1rem',
+                fontWeight: '300',
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
                 boxShadow: 'none',
-                      textTransform: 'none',
-                      letterSpacing: '0.02em',
-                      fontFamily: '"Inter", "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
                       position: 'relative',
                       overflow: 'hidden'
-                    }}
-                    onMouseEnter={(e) => {
-                if (!configState.showConstructionWorker) {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                }
-                    }}
-                    onMouseLeave={(e) => {
-                if (!configState.showConstructionWorker) {
-                  e.currentTarget.style.background = 'transparent';
-                }
                     }}
                   >
               Human Scale
@@ -548,15 +518,15 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                         border: 'none',
                         borderRadius: '8px',
                         padding: '16px 24px',
-                        fontSize: '0.95rem',
-                        fontWeight: '500',
+                        fontSize: '1rem',
+                        fontWeight: '300',
                         color: '#ffffff',
                         cursor: 'pointer',
                         transition: 'all 0.3s ease',
                         boxShadow: 'none',
-                        textTransform: 'none',
-                        letterSpacing: '0.02em',
-                        fontFamily: '"Inter", "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.1em',
+                        fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
                         position: 'relative',
                         overflow: 'hidden',
                         width: '100%',
@@ -567,12 +537,6 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                         backgroundPosition: 'right 12px center',
                         backgroundSize: '16px',
                         paddingRight: '40px'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'transparent';
                       }}
                     >
                       <option value="none" style={{ background: '#1e293b', color: 'white' }}>Environment</option>
