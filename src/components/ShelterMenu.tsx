@@ -387,28 +387,28 @@ export default function ShelterMenu() {
             }}
           >
 
-            {/* Large Configure Button */}
+            {/* Large Configure Button - SEXY BOY */}
             <Link href={`/configurator/${shelter.id}`}>
               <motion.button
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.05, y: -4 }}
+                whileTap={{ scale: 0.95 }}
                 style={{
                   width: '100%',
-                  padding: '32px 60px',
+                  padding: '20px 80px',
                   background: 'rgba(0, 0, 0, 0.95)',
-                  border: '2px solid rgba(255, 255, 255, 0.3)',
-                  borderRadius: '12px',
+                  border: '1px solid rgba(255, 255, 255, 0.4)',
+                  borderRadius: '8px',
                   color: '#ffffff',
                   fontWeight: '900',
-                  fontSize: '2rem',
+                  fontSize: '1.8rem',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   position: 'relative',
                   overflow: 'hidden',
-                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4)',
+                  boxShadow: '0 12px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1)',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
-                  maxWidth: '600px'
+                  letterSpacing: '0.08em',
+                  maxWidth: '800px'
                 }}
               >
                 Configure TRECC
@@ -417,57 +417,136 @@ export default function ShelterMenu() {
                   top: '0',
                   left: '0',
                   right: '0',
-                  height: '2px',
+                  height: '1px',
                   background: 'linear-gradient(90deg, transparent, #ffffff, transparent)',
-                  opacity: '0.8'
+                  opacity: '0.9'
                 }}></div>
               </motion.button>
             </Link>
 
-            {/* Bullet Points Section */}
-            <div style={{
-              textAlign: 'center',
-              marginBottom: '20px'
-            }}>
-              <div style={{
-                fontSize: '1.4rem',
-                color: '#ffffff',
-                lineHeight: '2.2',
-                fontWeight: '900'
-              }}>
-                <div style={{ marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.6rem' }}>•</span>
-                  Capacity: 6
-                </div>
-                <div style={{ marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.6rem' }}>•</span>
-                  Deployment time: 3 min
-                </div>
-                <div style={{ marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.6rem' }}>•</span>
-                  Temperature: -30 to 50 degrees
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.6rem' }}>•</span>
-                  ALL climates
-                </div>
-              </div>
-            </div>
-
-            {/* Large Picture Section */}
-            <div style={{
-              width: '100%',
-              maxWidth: '800px',
-              height: '500px',
-              background: 'rgba(0, 0, 0, 0.5)',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              position: 'relative',
-              overflow: 'hidden'
-            }}>
+            {/* Large Video Section */}
+            <motion.div 
+              whileHover={{ scale: 1.02, y: -8 }}
+              style={{
+                width: '100%',
+                maxWidth: '900px',
+                height: '600px',
+                background: 'rgba(0, 0, 0, 0.5)',
+                borderRadius: '16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                position: 'relative',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: '0 16px 48px rgba(0, 0, 0, 0.4)'
+              }}
+              onClick={() => {
+                // Open video modal
+                const modal = document.createElement('div');
+                modal.style.cssText = `
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  background: rgba(0, 0, 0, 0.95);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  z-index: 1000;
+                  backdrop-filter: blur(20px);
+                `;
+                
+                const videoContainer = document.createElement('div');
+                videoContainer.style.cssText = `
+                  position: relative;
+                  width: 90%;
+                  max-width: 1200px;
+                  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+                  border-radius: 20px;
+                  padding: 40px;
+                  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+                  border: 1px solid rgba(255, 255, 255, 0.2);
+                `;
+                
+                const closeButton = document.createElement('button');
+                closeButton.innerHTML = '×';
+                closeButton.style.cssText = `
+                  position: absolute;
+                  top: 20px;
+                  right: 20px;
+                  background: rgba(255, 255, 255, 0.1);
+                  border: none;
+                  border-radius: 50%;
+                  width: 40px;
+                  height: 40px;
+                  color: white;
+                  font-size: 20px;
+                  cursor: pointer;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  transition: all 0.3s ease;
+                `;
+                
+                const videoTitle = document.createElement('div');
+                videoTitle.innerHTML = 'TRECC Video';
+                videoTitle.style.cssText = `
+                  text-align: center;
+                  margin-bottom: 30px;
+                  color: white;
+                  font-size: 24px;
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                `;
+                
+                const videoWrapper = document.createElement('div');
+                videoWrapper.style.cssText = `
+                  position: relative;
+                  width: 100%;
+                  height: 0;
+                  padding-bottom: 56.25%;
+                  background: #000;
+                  border-radius: 10px;
+                  overflow: hidden;
+                `;
+                
+                const video = document.createElement('video');
+                video.controls = true;
+                video.autoplay = true;
+                video.style.cssText = `
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                `;
+                video.src = '/videos/trecc-walkthrough.mp4';
+                video.poster = 'https://d3kx2t94cz9q1y.cloudfront.net/Picture_of_trecc.jpg';
+                
+                video.onerror = () => {
+                  alert('Video is currently unavailable.');
+                  document.body.removeChild(modal);
+                };
+                
+                closeButton.onclick = () => document.body.removeChild(modal);
+                modal.onclick = (e) => {
+                  if (e.target === modal) document.body.removeChild(modal);
+                };
+                
+                videoWrapper.appendChild(video);
+                videoContainer.appendChild(closeButton);
+                videoContainer.appendChild(videoTitle);
+                videoContainer.appendChild(videoWrapper);
+                modal.appendChild(videoContainer);
+                document.body.appendChild(modal);
+              }}
+            >
               <img 
                 src="https://d3kx2t94cz9q1y.cloudfront.net/Picture_of_trecc.jpg"
                 alt="TRECC deployed shelter system"
@@ -478,9 +557,9 @@ export default function ShelterMenu() {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  borderRadius: '12px',
+                  borderRadius: '16px',
                   background: 'rgba(0, 0, 0, 0.8)',
-                  transition: 'opacity 0.3s ease'
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
                 onLoad={(e) => {
                   e.currentTarget.style.opacity = '1';
@@ -493,13 +572,13 @@ export default function ShelterMenu() {
                       <div style="
                         width: 100%;
                         height: 100%;
-                        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-                        border-radius: 8px;
+                        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+                        border-radius: 16px;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
-                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        border: 1px solid rgba(255, 255, 255, 0.2);
                       ">
                         <div style="font-size: 4rem; color: #fff; margin-bottom: 16px;">🏠</div>
                         <div style="font-size: 1.2rem; font-weight: 700; color: #ffffff; text-align: center;">TRECC</div>
@@ -508,6 +587,65 @@ export default function ShelterMenu() {
                   }
                 }}
               />
+              {/* Play Button Overlay */}
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '80px',
+                height: '80px',
+                background: 'rgba(255, 255, 255, 0.9)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '2rem',
+                color: '#000',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4)'
+              }}>
+                ▶
+              </div>
+            </motion.div>
+
+            {/* Sleek Bullet Points Section */}
+            <div style={{
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              borderRadius: '12px',
+              padding: '32px',
+              marginBottom: '20px',
+              backdropFilter: 'blur(10px)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+              maxWidth: '800px',
+              width: '100%'
+            }}>
+              <div style={{
+                fontSize: '1.3rem',
+                color: '#ffffff',
+                lineHeight: '2.0',
+                fontWeight: '700',
+                textAlign: 'center'
+              }}>
+                <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.4rem' }}>•</span>
+                  Capacity: 6
+                </div>
+                <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.4rem' }}>•</span>
+                  Deployment time: 3 min
+                </div>
+                <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.4rem' }}>•</span>
+                  Temperature: -30 to 50 degrees
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.4rem' }}>•</span>
+                  ALL climates
+                </div>
+              </div>
             </div>
 
           </motion.div>
