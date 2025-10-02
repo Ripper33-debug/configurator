@@ -257,8 +257,81 @@ export default function ShelterMenu() {
         </div>
       </motion.div>
 
+      {/* Category Filter Buttons */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '20px',
+          marginBottom: '60px',
+          padding: '0 20px'
+        }}
+      >
+        <motion.button
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setSelectedCategory('all')}
+          style={{
+            background: selectedCategory === 'all' 
+              ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)'
+              : 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+            border: selectedCategory === 'all'
+              ? '2px solid rgba(255, 255, 255, 0.4)'
+              : '2px solid rgba(255, 255, 255, 0.15)',
+            borderRadius: '12px',
+            padding: '16px 32px',
+            color: '#ffffff',
+            fontSize: '1.1rem',
+            fontWeight: '700',
+            letterSpacing: '0.05em',
+            textTransform: 'uppercase',
+            cursor: 'pointer',
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            backdropFilter: 'blur(10px)',
+            boxShadow: selectedCategory === 'all'
+              ? '0 8px 32px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+              : '0 8px 32px rgba(0, 0, 0, 0.3)',
+            position: 'relative',
+            overflow: 'hidden'
+          }}
+        >
+          All
+        </motion.button>
 
-
+        <motion.button
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setSelectedCategory('TRECC')}
+          style={{
+            background: selectedCategory === 'TRECC' 
+              ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)'
+              : 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+            border: selectedCategory === 'TRECC'
+              ? '2px solid rgba(255, 255, 255, 0.4)'
+              : '2px solid rgba(255, 255, 255, 0.15)',
+            borderRadius: '12px',
+            padding: '16px 32px',
+            color: '#ffffff',
+            fontSize: '1.1rem',
+            fontWeight: '700',
+            letterSpacing: '0.05em',
+            textTransform: 'uppercase',
+            cursor: 'pointer',
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            backdropFilter: 'blur(10px)',
+            boxShadow: selectedCategory === 'TRECC'
+              ? '0 8px 32px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+              : '0 8px 32px rgba(0, 0, 0, 0.3)',
+            position: 'relative',
+            overflow: 'hidden'
+          }}
+        >
+          TRECC
+        </motion.button>
+      </motion.div>
 
       {/* Shelter Grid */}
       <motion.div
