@@ -205,11 +205,13 @@ export default function ShelterMenu() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#0a0a0a',
+      background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)',
       padding: '60px 24px',
       fontFamily: '"Inter", "SF Pro Display", system-ui, -apple-system, sans-serif',
       position: 'relative',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      border: '1px solid rgba(255, 255, 255, 0.08)',
+      boxShadow: 'inset 0 0 100px rgba(255, 255, 255, 0.02)'
     }}>
       
       
@@ -387,61 +389,68 @@ export default function ShelterMenu() {
             }}
           >
 
-            {/* Large Configure Button - SEXY BOY */}
-            <Link href={`/configurator/${shelter.id}`}>
-              <motion.button
-                whileHover={{ scale: 1.05, y: -4 }}
+            {/* SEXY Adam-Style Clickable Text */}
+            <Link href={`/configurator/${shelter.id}`} style={{ textDecoration: 'none' }}>
+              <motion.div
+                whileHover={{ scale: 1.08, y: -6 }}
                 whileTap={{ scale: 0.95 }}
                 style={{
-                  width: '100%',
-                  padding: '20px 80px',
-                  background: 'rgba(0, 0, 0, 0.95)',
-                  border: '1px solid rgba(255, 255, 255, 0.4)',
-                  borderRadius: '8px',
-                  color: '#ffffff',
-                  fontWeight: '900',
-                  fontSize: '1.8rem',
                   cursor: 'pointer',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   position: 'relative',
-                  overflow: 'hidden',
-                  boxShadow: '0 12px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  maxWidth: '800px'
+                  display: 'inline-block',
+                  textAlign: 'center',
+                  marginBottom: '20px'
                 }}
               >
-                Configure TRECC
+                <div style={{
+                  fontSize: '3.5rem',
+                  fontWeight: '100',
+                  color: '#ffffff',
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
+                  position: 'relative',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
+                  background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}>
+                  Configure TRECC
+                </div>
                 <div style={{
                   position: 'absolute',
-                  top: '0',
-                  left: '0',
-                  right: '0',
-                  height: '1px',
+                  bottom: '-8px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '0%',
+                  height: '2px',
                   background: 'linear-gradient(90deg, transparent, #ffffff, transparent)',
-                  opacity: '0.9'
+                  transition: 'width 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
                 }}></div>
-              </motion.button>
+              </motion.div>
             </Link>
 
-            {/* Large Video Section */}
+            {/* Large Video Section - SEXY */}
             <motion.div 
               whileHover={{ scale: 1.02, y: -8 }}
               style={{
                 width: '100%',
                 maxWidth: '900px',
                 height: '600px',
-                background: 'rgba(0, 0, 0, 0.5)',
-                borderRadius: '16px',
+                background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
+                borderRadius: '20px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
+                border: '2px solid rgba(255, 255, 255, 0.15)',
                 position: 'relative',
                 overflow: 'hidden',
                 cursor: 'pointer',
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: '0 16px 48px rgba(0, 0, 0, 0.4)'
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)'
               }}
               onClick={() => {
                 // Open video modal
@@ -610,40 +619,171 @@ export default function ShelterMenu() {
               </div>
             </motion.div>
 
-            {/* Sleek Bullet Points Section */}
+            {/* SEXY Bullet Points Section */}
             <div style={{
-              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
-              borderRadius: '12px',
-              padding: '32px',
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0.08) 100%)',
+              border: '2px solid rgba(255, 255, 255, 0.12)',
+              borderRadius: '20px',
+              padding: '40px',
               marginBottom: '20px',
-              backdropFilter: 'blur(10px)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-              maxWidth: '800px',
-              width: '100%'
+              backdropFilter: 'blur(20px)',
+              boxShadow: '0 16px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+              maxWidth: '900px',
+              width: '100%',
+              position: 'relative',
+              overflow: 'hidden'
             }}>
+              {/* Subtle inner glow */}
               <div style={{
-                fontSize: '1.3rem',
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '0',
+                height: '1px',
+                background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)'
+              }}></div>
+              
+              <div style={{
+                fontSize: '1.5rem',
                 color: '#ffffff',
-                lineHeight: '2.0',
-                fontWeight: '700',
-                textAlign: 'center'
+                lineHeight: '2.4',
+                fontWeight: '300',
+                textAlign: 'center',
+                letterSpacing: '0.05em'
               }}>
-                <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.4rem' }}>•</span>
-                  Capacity: 6
+                <div style={{ 
+                  marginBottom: '24px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  position: 'relative'
+                }}>
+                  <div style={{
+                    width: '8px',
+                    height: '8px',
+                    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
+                    borderRadius: '50%',
+                    marginRight: '20px',
+                    boxShadow: '0 0 12px rgba(255, 255, 255, 0.4)',
+                    position: 'relative'
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      width: '4px',
+                      height: '4px',
+                      background: '#ffffff',
+                      borderRadius: '50%',
+                      boxShadow: '0 0 8px rgba(255, 255, 255, 0.6)'
+                    }}></div>
+                  </div>
+                  <span style={{ 
+                    fontWeight: '400',
+                    textShadow: '0 0 10px rgba(255, 255, 255, 0.2)'
+                  }}>Capacity: 6</span>
                 </div>
-                <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.4rem' }}>•</span>
-                  Deployment time: 3 min
+                
+                <div style={{ 
+                  marginBottom: '24px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  position: 'relative'
+                }}>
+                  <div style={{
+                    width: '8px',
+                    height: '8px',
+                    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
+                    borderRadius: '50%',
+                    marginRight: '20px',
+                    boxShadow: '0 0 12px rgba(255, 255, 255, 0.4)',
+                    position: 'relative'
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      width: '4px',
+                      height: '4px',
+                      background: '#ffffff',
+                      borderRadius: '50%',
+                      boxShadow: '0 0 8px rgba(255, 255, 255, 0.6)'
+                    }}></div>
+                  </div>
+                  <span style={{ 
+                    fontWeight: '400',
+                    textShadow: '0 0 10px rgba(255, 255, 255, 0.2)'
+                  }}>Deployment time: 3 min</span>
                 </div>
-                <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.4rem' }}>•</span>
-                  Temperature: -30 to 50 degrees
+                
+                <div style={{ 
+                  marginBottom: '24px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  position: 'relative'
+                }}>
+                  <div style={{
+                    width: '8px',
+                    height: '8px',
+                    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
+                    borderRadius: '50%',
+                    marginRight: '20px',
+                    boxShadow: '0 0 12px rgba(255, 255, 255, 0.4)',
+                    position: 'relative'
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      width: '4px',
+                      height: '4px',
+                      background: '#ffffff',
+                      borderRadius: '50%',
+                      boxShadow: '0 0 8px rgba(255, 255, 255, 0.6)'
+                    }}></div>
+                  </div>
+                  <span style={{ 
+                    fontWeight: '400',
+                    textShadow: '0 0 10px rgba(255, 255, 255, 0.2)'
+                  }}>Temperature: -30 to 50 degrees</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#ffffff', marginRight: '16px', fontSize: '1.4rem' }}>•</span>
-                  ALL climates
+                
+                <div style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  position: 'relative'
+                }}>
+                  <div style={{
+                    width: '8px',
+                    height: '8px',
+                    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
+                    borderRadius: '50%',
+                    marginRight: '20px',
+                    boxShadow: '0 0 12px rgba(255, 255, 255, 0.4)',
+                    position: 'relative'
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      width: '4px',
+                      height: '4px',
+                      background: '#ffffff',
+                      borderRadius: '50%',
+                      boxShadow: '0 0 8px rgba(255, 255, 255, 0.6)'
+                    }}></div>
+                  </div>
+                  <span style={{ 
+                    fontWeight: '400',
+                    textShadow: '0 0 10px rgba(255, 255, 255, 0.2)'
+                  }}>ALL climates</span>
                 </div>
               </div>
             </div>
