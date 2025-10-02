@@ -230,29 +230,31 @@ export default function ShelterMenu() {
       >
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
         <h1 style={{
-          fontSize: 'clamp(3rem, 6vw, 5rem)',
-            fontWeight: '900',
+          fontSize: 'clamp(3.5rem, 7vw, 6rem)',
+            fontWeight: '200',
             color: '#ffffff',
-          marginBottom: '20px',
-            textShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
-            letterSpacing: '0.15em',
-            lineHeight: '1.1',
+          marginBottom: '30px',
+            textShadow: '0 0 30px rgba(255, 255, 255, 0.4)',
+            letterSpacing: '0.25em',
+            lineHeight: '1.0',
             position: 'relative',
-            background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%)',
+            background: 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 30%, #ffffff 70%, #e0e0e0 100%)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
+            WebkitTextFillColor: 'transparent',
+            fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
         }}>
           TRECC CONFIGURATOR
           <div style={{
             position: 'absolute',
-            bottom: '-10px',
+            bottom: '-15px',
             left: '50%',
             transform: 'translateX(-50%)',
-            width: '60px',
-            height: '3px',
-            background: 'linear-gradient(90deg, transparent, #ffffff, transparent)',
-            borderRadius: '2px'
+            width: '200px',
+            height: '2px',
+            background: 'linear-gradient(90deg, transparent, #ffffff, #ffffff, #ffffff, transparent)',
+            borderRadius: '1px',
+            boxShadow: '0 0 10px rgba(255, 255, 255, 0.6)'
           }}></div>
         </h1>
         </div>
@@ -397,13 +399,13 @@ export default function ShelterMenu() {
 
             {/* Large Video Section - SEXY */}
             <motion.div 
-              whileHover={{ scale: 1.02, y: -8 }}
+              whileHover={{ scale: 1.03, y: -12 }}
               style={{
                 width: '100%',
-                maxWidth: '900px',
-                height: '600px',
+                maxWidth: '1000px',
+                height: '700px',
                 background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.6) 100%)',
-                borderRadius: '20px',
+                borderRadius: '24px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -412,8 +414,8 @@ export default function ShelterMenu() {
                 overflow: 'hidden',
                 cursor: 'pointer',
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(10px)'
+                boxShadow: '0 24px 80px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(15px)'
               }}
             >
               <img 
@@ -426,7 +428,7 @@ export default function ShelterMenu() {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  borderRadius: '16px',
+                  borderRadius: '24px',
                   background: 'rgba(0, 0, 0, 0.8)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
@@ -442,7 +444,7 @@ export default function ShelterMenu() {
                         width: 100%;
                         height: 100%;
                         background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-                        border-radius: 16px;
+                        border-radius: 24px;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
