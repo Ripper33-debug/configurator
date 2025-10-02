@@ -364,20 +364,19 @@ export default function ShelterMenu() {
             transition={{ duration: 0.6, delay: 0.1 * index }}
             whileHover={{ y: -12, scale: 1.03 }}
             style={{
-              background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              borderRadius: '16px',
-              padding: '32px',
+              background: 'rgba(0, 0, 0, 0.95)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '8px',
+              padding: '24px',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
               position: 'relative',
               overflow: 'hidden',
-              boxShadow: '0 16px 48px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.3)',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
               transform: 'translateY(0)',
               transformStyle: 'preserve-3d',
-              width: '480px',
-              minHeight: '640px'
+              width: '600px',
+              minHeight: '400px'
             }}
           >
 
@@ -406,14 +405,14 @@ export default function ShelterMenu() {
             {/* Minimal Preview Section */}
             <div style={{
               width: '100%',
-              height: '240px',
-              background: 'rgba(0, 0, 0, 0.3)',
-              borderRadius: '12px',
-              marginBottom: '24px',
+              height: '180px',
+              background: 'rgba(0, 0, 0, 0.5)',
+              borderRadius: '6px',
+              marginBottom: '20px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              border: '1px solid rgba(59, 130, 246, 0.2)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
               position: 'relative',
               overflow: 'hidden'
             }}>
@@ -441,8 +440,8 @@ export default function ShelterMenu() {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    borderRadius: '12px',
-                    background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)', // Immediate background
+                    borderRadius: '6px',
+                    background: 'rgba(0, 0, 0, 0.8)',
                     transition: 'opacity 0.3s ease'
                   }}
                   onLoad={(e) => {
@@ -478,22 +477,21 @@ export default function ShelterMenu() {
 
             {/* Shelter Info */}
             <div style={{ position: 'relative', zIndex: 1 }}>
-              <div style={{ marginBottom: '24px' }}>
+              <div style={{ marginBottom: '16px' }}>
                 <h3 style={{
-                  fontSize: '1.8rem',
+                  fontSize: '1.5rem',
                   fontWeight: '900',
                   color: '#ffffff',
                   marginBottom: '4px',
                   letterSpacing: '-0.02em',
-                  lineHeight: '1.2',
-                  textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'
+                  lineHeight: '1.2'
                 }}>
                   {shelter.name}
                 </h3>
                 <div style={{
-                  fontSize: '0.8rem',
-                  fontWeight: '400',
-                  color: '#94a3b8',
+                  fontSize: '0.7rem',
+                  fontWeight: '500',
+                  color: '#cccccc',
                   letterSpacing: '0.05em',
                   textTransform: 'uppercase'
                 }}>
@@ -503,254 +501,72 @@ export default function ShelterMenu() {
               
               <p style={{
                 color: '#ffffff',
-                lineHeight: '1.5',
-                marginBottom: '24px',
-                fontSize: '0.95rem',
-                fontWeight: '600'
+                lineHeight: '1.4',
+                marginBottom: '20px',
+                fontSize: '0.9rem',
+                fontWeight: '500'
               }}>
                 {shelter.description}
               </p>
 
-              {/* Deployment Time Indicator */}
+              {/* Simple Deployment Info */}
               <div style={{
-                marginBottom: '20px',
-                padding: '16px',
-                background: 'rgba(59, 130, 246, 0.1)',
-                borderRadius: '8px',
-                border: '1px solid rgba(59, 130, 246, 0.2)'
+                marginBottom: '16px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '8px 0',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
               }}>
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginBottom: '8px'
+                <span style={{
+                  fontSize: '0.8rem',
+                  fontWeight: '600',
+                  color: '#ffffff'
                 }}>
-                  <span style={{
-                    fontSize: '0.85rem',
-                    fontWeight: '500',
-                    color: '#3b82f6',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px'
-                  }}>
-                    ⏱️ Deployment
-                  </span>
-                  <span style={{
-                    fontSize: '0.8rem',
-                    color: '#94a3b8',
-                    fontWeight: '500'
-                  }}>
-                    {formatDuration(shelter.deploymentTime)}
-                  </span>
-                </div>
-                <div style={{
-                  width: '100%',
-                  height: '4px',
-                  background: 'rgba(0, 0, 0, 0.3)',
-                  borderRadius: '2px',
-                  overflow: 'hidden',
-                  position: 'relative'
+                  Deployment: {formatDuration(shelter.deploymentTime)}
+                </span>
+                <span style={{
+                  fontSize: '0.8rem',
+                  fontWeight: '600',
+                  color: '#ffffff'
                 }}>
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${(6 - shelter.deploymentTime) / 6 * 100}%` }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    style={{
-                      height: '100%',
-                      background: shelter.deploymentTime <= 2 
-                        ? '#22c55e' 
-                        : shelter.deploymentTime <= 4 
-                        ? '#f59e0b' 
-                        : '#ef4444',
-                      borderRadius: '2px'
-                    }}
-                  />
-                </div>
-                <div style={{
-                  fontSize: '0.75rem',
-                  color: '#64748b',
-                  marginTop: '4px',
-                  textAlign: 'right'
-                }}>
-                  {formatDuration(shelter.deploymentTime)} setup
-                </div>
+                  Capacity: {shelter.capacity}
+                </span>
               </div>
 
-              {/* Weather Resistance & Capacity */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '16px',
-                marginBottom: '24px'
-              }}>
-                {/* Weather Rating */}
-                <div style={{
-                  padding: '16px',
-                  background: 'rgba(59, 130, 246, 0.08)',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(59, 130, 246, 0.15)',
-                  textAlign: 'center'
-                }}>
-                  <div style={{
-                    fontSize: '1.2rem',
-                    marginBottom: '6px'
-                  }}>
-                    🌡️
-                  </div>
-                  <div style={{
-                    fontSize: '0.8rem',
-                    color: '#3b82f6',
-                    fontWeight: '500',
-                    marginBottom: '6px'
-                  }}>
-                    Weather
-                  </div>
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '2px'
-                  }}>
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <div
-                        key={star}
-                        style={{
-                          width: '6px',
-                          height: '6px',
-                          borderRadius: '50%',
-                          background: star <= shelter.weatherRating ? '#3b82f6' : 'rgba(59, 130, 246, 0.3)'
-                        }}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Capacity Meter */}
-                <div style={{
-                  padding: '16px',
-                  background: 'rgba(59, 130, 246, 0.08)',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(59, 130, 246, 0.15)',
-                  textAlign: 'center'
-                }}>
-                  <div style={{
-                    fontSize: '1.2rem',
-                    marginBottom: '6px'
-                  }}>
-                    👥
-                  </div>
-                  <div style={{
-                    fontSize: '0.8rem',
-                    color: '#3b82f6',
-                    fontWeight: '500',
-                    marginBottom: '6px'
-                  }}>
-                    Capacity
-                  </div>
-                  <div style={{
-                    fontSize: '1.1rem',
-                    color: '#ffffff',
-                    fontWeight: '600'
-                  }}>
-                    {shelter.capacity}
-                  </div>
-                  <div style={{
-                    fontSize: '0.75rem',
-                    color: '#94a3b8',
-                    fontWeight: '400'
-                  }}>
-                    Personnel
-                  </div>
-                </div>
-              </div>
 
               {/* Features */}
               <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '8px',
-                marginBottom: '24px'
+                marginBottom: '20px'
               }}>
-                {shelter.features.slice(0, 3).map((feature, idx) => (
-                  <span
-                    key={idx}
-                    style={{
-                      padding: '6px 12px',
-                      background: 'rgba(59, 130, 246, 0.1)',
-                      border: '1px solid rgba(59, 130, 246, 0.2)',
-                      borderRadius: '6px',
-                      fontSize: '0.8rem',
-                      color: '#3b82f6',
-                      fontWeight: '500'
-                    }}
-                  >
-                    {feature}
-                  </span>
-                ))}
+                <div style={{
+                  fontSize: '0.8rem',
+                  color: '#cccccc',
+                  lineHeight: '1.4',
+                  fontWeight: '500'
+                }}>
+                  {shelter.features.slice(0, 3).join(' • ')}
+                </div>
               </div>
 
-              {/* Specifications */}
-              {shelter.specs && (
-                <div style={{
-                  marginBottom: '25px',
-                  padding: '15px',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(255, 255, 255, 0.1)'
-                }}>
-                  <h4 style={{
-                    fontSize: '0.9rem',
-                    fontWeight: '600',
-                    color: 'var(--text-accent)',
-                    marginBottom: '10px',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
-                  }}>
-                    Key Specifications
-                  </h4>
-                  <div style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '5px'
-                  }}>
-                    {shelter.specs.map((spec, idx) => (
-                      <div key={idx} style={{
-                        fontSize: '0.8rem',
-                        color: 'var(--text-secondary)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px'
-                      }}>
-                        <span style={{
-                          width: '4px',
-                          height: '4px',
-                          background: 'var(--text-accent)',
-                          borderRadius: '50%'
-                        }} />
-                        {spec}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
 
               {/* Action Buttons */}
-              <div style={{ display: 'flex', gap: '12px', marginBottom: '16px' }}>
+              <div style={{ display: 'flex', gap: '12px' }}>
                 <Link href={`/configurator/${shelter.id}`} style={{ flex: 1 }}>
                   <motion.button
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     style={{
                       width: '100%',
-                      padding: '14px 20px',
-                      background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+                      padding: '12px 20px',
+                      background: 'rgba(255, 255, 255, 0.1)',
                       color: 'white',
-                      border: '1px solid rgba(59, 130, 246, 0.3)',
-                      borderRadius: '8px',
-                      fontWeight: '600',
-                      fontSize: '0.95rem',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      borderRadius: '6px',
+                      fontWeight: '700',
+                      fontSize: '0.9rem',
                       cursor: 'pointer',
-                      transition: 'all 0.2s ease',
-                      boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)'
+                      transition: 'all 0.2s ease'
                     }}
                   >
                     Configure {shelter.name}
@@ -868,20 +684,20 @@ export default function ShelterMenu() {
                     }
                   }}
                   style={{
-                    padding: '14px 20px',
-                    background: 'rgba(255, 255, 255, 0.1)',
+                    padding: '12px 16px',
+                    background: 'rgba(255, 255, 255, 0.05)',
                     color: 'white',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    borderRadius: '8px',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    borderRadius: '6px',
                     fontWeight: '600',
-                    fontSize: '0.95rem',
+                    fontSize: '0.85rem',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: '8px',
-                    minWidth: '120px'
+                    gap: '6px',
+                    minWidth: '100px'
                   }}
                 >
                   🎥 Walkthrough
