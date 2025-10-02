@@ -594,8 +594,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'right 12px center',
                         backgroundSize: '16px',
-                        paddingRight: '40px',
-                        width: '100%'
+                        paddingRight: '40px'
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.background = 'rgba(249, 115, 22, 0.2)';
