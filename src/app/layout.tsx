@@ -126,6 +126,14 @@ export default function RootLayout({
             min-height: 100vh;
             overflow-x: hidden;
             font-weight: 300;
+            /* Hide scrollbar for webkit browsers */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+          }
+          
+          /* Hide scrollbar for webkit browsers */
+          body::-webkit-scrollbar {
+            display: none;
           }
           
           /* Critical layout styles */
@@ -138,6 +146,13 @@ export default function RootLayout({
             display: flex;
             flex-direction: column;
             font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+            /* Hide scrollbar */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+          }
+          
+          .configurator-container::-webkit-scrollbar {
+            display: none;
           }
           
           /* Critical typography */
@@ -201,6 +216,13 @@ export default function RootLayout({
             height: 100%;
             border-top-right-radius: 24px;
             border-bottom-right-radius: 24px;
+            /* Hide scrollbar */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+          }
+          
+          .left-controls::-webkit-scrollbar {
+            display: none;
           }
           
           .viewer-section {
