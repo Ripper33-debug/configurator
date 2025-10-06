@@ -134,11 +134,10 @@ export default function ShelterMenu() {
 
           {/* Section 1: Your TRECC Model */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.8 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}
+            style={{ minHeight: '700px', display: 'flex', alignItems: 'center' }}
           >
             <div>
               <h2 style={{
@@ -176,9 +175,9 @@ export default function ShelterMenu() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.8 }}
+            viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.8 }}
-            style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}
+            style={{ minHeight: '700px', display: 'flex', alignItems: 'center' }}
           >
             <div>
               <h2 style={{
@@ -216,9 +215,9 @@ export default function ShelterMenu() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.8 }}
+            viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.8 }}
-            style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}
+            style={{ minHeight: '700px', display: 'flex', alignItems: 'center' }}
           >
             <div>
               <h2 style={{
@@ -256,9 +255,9 @@ export default function ShelterMenu() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.8 }}
+            viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.8 }}
-            style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}
+            style={{ minHeight: '700px', display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}
           >
             <div style={{ width: '100%' }}>
               <h2 style={{
