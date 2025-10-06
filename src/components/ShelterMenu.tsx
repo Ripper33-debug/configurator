@@ -124,7 +124,8 @@ export default function ShelterMenu() {
           overflowX: 'hidden',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
-          paddingRight: '20px'
+          paddingRight: '20px',
+          scrollSnapType: 'y mandatory'
         }}>
           <style>{`
             div::-webkit-scrollbar {
@@ -137,7 +138,12 @@ export default function ShelterMenu() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            style={{ minHeight: '700px', display: 'flex', alignItems: 'center' }}
+            style={{ 
+              minHeight: '700px', 
+              display: 'flex', 
+              alignItems: 'center',
+              scrollSnapAlign: 'start'
+            }}
           >
             <div>
               <h2 style={{
@@ -177,7 +183,12 @@ export default function ShelterMenu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.8 }}
-            style={{ minHeight: '700px', display: 'flex', alignItems: 'center' }}
+            style={{ 
+              minHeight: '700px', 
+              display: 'flex', 
+              alignItems: 'center',
+              scrollSnapAlign: 'start'
+            }}
           >
             <div>
               <h2 style={{
@@ -217,7 +228,12 @@ export default function ShelterMenu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.8 }}
-            style={{ minHeight: '700px', display: 'flex', alignItems: 'center' }}
+            style={{ 
+              minHeight: '700px', 
+              display: 'flex', 
+              alignItems: 'center',
+              scrollSnapAlign: 'start'
+            }}
           >
             <div>
               <h2 style={{
@@ -257,7 +273,14 @@ export default function ShelterMenu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.8 }}
-            style={{ minHeight: '700px', display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}
+            style={{ 
+              minHeight: '700px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              flexDirection: 'column', 
+              justifyContent: 'center',
+              scrollSnapAlign: 'start'
+            }}
           >
             <div style={{ width: '100%' }}>
               <h2 style={{
