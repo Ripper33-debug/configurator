@@ -125,11 +125,17 @@ export default function ShelterMenu() {
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
           paddingRight: '20px',
-          scrollSnapType: 'y mandatory'
+          scrollSnapType: 'y mandatory',
+          scrollBehavior: 'smooth'
         }}>
           <style>{`
             div::-webkit-scrollbar {
               display: none;
+            }
+            @media (prefers-reduced-motion: no-preference) {
+              * {
+                scroll-behavior: smooth;
+              }
             }
           `}</style>
 
