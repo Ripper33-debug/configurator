@@ -25,22 +25,22 @@ export default function ShelterMenu() {
     }}>
       {/* Main Content */}
       <div style={{
-        maxWidth: '1400px',
+        maxWidth: '1600px',
         width: '100%',
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '80px',
+        gridTemplateColumns: '1.2fr 0.8fr',
+        gap: '60px',
         alignItems: 'center'
       }}>
         
-        {/* Left Side - Image */}
+        {/* Left Side - Video */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           style={{
             width: '100%',
-            height: '600px',
+            height: '700px',
             position: 'relative'
           }}
         >
