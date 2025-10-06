@@ -132,158 +132,181 @@ export default function ShelterMenu() {
             }
           `}</style>
 
-          {/* Section 1: Description */}
+          {/* Section 1: Your TRECC Model */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 0.6 }}
-            style={{ marginBottom: '60px' }}
+            viewport={{ once: false, amount: 0.8 }}
+            transition={{ duration: 0.8 }}
+            style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}
           >
-            <p style={{
-              fontSize: '1.2rem',
-              color: '#cccccc',
-              lineHeight: '1.8',
-              fontWeight: '300',
-              letterSpacing: '0.05em',
-              fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
-            }}>
-              Experience the next generation of deployable shelter systems. Built for extreme conditions, designed for rapid deployment, engineered for excellence.
-            </p>
-          </motion.div>
-
-          {/* Section 2: Specs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 0.6 }}
-            style={{ marginBottom: '60px' }}
-          >
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '16px'
-            }}>
-              {[
-                { label: 'Deployment', value: '3 MIN' },
-                { label: 'Capacity', value: '6 PPL' }
-              ].map((spec, i) => (
-                <div key={i} style={{
-                  padding: '24px 20px',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
-                  borderRadius: '12px',
-                  textAlign: 'center'
-                }}>
-                  <div style={{
-                    fontSize: '2rem',
-                    fontWeight: '700',
-                    color: '#ffffff',
-                    marginBottom: '8px',
-                    letterSpacing: '0.05em',
-                    fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
-                  }}>
-                    {spec.value}
-                  </div>
-                  <div style={{
-                    fontSize: '0.7rem',
-                    color: '#999999',
-                    fontWeight: '300',
-                    letterSpacing: '0.15em',
-                    textTransform: 'uppercase',
-                    fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
-                  }}>
-                    {spec.label}
-                  </div>
-                </div>
-              ))}
+            <div>
+              <h2 style={{
+                fontSize: '2.5rem',
+                fontWeight: '100',
+                color: '#ffffff',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                lineHeight: '1.3',
+                marginBottom: '24px'
+              }}>
+                Your TRECC<br />Model
+              </h2>
+              <div style={{
+                width: '80px',
+                height: '2px',
+                background: 'linear-gradient(90deg, #ffffff, transparent)',
+                marginBottom: '24px'
+              }} />
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#999999',
+                lineHeight: '1.8',
+                fontWeight: '300',
+                letterSpacing: '0.05em',
+                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+              }}>
+                Experience the next generation of deployable shelter systems. Built for extreme conditions.
+              </p>
             </div>
           </motion.div>
 
-          {/* Section 3: More Specs */}
+          {/* Section 2: Customize Colour */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 0.6 }}
-            style={{ marginBottom: '60px' }}
+            viewport={{ once: false, amount: 0.8 }}
+            transition={{ duration: 0.8 }}
+            style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}
           >
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '16px'
-            }}>
-              {[
-                { label: 'Temperature', value: '-30° to 50°' },
-                { label: 'All Climates', value: '✓' }
-              ].map((spec, i) => (
-                <div key={i} style={{
-                  padding: '24px 20px',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
-                  borderRadius: '12px',
-                  textAlign: 'center'
-                }}>
-                  <div style={{
-                    fontSize: '2rem',
-                    fontWeight: '700',
-                    color: '#ffffff',
-                    marginBottom: '8px',
-                    letterSpacing: '0.05em',
-                    fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
-                  }}>
-                    {spec.value}
-                  </div>
-                  <div style={{
-                    fontSize: '0.7rem',
-                    color: '#999999',
-                    fontWeight: '300',
-                    letterSpacing: '0.15em',
-                    textTransform: 'uppercase',
-                    fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
-                  }}>
-                    {spec.label}
-                  </div>
-                </div>
-              ))}
+            <div>
+              <h2 style={{
+                fontSize: '2.5rem',
+                fontWeight: '100',
+                color: '#ffffff',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                lineHeight: '1.3',
+                marginBottom: '24px'
+              }}>
+                Customize Colour<br />to Match Your<br />Deployment
+              </h2>
+              <div style={{
+                width: '80px',
+                height: '2px',
+                background: 'linear-gradient(90deg, #ffffff, transparent)',
+                marginBottom: '24px'
+              }} />
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#999999',
+                lineHeight: '1.8',
+                fontWeight: '300',
+                letterSpacing: '0.05em',
+                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+              }}>
+                Choose from desert tan, olive green, or arctic white configurations.
+              </p>
             </div>
           </motion.div>
 
-          {/* Section 4: Launch Button */}
+          {/* Section 3: View in 3D */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: false, amount: 0.8 }}
+            transition={{ duration: 0.8 }}
+            style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}
           >
-            <Link href="/configurator/trecc" style={{ textDecoration: 'none' }}>
-              <motion.div
-                style={{
-                  width: '100%',
-                  padding: '28px 48px',
-                  background: 'transparent',
-                  border: 'none',
-                  borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
-                  cursor: 'pointer',
-                  fontSize: '1.5rem',
-                  fontWeight: '100',
-                  color: '#ffffff',
-                  letterSpacing: '0.2em',
-                  textTransform: 'uppercase',
-                  fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                  transition: 'all 0.3s ease',
-                  textAlign: 'center'
-                }}
-                whileHover={{
-                  borderBottomColor: 'rgba(255, 255, 255, 0.8)',
-                  letterSpacing: '0.25em'
-                }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Launch Configurator
-              </motion.div>
-            </Link>
+            <div>
+              <h2 style={{
+                fontSize: '2.5rem',
+                fontWeight: '100',
+                color: '#ffffff',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                lineHeight: '1.3',
+                marginBottom: '24px'
+              }}>
+                View Your Shelter<br />in 3D Deployed<br />Views
+              </h2>
+              <div style={{
+                width: '80px',
+                height: '2px',
+                background: 'linear-gradient(90deg, #ffffff, transparent)',
+                marginBottom: '24px'
+              }} />
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#999999',
+                lineHeight: '1.8',
+                fontWeight: '300',
+                letterSpacing: '0.05em',
+                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+              }}>
+                Rotate, zoom, and explore every detail from all angles.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Section 4: Configure TRECC */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.8 }}
+            transition={{ duration: 0.8 }}
+            style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}
+          >
+            <div style={{ width: '100%' }}>
+              <h2 style={{
+                fontSize: '2.5rem',
+                fontWeight: '100',
+                color: '#ffffff',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                lineHeight: '1.3',
+                marginBottom: '24px'
+              }}>
+                Configure<br />TRECC
+              </h2>
+              <div style={{
+                width: '80px',
+                height: '2px',
+                background: 'linear-gradient(90deg, #ffffff, transparent)',
+                marginBottom: '48px'
+              }} />
+              <Link href="/configurator/trecc" style={{ textDecoration: 'none' }}>
+                <motion.div
+                  style={{
+                    width: '100%',
+                    padding: '28px 48px',
+                    background: 'transparent',
+                    border: 'none',
+                    borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
+                    cursor: 'pointer',
+                    fontSize: '1.5rem',
+                    fontWeight: '100',
+                    color: '#ffffff',
+                    letterSpacing: '0.2em',
+                    textTransform: 'uppercase',
+                    fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                    transition: 'all 0.3s ease',
+                    textAlign: 'center'
+                  }}
+                  whileHover={{
+                    borderBottomColor: 'rgba(255, 255, 255, 0.8)',
+                    letterSpacing: '0.25em'
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Launch Configurator
+                </motion.div>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </div>
