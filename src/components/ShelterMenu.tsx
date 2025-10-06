@@ -117,97 +117,175 @@ export default function ShelterMenu() {
           </div>
         </motion.div>
 
-        {/* Right Side - Text Content */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <p style={{
-            fontSize: '1.2rem',
-            color: '#cccccc',
-            lineHeight: '1.8',
-            fontWeight: '300',
-            marginBottom: '48px',
-            letterSpacing: '0.05em',
-            fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
-          }}>
-            Experience the next generation of deployable shelter systems. Built for extreme conditions, designed for rapid deployment, engineered for excellence.
-          </p>
+        {/* Right Side - Scrolling Text Sections */}
+        <div style={{
+          height: '700px',
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+          paddingRight: '20px'
+        }}>
+          <style>{`
+            div::-webkit-scrollbar {
+              display: none;
+            }
+          `}</style>
 
-          {/* Specs Grid */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '16px',
-            marginBottom: '48px'
-          }}>
-            {[
-              { label: 'Deployment', value: '3 MIN' },
-              { label: 'Capacity', value: '6 PPL' },
-              { label: 'Temperature', value: '-30° to 50°' },
-              { label: 'All Climates', value: '✓' }
-            ].map((spec, i) => (
-              <div key={i} style={{
-                padding: '24px 20px',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                borderRadius: '12px',
-                textAlign: 'center'
-              }}>
-                <div style={{
-                  fontSize: '2rem',
-                  fontWeight: '700',
+          {/* Section 1: Description */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.6 }}
+            style={{ marginBottom: '60px' }}
+          >
+            <p style={{
+              fontSize: '1.2rem',
+              color: '#cccccc',
+              lineHeight: '1.8',
+              fontWeight: '300',
+              letterSpacing: '0.05em',
+              fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+            }}>
+              Experience the next generation of deployable shelter systems. Built for extreme conditions, designed for rapid deployment, engineered for excellence.
+            </p>
+          </motion.div>
+
+          {/* Section 2: Specs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.6 }}
+            style={{ marginBottom: '60px' }}
+          >
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '16px'
+            }}>
+              {[
+                { label: 'Deployment', value: '3 MIN' },
+                { label: 'Capacity', value: '6 PPL' }
+              ].map((spec, i) => (
+                <div key={i} style={{
+                  padding: '24px 20px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  borderRadius: '12px',
+                  textAlign: 'center'
+                }}>
+                  <div style={{
+                    fontSize: '2rem',
+                    fontWeight: '700',
+                    color: '#ffffff',
+                    marginBottom: '8px',
+                    letterSpacing: '0.05em',
+                    fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+                  }}>
+                    {spec.value}
+                  </div>
+                  <div style={{
+                    fontSize: '0.7rem',
+                    color: '#999999',
+                    fontWeight: '300',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
+                    fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+                  }}>
+                    {spec.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Section 3: More Specs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.6 }}
+            style={{ marginBottom: '60px' }}
+          >
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '16px'
+            }}>
+              {[
+                { label: 'Temperature', value: '-30° to 50°' },
+                { label: 'All Climates', value: '✓' }
+              ].map((spec, i) => (
+                <div key={i} style={{
+                  padding: '24px 20px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  borderRadius: '12px',
+                  textAlign: 'center'
+                }}>
+                  <div style={{
+                    fontSize: '2rem',
+                    fontWeight: '700',
+                    color: '#ffffff',
+                    marginBottom: '8px',
+                    letterSpacing: '0.05em',
+                    fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+                  }}>
+                    {spec.value}
+                  </div>
+                  <div style={{
+                    fontSize: '0.7rem',
+                    color: '#999999',
+                    fontWeight: '300',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
+                    fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+                  }}>
+                    {spec.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Section 4: Launch Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Link href="/configurator/trecc" style={{ textDecoration: 'none' }}>
+              <motion.div
+                style={{
+                  width: '100%',
+                  padding: '28px 48px',
+                  background: 'transparent',
+                  border: 'none',
+                  borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
+                  cursor: 'pointer',
+                  fontSize: '1.5rem',
+                  fontWeight: '100',
                   color: '#ffffff',
-                  marginBottom: '8px',
-                  letterSpacing: '0.05em',
-                  fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
-                }}>
-                  {spec.value}
-                </div>
-                <div style={{
-                  fontSize: '0.7rem',
-                  color: '#999999',
-                  fontWeight: '300',
-                  letterSpacing: '0.15em',
+                  letterSpacing: '0.2em',
                   textTransform: 'uppercase',
-                  fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
-                }}>
-                  {spec.label}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Launch Button */}
-          <Link href="/configurator/trecc" style={{ textDecoration: 'none' }}>
-            <motion.div
-              style={{
-                width: '100%',
-                padding: '28px 48px',
-                background: 'transparent',
-                border: 'none',
-                borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
-                cursor: 'pointer',
-                fontSize: '1.5rem',
-                fontWeight: '100',
-                color: '#ffffff',
-                letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                transition: 'all 0.3s ease',
-                textAlign: 'center'
-              }}
-              whileHover={{
-                borderBottomColor: 'rgba(255, 255, 255, 0.8)',
-                letterSpacing: '0.25em'
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Launch Configurator
-            </motion.div>
-          </Link>
-        </motion.div>
+                  fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                  transition: 'all 0.3s ease',
+                  textAlign: 'center'
+                }}
+                whileHover={{
+                  borderBottomColor: 'rgba(255, 255, 255, 0.8)',
+                  letterSpacing: '0.25em'
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Launch Configurator
+              </motion.div>
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
