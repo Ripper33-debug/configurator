@@ -1,14 +1,74 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export default function ShelterMenu() {
   const [mounted, setMounted] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Custom smooth scroll with slower duration
+  useEffect(() => {
+    if (!mounted || !scrollContainerRef.current) return;
+
+    const scrollContainer = scrollContainerRef.current;
+    let isScrolling = false;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (isScrolling) return;
+      
+      e.preventDefault();
+      isScrolling = true;
+
+      const delta = e.deltaY;
+      const currentScroll = scrollContainer.scrollTop;
+      const sectionHeight = 700;
+      const currentSection = Math.round(currentScroll / sectionHeight);
+      
+      let targetSection = currentSection;
+      if (delta > 0) {
+        targetSection = Math.min(currentSection + 1, 3);
+      } else {
+        targetSection = Math.max(currentSection - 1, 0);
+      }
+
+      const targetScroll = targetSection * sectionHeight;
+
+      // Smooth scroll with custom duration (1500ms)
+      const startScroll = currentScroll;
+      const distance = targetScroll - startScroll;
+      const duration = 1500;
+      const startTime = performance.now();
+
+      const animateScroll = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Ease out cubic for smooth deceleration
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        
+        scrollContainer.scrollTop = startScroll + (distance * easeProgress);
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          isScrolling = false;
+        }
+      };
+
+      requestAnimationFrame(animateScroll);
+    };
+
+    scrollContainer.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      scrollContainer.removeEventListener('wheel', handleWheel);
+    };
+  }, [mounted]);
 
   if (!mounted) return null;
 
@@ -118,16 +178,16 @@ export default function ShelterMenu() {
         </motion.div>
 
         {/* Right Side - Scrolling Text Sections */}
-        <div style={{
-          height: '700px',
-          overflowY: 'auto',
-          overflowX: 'hidden',
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-          paddingRight: '20px',
-          scrollSnapType: 'y mandatory',
-          scrollBehavior: 'smooth'
-        }}>
+        <div 
+          ref={scrollContainerRef}
+          style={{
+            height: '700px',
+            overflowY: 'auto',
+            overflowX: 'hidden',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            paddingRight: '20px'
+          }}>
           <style>{`
             div::-webkit-scrollbar {
               display: none;
