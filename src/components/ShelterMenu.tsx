@@ -135,9 +135,12 @@ export default function ShelterMenu() {
 
           {/* Section 1: Your TRECC Model */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ 
+              duration: 1.4,
+              ease: [0.22, 1, 0.36, 1]
+            }}
             style={{ 
               minHeight: '700px', 
               display: 'flex', 
@@ -179,10 +182,13 @@ export default function ShelterMenu() {
 
           {/* Section 2: Customize Colour */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 0.8 }}
+            transition={{ 
+              duration: 1.2,
+              ease: [0.22, 1, 0.36, 1]
+            }}
             style={{ 
               minHeight: '700px', 
               display: 'flex', 
@@ -215,19 +221,79 @@ export default function ShelterMenu() {
                 lineHeight: '1.8',
                 fontWeight: '300',
                 letterSpacing: '0.05em',
-                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                marginBottom: '32px'
               }}>
                 Choose from desert tan, olive green, or arctic white configurations.
               </p>
+              
+              {/* Color Circles */}
+              <div style={{
+                display: 'flex',
+                gap: '24px',
+                marginTop: '32px'
+              }}>
+                {[
+                  { name: 'Desert Tan', color: '#B8A082' },
+                  { name: 'Olive Green', color: '#6B7C32' },
+                  { name: 'Arctic White', color: '#F8F8F8' }
+                ].map((colorOption, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false }}
+                    transition={{ 
+                      duration: 0.8,
+                      delay: 0.3 + (i * 0.15),
+                      ease: [0.22, 1, 0.36, 1]
+                    }}
+                    whileHover={{ 
+                      scale: 1.15,
+                      transition: { duration: 0.3 }
+                    }}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: '12px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <div style={{
+                      width: '80px',
+                      height: '80px',
+                      borderRadius: '50%',
+                      background: colorOption.color,
+                      border: '2px solid rgba(255, 255, 255, 0.2)',
+                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 2px 8px rgba(255, 255, 255, 0.1)',
+                      transition: 'all 0.3s ease'
+                    }} />
+                    <span style={{
+                      fontSize: '0.75rem',
+                      color: '#666666',
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                      fontWeight: '300'
+                    }}>
+                      {colorOption.name}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
 
           {/* Section 3: View in 3D */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 0.8 }}
+            transition={{ 
+              duration: 1.2,
+              ease: [0.22, 1, 0.36, 1]
+            }}
             style={{ 
               minHeight: '700px', 
               display: 'flex', 
@@ -269,10 +335,13 @@ export default function ShelterMenu() {
 
           {/* Section 4: Configure TRECC */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 0.8 }}
+            transition={{ 
+              duration: 1.2,
+              ease: [0.22, 1, 0.36, 1]
+            }}
             style={{ 
               minHeight: '700px', 
               display: 'flex', 
