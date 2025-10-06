@@ -38,18 +38,20 @@ export default function ShelterMenu() {
 
       const targetScroll = targetSection * sectionHeight;
 
-      // Smooth scroll with custom duration (1500ms)
+      // Smooth scroll with longer duration (2500ms)
       const startScroll = currentScroll;
       const distance = targetScroll - startScroll;
-      const duration = 1500;
+      const duration = 2500;
       const startTime = performance.now();
 
       const animateScroll = (currentTime: number) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
         
-        // Ease out cubic for smooth deceleration
-        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        // Ease in-out quad for smooth, elegant motion
+        const easeProgress = progress < 0.5
+          ? 2 * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
         
         scrollContainer.scrollTop = startScroll + (distance * easeProgress);
 
