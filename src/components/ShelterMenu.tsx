@@ -51,17 +51,33 @@ export default function ShelterMenu() {
             border: '2px solid rgba(255, 255, 255, 0.15)',
             borderRadius: '24px',
             boxShadow: '0 25px 100px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            position: 'relative'
           }}>
-            <img
-              src="https://d3kx2t94cz9q1y.cloudfront.net/Picture_of_trecc.jpg"
-              alt="TRECC Shelter"
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover'
               }}
-            />
+            >
+              <source src="/videos/rotating.mp4" type="video/mp4" />
+            </video>
+            
+            {/* Gradient overlay */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, transparent 50%, rgba(0, 0, 0, 0.2) 100%)',
+              pointerEvents: 'none'
+            }} />
           </div>
         </motion.div>
 
