@@ -315,17 +315,15 @@ function TreccModel({
           }
         }
         
-        // If tan model fails, try fallback to closed version
-        if (modelPath?.includes('Closed_desert_tan911-v1')) {
-          console.log('🔄 Tan model failed, trying fallback to closed version...');
-          try {
-            const fallbackUrl = await getModelUrl('Tanstowedreduced.glb');
-            setActualModelPath(fallbackUrl);
-            console.log('✅ Fallback to closed tan model successful');
-            return;
-          } catch (fallbackError) {
-            console.error('❌ Fallback also failed:', fallbackError);
-          }
+        // Fallback to default tan model if any model fails
+        console.log('🔄 Model failed, using default fallback...');
+        try {
+          const fallbackUrl = await getModelUrl('Tanstowedreduced.glb');
+          setActualModelPath(fallbackUrl);
+          console.log('✅ Fallback to default tan model successful');
+          return;
+        } catch (fallbackError) {
+          console.error('❌ Fallback also failed:', fallbackError);
         }
         
         setHasError(true);
@@ -388,11 +386,12 @@ function TreccModel({
       return new THREE.Euler(0, 0, 0);
     } else if (
       modelPath.includes('Green_stowed') ||
-      modelPath.includes('Closed_desert_tan911') ||
-      modelPath.includes('arctic_white_closed') ||
-      modelPath.includes('File_Desert_tan_open911') ||
-      modelPath.includes('File_green_open911') ||
-      modelPath.includes('File_white_open') ||
+      modelPath.includes('Tanstowedreduced') ||
+      modelPath.includes('Greenstowedreduced') ||
+      modelPath.includes('Arcticwhitereducedstowed') ||
+      modelPath.includes('Tanmodelopen') ||
+      modelPath.includes('Greenmodelopen') ||
+      modelPath.includes('ArcticWhiteOpenModel') ||
       modelPath.includes('Green_Open_Interior') ||
       modelPath.includes('construction')
     ) {
