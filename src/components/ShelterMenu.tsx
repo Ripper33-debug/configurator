@@ -17,12 +17,48 @@ export default function ShelterMenu() {
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)',
       display: 'flex',
+      flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '40px',
+      padding: '40px 40px 60px',
       position: 'relative',
       overflow: 'hidden'
     }}>
+      {/* Top Title */}
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        style={{
+          textAlign: 'center',
+          marginBottom: '60px',
+          width: '100%'
+        }}
+      >
+        <h1 style={{
+          fontSize: 'clamp(3rem, 8vw, 6rem)',
+          fontWeight: '100',
+          color: '#ffffff',
+          letterSpacing: '0.2em',
+          textTransform: 'uppercase',
+          lineHeight: '1',
+          fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+          marginBottom: '16px'
+        }}>
+          TRECC
+        </h1>
+        <div style={{
+          fontSize: 'clamp(1rem, 2vw, 1.5rem)',
+          fontWeight: '300',
+          color: '#999999',
+          letterSpacing: '0.3em',
+          textTransform: 'uppercase',
+          fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+        }}>
+          CONFIGURATOR
+        </div>
+      </motion.div>
+
       {/* Main Content */}
       <div style={{
         maxWidth: '1600px',
@@ -87,33 +123,14 @@ export default function ShelterMenu() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 style={{
-            fontSize: 'clamp(3rem, 6vw, 5rem)',
-            fontWeight: '900',
-            color: '#ffffff',
-            marginBottom: '24px',
-            letterSpacing: '0.05em',
-            textTransform: 'uppercase',
-            lineHeight: '1.1',
-            fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
-          }}>
-            TRECC<br />Configurator
-          </h1>
-          
-          <div style={{
-            width: '120px',
-            height: '3px',
-            background: 'linear-gradient(90deg, #ffffff, transparent)',
-            marginBottom: '32px'
-          }} />
-          
           <p style={{
-            fontSize: '1.3rem',
+            fontSize: '1.2rem',
             color: '#cccccc',
             lineHeight: '1.8',
             fontWeight: '300',
-            marginBottom: '40px',
-            letterSpacing: '0.02em'
+            marginBottom: '48px',
+            letterSpacing: '0.05em',
+            fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
           }}>
             Experience the next generation of deployable shelter systems. Built for extreme conditions, designed for rapid deployment, engineered for excellence.
           </p>
@@ -132,26 +149,29 @@ export default function ShelterMenu() {
               { label: 'All Climates', value: '✓' }
             ].map((spec, i) => (
               <div key={i} style={{
-                padding: '20px',
+                padding: '24px 20px',
                 background: 'rgba(255, 255, 255, 0.05)',
                 border: '1px solid rgba(255, 255, 255, 0.15)',
                 borderRadius: '12px',
                 textAlign: 'center'
               }}>
                 <div style={{
-                  fontSize: '1.5rem',
-                  fontWeight: '900',
+                  fontSize: '2rem',
+                  fontWeight: '700',
                   color: '#ffffff',
-                  marginBottom: '4px'
+                  marginBottom: '8px',
+                  letterSpacing: '0.05em',
+                  fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
                 }}>
                   {spec.value}
                 </div>
                 <div style={{
-                  fontSize: '0.75rem',
+                  fontSize: '0.7rem',
                   color: '#999999',
-                  fontWeight: '500',
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase'
+                  fontWeight: '300',
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
+                  fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
                 }}>
                   {spec.label}
                 </div>
@@ -161,33 +181,31 @@ export default function ShelterMenu() {
 
           {/* Launch Button */}
           <Link href="/configurator/trecc" style={{ textDecoration: 'none' }}>
-            <motion.button
+            <motion.div
               style={{
                 width: '100%',
-                padding: '24px 48px',
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)',
-                border: '3px solid rgba(255, 255, 255, 0.4)',
-                borderRadius: '16px',
-                backdropFilter: 'blur(15px)',
-                boxShadow: '0 12px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                padding: '28px 48px',
+                background: 'transparent',
+                border: 'none',
+                borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
                 cursor: 'pointer',
-                fontSize: '1.3rem',
-                fontWeight: '700',
+                fontSize: '1.5rem',
+                fontWeight: '100',
                 color: '#ffffff',
-                letterSpacing: '0.15em',
+                letterSpacing: '0.2em',
                 textTransform: 'uppercase',
                 fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                textAlign: 'center'
               }}
               whileHover={{
-                scale: 1.02,
-                boxShadow: '0 16px 64px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
-                borderColor: 'rgba(255, 255, 255, 0.6)'
+                borderBottomColor: 'rgba(255, 255, 255, 0.8)',
+                letterSpacing: '0.25em'
               }}
               whileTap={{ scale: 0.98 }}
             >
               Launch Configurator
-            </motion.button>
+            </motion.div>
           </Link>
         </motion.div>
       </div>
