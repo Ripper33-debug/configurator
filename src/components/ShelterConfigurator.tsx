@@ -644,7 +644,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
             textTransform: 'uppercase',
             letterSpacing: '1px'
           }}>
-            📋 Specifications
+            SPECIFICATIONS
             </h3>
             
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '36px' }}>
@@ -751,7 +751,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
               e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
             }}
           >
-            📄 Request Quote with Config
+            REQUEST QUOTE WITH CONFIG
           </button>
 
           {/* Share Row */}
@@ -783,7 +783,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                 e.currentTarget.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
               }}
             >
-              🔗 Copy Share URL
+              COPY SHARE URL
             </button>
             <button
               onClick={handleCreateShortCode}
@@ -812,7 +812,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                 e.currentTarget.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
               }}
             >
-              🔒 Create Short Code
+              CREATE SHORT CODE
               </button>
             </div>
           </div>
