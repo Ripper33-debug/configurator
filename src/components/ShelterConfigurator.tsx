@@ -523,8 +523,8 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                         textAlign: 'center'
                       }}
                     >
-                      <option value="none" style={{ background: '#1e293b', color: 'white' }}>ENVIRONMENT</option>
-                      <option value="forest" style={{ background: '#1e293b', color: 'white' }}>FOREST</option>
+                      <option value="none" style={{ background: 'rgba(30, 30, 30, 0.95)', color: 'white' }}>ENVIRONMENT</option>
+                      <option value="forest" style={{ background: 'rgba(30, 30, 30, 0.95)', color: 'white' }}>FOREST</option>
                     </select>
                   </div>
 
