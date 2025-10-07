@@ -182,9 +182,25 @@ export default function RootLayout({
           }
           
           select:focus,
-          select:active {
+          select:active,
+          select:hover {
             outline: none !important;
             box-shadow: none !important;
+            -webkit-tap-highlight-color: transparent !important;
+          }
+          
+          select[type="select-one"] {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent !important;
+          }
+          
+          select[type="select-one"]:hover,
+          select[type="select-one"]:focus,
+          select[type="select-one"]:active {
+            outline: none !important;
+            box-shadow: none !important;
+            -webkit-tap-highlight-color: transparent !important;
+            background: transparent !important;
           }
           
           option {
