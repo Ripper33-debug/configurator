@@ -26,7 +26,7 @@ export default function ShelterMenu() {
 
       const delta = e.deltaY;
       const currentScroll = scrollContainer.scrollTop;
-      const sectionHeight = 700;
+      const sectionHeight = 650;
       const currentSection = Math.round(currentScroll / sectionHeight);
       
       let targetSection = currentSection;
@@ -179,7 +179,7 @@ export default function ShelterMenu() {
       </motion.div>
 
         {/* Right Side - Scrolling Text Sections */}
-        <div style={{ position: 'relative', height: '700px' }}>
+        <div style={{ position: 'relative', height: '650px' }}>
           {/* Floating Scroll CTA */}
         <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -231,8 +231,8 @@ export default function ShelterMenu() {
 
           <div 
             ref={scrollContainerRef}
-        style={{
-              height: '700px',
+            style={{
+              height: '650px',
               overflowY: 'auto',
               overflowX: 'hidden',
               scrollbarWidth: 'none',
@@ -259,7 +259,7 @@ export default function ShelterMenu() {
               ease: [0.22, 1, 0.36, 1]
             }}
             style={{
-              minHeight: '700px', 
+              minHeight: '650px', 
               display: 'flex', 
               alignItems: 'center',
               scrollSnapAlign: 'start'
@@ -307,7 +307,7 @@ export default function ShelterMenu() {
               ease: [0.22, 1, 0.36, 1]
             }}
             style={{ 
-              minHeight: '700px', 
+              minHeight: '650px', 
               display: 'flex',
               alignItems: 'center',
               scrollSnapAlign: 'start'
@@ -412,7 +412,7 @@ export default function ShelterMenu() {
               ease: [0.22, 1, 0.36, 1]
             }}
                         style={{
-              minHeight: '700px', 
+              minHeight: '650px', 
               display: 'flex', 
               alignItems: 'center',
               scrollSnapAlign: 'start'

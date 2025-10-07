@@ -359,6 +359,45 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
           borderTopRightRadius: '24px',
           borderBottomRightRadius: '24px'
         }}>
+          {/* Back Button */}
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <motion.div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 20px',
+                background: 'transparent',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '12px',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                marginBottom: '16px'
+              }}
+              whileHover={{
+                borderColor: 'rgba(255, 255, 255, 0.4)',
+                transform: 'translateX(-4px)'
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span style={{
+                fontSize: '1.2rem',
+                color: 'rgba(255, 255, 255, 0.8)',
+                fontWeight: '100'
+              }}>←</span>
+              <span style={{
+                fontSize: '0.85rem',
+                color: 'rgba(255, 255, 255, 0.8)',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                fontWeight: '300'
+              }}>
+                Menu
+              </span>
+            </motion.div>
+          </Link>
+
           {/* Simple Header */}
           <div style={{
             textAlign: 'center',
