@@ -638,41 +638,42 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
 
           {/* Specifications */}
             <h3 style={{
-              fontSize: '18px',
-            fontWeight: '900',
-            color: 'white',
-            margin: '0 0 20px 0',
-            textAlign: 'center',
-            textTransform: 'uppercase',
-            letterSpacing: '1px'
-          }}>
+              fontSize: '1rem',
+              fontWeight: '300',
+              color: 'white',
+              margin: '0 0 20px 0',
+              textAlign: 'center',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+            }}>
             SPECIFICATIONS
             </h3>
             
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '36px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '600' }}>Dimensions:</span>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '700' }}>20' × 8' × 8'</span>
+              <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '300', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>Dimensions:</span>
+              <span style={{ fontSize: '0.9rem', color: 'white', fontWeight: '400', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>20' × 8' × 8'</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '600' }}>Weight:</span>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '700' }}>2,400 lbs</span>
+              <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '300', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>Weight:</span>
+              <span style={{ fontSize: '0.9rem', color: 'white', fontWeight: '400', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>2,400 lbs</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '600' }}>Capacity:</span>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '700' }}>8-12 personnel</span>
+              <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '300', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>Capacity:</span>
+              <span style={{ fontSize: '0.9rem', color: 'white', fontWeight: '400', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>8-12 personnel</span>
               </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '600' }}>Deployment:</span>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '700' }}>15 minutes</span>
+              <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '300', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>Deployment:</span>
+              <span style={{ fontSize: '0.9rem', color: 'white', fontWeight: '400', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>15 minutes</span>
               </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '600' }}>Power:</span>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '700' }}>Solar + Generator</span>
+              <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '300', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>Power:</span>
+              <span style={{ fontSize: '0.9rem', color: 'white', fontWeight: '400', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>Solar + Generator</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '600' }}>Temperature:</span>
-              <span style={{ fontSize: '14px', color: 'white', fontWeight: '700' }}>-40°F to +120°F</span>
+              <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '300', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>Temperature:</span>
+              <span style={{ fontSize: '0.9rem', color: 'white', fontWeight: '400', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>-40°F to +120°F</span>
             </div>
           </div>
 
