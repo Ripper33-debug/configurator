@@ -126,19 +126,19 @@ export default function ShelterMenu() {
         display: 'grid',
         gridTemplateColumns: '1.2fr 0.8fr',
         gap: '60px',
-        alignItems: 'center'
+        alignItems: 'center',
+        transform: 'translate(-50px, -40px)'
       }}>
         
         {/* Left Side - Video */}
-        <motion.div
+      <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          style={{
+        style={{
             width: '100%',
             height: '700px',
-            position: 'relative',
-            transform: 'translate(-40px, -30px)'
+            position: 'relative'
           }}
         >
           <div style={{
@@ -514,8 +514,8 @@ export default function ShelterMenu() {
               
               {/* Launch Button */}
               <Link href="/configurator/trecc" style={{ textDecoration: 'none' }}>
-      <motion.div
-        style={{
+                <motion.div
+                  style={{
                     width: '100%',
                     padding: '28px 48px',
                     background: 'transparent',
@@ -526,10 +526,11 @@ export default function ShelterMenu() {
                     fontWeight: '100',
                     color: '#ffffff',
                     letterSpacing: '0.2em',
-            textTransform: 'uppercase',
+                    textTransform: 'uppercase',
                     fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-            transition: 'all 0.3s ease',
-                    textAlign: 'center'
+                    transition: 'all 0.3s ease',
+                    textAlign: 'center',
+                    marginTop: '24px'
                   }}
                   whileHover={{
                     borderBottomColor: 'rgba(255, 255, 255, 0.8)',
@@ -538,7 +539,7 @@ export default function ShelterMenu() {
                   whileTap={{ scale: 0.98 }}
                 >
                   Launch Configurator
-      </motion.div>
+                </motion.div>
               </Link>
             </div>
           </motion.div>
