@@ -377,19 +377,17 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                   width: '36px',
                   height: '36px',
                   background: 'transparent',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  borderRadius: '8px',
+                  border: 'none',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
                 }}
                 whileHover={{
-                  borderColor: 'rgba(255, 255, 255, 0.5)',
-                  background: 'rgba(255, 255, 255, 0.05)'
+                  opacity: 0.6
                 }}
                 whileTap={{ scale: 0.9 }}
               >
                 <span style={{
-                  fontSize: '1.2rem',
+                  fontSize: '1.4rem',
                   color: 'rgba(255, 255, 255, 0.8)',
                   fontWeight: '100'
                 }}>←</span>

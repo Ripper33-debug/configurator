@@ -450,67 +450,45 @@ export default function ShelterMenu() {
               </p>
               
               {/* 3D Features */}
-                  <div style={{
-                    display: 'flex',
-                gap: '32px',
+              <div style={{
+                display: 'flex',
+                gap: '40px',
                 marginBottom: '48px',
                 justifyContent: 'center'
               }}>
                 {[
-                  { icon: '⟲', label: '3D View' },
-                  { icon: '⊕', label: 'Zoom' },
-                  { icon: '⇄', label: 'Movement' }
+                  { label: '3D View' },
+                  { label: 'Zoom' },
+                  { label: 'Movement' }
                 ].map((feature, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false }}
                     transition={{ 
                       duration: 0.6,
                       delay: i * 0.1,
                       ease: [0.22, 1, 0.36, 1]
                     }}
-                    whileHover={{ 
-                      scale: 1.1,
-                      transition: { duration: 0.2 }
-                  }}
-                  style={{
-                    display: 'flex',
-                      flexDirection: 'column',
-                    alignItems: 'center',
-                      gap: '12px'
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center'
                     }}
                   >
-                    <div style={{
-                      width: '60px',
-                      height: '60px',
-                      borderRadius: '50%',
-                      background: 'transparent',
-                      border: '1px solid rgba(255, 255, 255, 0.3)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-                fontSize: '1.8rem',
-                      color: 'rgba(255, 255, 255, 0.8)',
-                      fontWeight: '100',
-                      transition: 'all 0.3s ease'
-                    }}>
-                      {feature.icon}
-            </div>
                     <span style={{
-                      fontSize: '0.7rem',
-                      color: '#666666',
-                      letterSpacing: '0.1em',
+                      fontSize: '0.85rem',
+                      color: '#999999',
+                      letterSpacing: '0.15em',
                       textTransform: 'uppercase',
                       fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
                       fontWeight: '300'
                     }}>
                       {feature.label}
-                        </span>
+                    </span>
                   </motion.div>
-                      ))}
-                    </div>
+                ))}
+              </div>
               
               {/* Launch Button */}
               <Link href="/configurator/trecc" style={{ textDecoration: 'none' }}>
