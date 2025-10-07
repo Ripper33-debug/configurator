@@ -31,7 +31,7 @@ export default function ShelterMenu() {
       
       let targetSection = currentSection;
       if (delta > 0) {
-        targetSection = Math.min(currentSection + 1, 3);
+        targetSection = Math.min(currentSection + 1, 2);
       } else {
         targetSection = Math.max(currentSection - 1, 0);
       }
@@ -367,7 +367,7 @@ export default function ShelterMenu() {
               scrollSnapAlign: 'start'
             }}
           >
-            <div>
+            <div style={{ width: '100%' }}>
               <h2 style={{
                 fontSize: '2.5rem',
                 fontWeight: '100',
@@ -392,50 +392,13 @@ export default function ShelterMenu() {
                 lineHeight: '1.8',
                 fontWeight: '300',
                 letterSpacing: '0.05em',
-                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif'
+                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                marginBottom: '48px'
               }}>
                 Rotate, zoom, and explore every detail from all angles.
               </p>
-            </div>
-          </motion.div>
-
-          {/* Section 4: Configure TRECC */}
-          <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }}
-            transition={{ 
-              duration: 1.2,
-              ease: [0.22, 1, 0.36, 1]
-            }}
-            style={{ 
-              minHeight: '700px', 
-              display: 'flex', 
-              alignItems: 'center', 
-              flexDirection: 'column', 
-              justifyContent: 'center',
-              scrollSnapAlign: 'start'
-            }}
-          >
-            <div style={{ width: '100%' }}>
-              <h2 style={{
-                fontSize: '2.5rem',
-                fontWeight: '100',
-                color: '#ffffff',
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                lineHeight: '1.3',
-                marginBottom: '24px'
-              }}>
-                Configure<br />TRECC
-              </h2>
-              <div style={{
-                width: '80px',
-                height: '2px',
-                background: 'linear-gradient(90deg, #ffffff, transparent)',
-                marginBottom: '48px'
-              }} />
+              
+              {/* Launch Button */}
               <Link href="/configurator/trecc" style={{ textDecoration: 'none' }}>
                 <motion.div
                   style={{
