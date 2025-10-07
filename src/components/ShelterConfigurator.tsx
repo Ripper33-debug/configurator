@@ -657,7 +657,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '300', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>Weight:</span>
-              <span style={{ fontSize: '0.9rem', color: 'white', fontWeight: '400', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>2,400 lbs</span>
+              <span style={{ fontSize: '0.9rem', color: 'white', fontWeight: '400', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>2,000 lbs</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '300', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>Capacity:</span>
