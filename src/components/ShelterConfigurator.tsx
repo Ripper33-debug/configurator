@@ -652,7 +652,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
             
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '36px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '300', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>Dimensions:</span>
+              <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '300', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>Dimensions (deployed):</span>
               <span style={{ fontSize: '0.9rem', color: 'white', fontWeight: '400', letterSpacing: '0.05em', fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>20' × 8' × 8'</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
