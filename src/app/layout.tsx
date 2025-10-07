@@ -175,6 +175,29 @@ export default function RootLayout({
             transition: all 0.3s ease;
           }
           
+          /* Remove blue highlight from select elements */
+          select {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent !important;
+          }
+          
+          select:focus,
+          select:active {
+            outline: none !important;
+            box-shadow: none !important;
+          }
+          
+          option {
+            outline: none !important;
+          }
+          
+          option:hover,
+          option:focus,
+          option:checked {
+            background: rgba(20, 20, 20, 0.98) !important;
+            color: white !important;
+          }
+          
           /* Critical loading styles */
           .loading-placeholder {
             width: 100%;

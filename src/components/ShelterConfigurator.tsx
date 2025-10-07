@@ -497,16 +497,17 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                         }));
                       }}
                       style={{
-                        background: 'transparent',
-                        border: 'none',
-                        borderRadius: '8px',
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        backdropFilter: 'blur(10px)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        borderRadius: '16px',
                         padding: '16px 24px',
                         fontSize: '1rem',
                         fontWeight: '300',
                         color: '#ffffff',
                         cursor: 'pointer',
                         transition: 'all 0.3s ease',
-                        boxShadow: 'none',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
                         textTransform: 'uppercase',
                         letterSpacing: '0.1em',
                         fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
@@ -520,11 +521,13 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                         backgroundPosition: 'right 8px center',
                         backgroundSize: '16px',
                         paddingRight: '32px',
-                        textAlign: 'center'
-                      }}
+                        textAlign: 'center',
+                        WebkitAppearance: 'none',
+                        MozAppearance: 'none'
+                      } as React.CSSProperties}
                     >
-                      <option value="none" style={{ background: 'rgba(30, 30, 30, 0.95)', color: 'white' }}>ENVIRONMENT</option>
-                      <option value="forest" style={{ background: 'rgba(30, 30, 30, 0.95)', color: 'white' }}>FOREST</option>
+                      <option value="none" style={{ background: 'rgba(20, 20, 20, 0.98)', color: 'white', padding: '12px' }}>ENVIRONMENT</option>
+                      <option value="forest" style={{ background: 'rgba(20, 20, 20, 0.98)', color: 'white', padding: '12px' }}>FOREST</option>
                     </select>
                   </div>
 
