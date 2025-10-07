@@ -452,7 +452,7 @@ export default function ShelterMenu() {
               {/* 3D Features */}
               <div style={{
                 display: 'flex',
-                gap: '40px',
+                gap: '32px',
                 marginBottom: '48px',
                 justifyContent: 'center'
               }}>
@@ -463,21 +463,38 @@ export default function ShelterMenu() {
                 ].map((feature, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: false }}
                     transition={{ 
                       duration: 0.6,
                       delay: i * 0.1,
                       ease: [0.22, 1, 0.36, 1]
                     }}
+                    whileHover={{ 
+                      scale: 1.05,
+                      transition: { duration: 0.2 }
+                    }}
                     style={{
                       display: 'flex',
-                      alignItems: 'center'
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: '12px'
                     }}
                   >
+                    <div style={{
+                      width: '60px',
+                      height: '60px',
+                      borderRadius: '50%',
+                      background: 'transparent',
+                      border: '1px solid rgba(255, 255, 255, 0.3)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      transition: 'all 0.3s ease'
+                    }} />
                     <span style={{
-                      fontSize: '0.85rem',
+                      fontSize: '0.7rem',
                       color: '#999999',
                       letterSpacing: '0.15em',
                       textTransform: 'uppercase',
