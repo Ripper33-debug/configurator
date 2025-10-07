@@ -38,10 +38,10 @@ export default function ShelterMenu() {
 
       const targetScroll = targetSection * sectionHeight;
 
-      // Fast smooth scroll (800ms)
+      // Fast smooth scroll (500ms)
       const startScroll = currentScroll;
       const distance = targetScroll - startScroll;
-      const duration = 800;
+      const duration = 500;
       const startTime = performance.now();
 
       const animateScroll = (currentTime: number) => {
