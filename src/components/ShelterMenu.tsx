@@ -419,18 +419,28 @@ export default function ShelterMenu() {
             }}
           >
             <div style={{ width: '100%' }}>
-              <h2 style={{
-                fontSize: '2.5rem',
-                fontWeight: '100',
-                    color: '#ffffff',
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                lineHeight: '1.3',
-                marginBottom: '24px'
-              }}>
+              <motion.h2
+                animate={{
+                  y: [0, -2, 0]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '100',
+                  color: '#ffffff',
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
+                  fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                  lineHeight: '1.3',
+                  marginBottom: '24px'
+                }}
+              >
                 View Your Shelter<br />in 3D Deployed<br />Views
-              </h2>
+              </motion.h2>
                   <div style={{
                 width: '80px',
                 height: '2px',
@@ -466,8 +476,11 @@ export default function ShelterMenu() {
                     ease: [0.22, 1, 0.36, 1]
                   }}
                   whileHover={{ 
-                    rotate: 180,
-                    transition: { duration: 0.5 }
+                    rotate: 360,
+                    scale: 1.1,
+                    borderColor: 'rgba(255, 255, 255, 0.6)',
+                    boxShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
+                    transition: { duration: 0.8, ease: "easeInOut" }
                   }}
                   style={{
                     width: '70px',
@@ -478,7 +491,8 @@ export default function ShelterMenu() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    position: 'relative'
+                    position: 'relative',
+                    cursor: 'pointer'
                   }}
                 >
                   {/* Curved arrows for rotation */}
@@ -495,7 +509,7 @@ export default function ShelterMenu() {
       </motion.div>
 
                 {/* Zoom */}
-        <motion.div
+                <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: false }}
@@ -505,19 +519,22 @@ export default function ShelterMenu() {
                     ease: [0.22, 1, 0.36, 1]
                   }}
                   whileHover={{ 
-                    scale: 1.15,
-                    transition: { duration: 0.3 }
+                    scale: 1.2,
+                    borderColor: 'rgba(255, 255, 255, 0.6)',
+                    boxShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
+                    transition: { duration: 0.4, ease: "easeOut" }
                   }}
-          style={{
+                  style={{
                     width: '70px',
                     height: '70px',
                     borderRadius: '50%',
                     background: 'transparent',
                     border: '2px solid rgba(255, 255, 255, 0.3)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-                    position: 'relative'
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    position: 'relative',
+                    cursor: 'pointer'
                   }}
                 >
                   {/* Magnifying glass */}
@@ -530,12 +547,24 @@ export default function ShelterMenu() {
                 </motion.div>
 
                 {/* Movement */}
-          <motion.div
+                <motion.div
                   initial={{ opacity: 0, scale: 0.8, x: 0 }}
                   whileInView={{ opacity: 1, scale: 1, x: 0 }}
                   viewport={{ once: false }}
                   animate={{
                     x: [0, 3, 0, -3, 0]
+                  }}
+                  whileHover={{
+                    scale: 1.1,
+                    borderColor: 'rgba(255, 255, 255, 0.6)',
+                    boxShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
+                    x: [0, 5, 0, -5, 0],
+                    transition: { 
+                      scale: { duration: 0.3 },
+                      borderColor: { duration: 0.3 },
+                      boxShadow: { duration: 0.3 },
+                      x: { duration: 0.8, repeat: Infinity }
+                    }
                   }}
                   transition={{
                     x: {
@@ -552,7 +581,7 @@ export default function ShelterMenu() {
                       delay: 0.2
                     }
                   }}
-                style={{
+                  style={{
                     width: '70px',
                     height: '70px',
                     borderRadius: '50%',
@@ -561,7 +590,8 @@ export default function ShelterMenu() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    position: 'relative'
+                    position: 'relative',
+                    cursor: 'pointer'
                   }}
                 >
                   {/* Four directional arrows */}
