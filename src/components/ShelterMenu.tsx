@@ -131,11 +131,11 @@ export default function ShelterMenu() {
       }}>
         
         {/* Left Side - Video */}
-        <motion.div
+      <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          style={{
+        style={{
             width: '100%',
             height: '650px',
             position: 'relative'
@@ -231,7 +231,7 @@ export default function ShelterMenu() {
 
           <div 
             ref={scrollContainerRef}
-            style={{
+        style={{
               height: '650px',
               overflowY: 'auto',
               overflowX: 'hidden',
@@ -450,8 +450,8 @@ export default function ShelterMenu() {
               </p>
               
               {/* 3D Features */}
-              <div style={{
-                display: 'flex',
+                  <div style={{
+                    display: 'flex',
                 gap: '32px',
                 marginBottom: '48px',
                 justifyContent: 'center'
@@ -492,10 +492,10 @@ export default function ShelterMenu() {
                     />
                     <path d="M13 4 L16 4 L16 7 Z" fill="white" />
                   </svg>
-                </motion.div>
+      </motion.div>
 
                 {/* Zoom */}
-                <motion.div
+        <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: false }}
@@ -508,15 +508,15 @@ export default function ShelterMenu() {
                     scale: 1.15,
                     transition: { duration: 0.3 }
                   }}
-                  style={{
+          style={{
                     width: '70px',
                     height: '70px',
                     borderRadius: '50%',
                     background: 'transparent',
                     border: '2px solid rgba(255, 255, 255, 0.3)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
                     position: 'relative'
                   }}
                 >
@@ -530,24 +530,29 @@ export default function ShelterMenu() {
                 </motion.div>
 
                 {/* Movement */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+          <motion.div
+                  initial={{ opacity: 0, scale: 0.8, x: 0 }}
+                  whileInView={{ opacity: 1, scale: 1, x: 0 }}
                   viewport={{ once: false }}
-                  transition={{ 
-                    duration: 0.6,
-                    delay: 0.2,
-                    ease: [0.22, 1, 0.36, 1]
-                  }}
                   animate={{
                     x: [0, 3, 0, -3, 0]
                   }}
                   transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
+                    x: {
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    opacity: {
+                      duration: 0.6,
+                      delay: 0.2
+                    },
+                    scale: {
+                      duration: 0.6,
+                      delay: 0.2
+                    }
                   }}
-                  style={{
+                style={{
                     width: '70px',
                     height: '70px',
                     borderRadius: '50%',
@@ -567,12 +572,12 @@ export default function ShelterMenu() {
                     <path d="M26 16 L20 16 M26 16 L23 13 M26 16 L23 19" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>
                 </motion.div>
-              </div>
-              
+            </div>
+
               {/* Launch Button */}
               <Link href="/configurator/trecc" style={{ textDecoration: 'none' }}>
-                <motion.div
-                  style={{
+      <motion.div
+        style={{
                     width: '100%',
                     padding: '28px 48px',
                     background: 'transparent',
@@ -583,9 +588,9 @@ export default function ShelterMenu() {
                     fontWeight: '100',
                     color: '#ffffff',
                     letterSpacing: '0.2em',
-                    textTransform: 'uppercase',
+            textTransform: 'uppercase',
                     fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                    transition: 'all 0.3s ease',
+            transition: 'all 0.3s ease',
                     textAlign: 'center',
                     marginTop: '24px'
                   }}
@@ -596,7 +601,7 @@ export default function ShelterMenu() {
                   whileTap={{ scale: 0.98 }}
                 >
                   Launch Configurator
-                </motion.div>
+      </motion.div>
               </Link>
             </div>
           </motion.div>
