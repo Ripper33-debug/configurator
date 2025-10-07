@@ -178,26 +178,76 @@ export default function ShelterMenu() {
         </motion.div>
 
         {/* Right Side - Scrolling Text Sections */}
-        <div 
-          ref={scrollContainerRef}
-          style={{
-            height: '700px',
-            overflowY: 'auto',
-            overflowX: 'hidden',
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            paddingRight: '20px'
-          }}>
-          <style>{`
-            div::-webkit-scrollbar {
-              display: none;
-            }
-            @media (prefers-reduced-motion: no-preference) {
-              * {
-                scroll-behavior: smooth;
+        <div style={{ position: 'relative', height: '700px' }}>
+          {/* Floating Scroll CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 1,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: 'easeInOut'
+            }}
+            style={{
+              position: 'absolute',
+              top: '20px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              zIndex: 10,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '8px',
+              pointerEvents: 'none'
+            }}
+          >
+            <span style={{
+              fontSize: '0.75rem',
+              color: 'rgba(255, 255, 255, 0.6)',
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+              fontWeight: '300'
+            }}>
+              Scroll
+            </span>
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: 'easeInOut'
+              }}
+              style={{
+                fontSize: '1.2rem',
+                color: 'rgba(255, 255, 255, 0.6)'
+              }}
+            >
+              ↓
+            </motion.div>
+          </motion.div>
+
+          <div 
+            ref={scrollContainerRef}
+            style={{
+              height: '700px',
+              overflowY: 'auto',
+              overflowX: 'hidden',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              paddingRight: '20px'
+            }}>
+            <style>{`
+              div::-webkit-scrollbar {
+                display: none;
               }
-            }
-          `}</style>
+              @media (prefers-reduced-motion: no-preference) {
+                * {
+                  scroll-behavior: smooth;
+                }
+              }
+            `}</style>
 
           {/* Section 1: Your TRECC Model */}
           <motion.div
@@ -428,6 +478,7 @@ export default function ShelterMenu() {
               </Link>
             </div>
           </motion.div>
+          </div>
         </div>
       </div>
     </div>
