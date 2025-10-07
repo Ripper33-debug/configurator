@@ -497,17 +497,16 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                         }));
                       }}
                       style={{
-                        background: 'rgba(255, 255, 255, 0.05)',
-                        backdropFilter: 'blur(10px)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
-                        borderRadius: '16px',
+                        background: 'transparent',
+                        border: 'none',
+                        borderRadius: '8px',
                         padding: '16px 24px',
                         fontSize: '1rem',
                         fontWeight: '300',
                         color: '#ffffff',
                         cursor: 'pointer',
                         transition: 'all 0.3s ease',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: 'none',
                         textTransform: 'uppercase',
                         letterSpacing: '0.1em',
                         fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
