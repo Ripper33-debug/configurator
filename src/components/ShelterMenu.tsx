@@ -456,55 +456,117 @@ export default function ShelterMenu() {
                 marginBottom: '48px',
                 justifyContent: 'center'
               }}>
-                {[
-                  { label: '3D View' },
-                  { label: 'Zoom' },
-                  { label: 'Movement' }
-                ].map((feature, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: false }}
-                    transition={{ 
-                      duration: 0.6,
-                      delay: i * 0.1,
-                      ease: [0.22, 1, 0.36, 1]
-                    }}
-                    whileHover={{ 
-                      scale: 1.05,
-                      transition: { duration: 0.2 }
-                    }}
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      gap: '12px'
-                    }}
-                  >
-                    <div style={{
-                      width: '60px',
-                      height: '60px',
-                      borderRadius: '50%',
-                      background: 'transparent',
-                      border: '1px solid rgba(255, 255, 255, 0.3)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      transition: 'all 0.3s ease'
-                    }} />
-                    <span style={{
-                      fontSize: '0.7rem',
-                      color: '#999999',
-                      letterSpacing: '0.15em',
-                      textTransform: 'uppercase',
-                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-                      fontWeight: '300'
-                    }}>
-                      {feature.label}
-                    </span>
-                  </motion.div>
-                ))}
+                {/* 3D Rotation */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ 
+                    duration: 0.6,
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
+                  whileHover={{ 
+                    rotate: 180,
+                    transition: { duration: 0.5 }
+                  }}
+                  style={{
+                    width: '70px',
+                    height: '70px',
+                    borderRadius: '50%',
+                    background: 'transparent',
+                    border: '2px solid rgba(255, 255, 255, 0.3)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    position: 'relative'
+                  }}
+                >
+                  {/* Curved arrows for rotation */}
+                  <svg width="32" height="32" viewBox="0 0 32 32" style={{ opacity: 0.8 }}>
+                    <path 
+                      d="M16 4 L16 8 M16 4 C9 4 4 9 4 16 C4 23 9 28 16 28 C23 28 28 23 28 16 C28 9 23 4 16 4" 
+                      stroke="white" 
+                      strokeWidth="1.5" 
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                    <path d="M13 4 L16 4 L16 7 Z" fill="white" />
+                  </svg>
+                </motion.div>
+
+                {/* Zoom */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ 
+                    duration: 0.6,
+                    delay: 0.1,
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
+                  whileHover={{ 
+                    scale: 1.15,
+                    transition: { duration: 0.3 }
+                  }}
+                  style={{
+                    width: '70px',
+                    height: '70px',
+                    borderRadius: '50%',
+                    background: 'transparent',
+                    border: '2px solid rgba(255, 255, 255, 0.3)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    position: 'relative'
+                  }}
+                >
+                  {/* Magnifying glass */}
+                  <svg width="28" height="28" viewBox="0 0 28 28" style={{ opacity: 0.8 }}>
+                    <circle cx="11" cy="11" r="7" stroke="white" strokeWidth="1.5" fill="none" />
+                    <line x1="16" y1="16" x2="22" y2="22" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                    <line x1="11" y1="8" x2="11" y2="14" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                    <line x1="8" y1="11" x2="14" y2="11" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </motion.div>
+
+                {/* Movement */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ 
+                    duration: 0.6,
+                    delay: 0.2,
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
+                  animate={{
+                    x: [0, 3, 0, -3, 0]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  style={{
+                    width: '70px',
+                    height: '70px',
+                    borderRadius: '50%',
+                    background: 'transparent',
+                    border: '2px solid rgba(255, 255, 255, 0.3)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    position: 'relative'
+                  }}
+                >
+                  {/* Four directional arrows */}
+                  <svg width="32" height="32" viewBox="0 0 32 32" style={{ opacity: 0.8 }}>
+                    <path d="M16 6 L16 12 M16 6 L13 9 M16 6 L19 9" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                    <path d="M16 26 L16 20 M16 26 L13 23 M16 26 L19 23" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                    <path d="M6 16 L12 16 M6 16 L9 13 M6 16 L9 19" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                    <path d="M26 16 L20 16 M26 16 L23 13 M26 16 L23 19" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </motion.div>
               </div>
               
               {/* Launch Button */}
