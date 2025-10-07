@@ -175,49 +175,27 @@ export default function RootLayout({
             transition: all 0.3s ease;
           }
           
-          /* NUCLEAR OPTION - Remove ALL blue highlights from select elements */
-          select,
-          select *,
-          select:hover,
+          /* Remove blue highlight from select elements */
+          select {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent !important;
+          }
+          
           select:focus,
-          select:active,
-          select:visited,
-          select:link,
-          select:any-link {
+          select:active {
             outline: none !important;
             box-shadow: none !important;
-            border: none !important;
-            -webkit-tap-highlight-color: transparent !important;
-            -webkit-focus-ring-color: transparent !important;
-            -webkit-appearance: none !important;
-            -moz-appearance: none !important;
-            appearance: none !important;
-            background: transparent !important;
-            background-color: transparent !important;
           }
           
-          select::-webkit-focus-ring-color {
-            outline: none !important;
-            -webkit-focus-ring-color: transparent !important;
-          }
-          
-          select::-moz-focus-inner {
-            border: none !important;
+          option {
             outline: none !important;
           }
           
-          option,
           option:hover,
           option:focus,
-          option:active,
-          option:checked,
-          option:selected {
-            outline: none !important;
-            box-shadow: none !important;
+          option:checked {
             background: rgba(20, 20, 20, 0.98) !important;
-            background-color: rgba(20, 20, 20, 0.98) !important;
             color: white !important;
-            -webkit-tap-highlight-color: transparent !important;
           }
           
           /* Critical loading styles */
