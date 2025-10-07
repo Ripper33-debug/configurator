@@ -342,7 +342,7 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
         {/* Left Side - Lighting Controls (Visible by default) */}
         <div className="left-controls" style={{
           width: '360px',
-          background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%)',
+          background: 'linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(40, 40, 40, 0.9) 100%)',
           backdropFilter: 'blur(20px)',
           borderRight: '2px solid rgba(255, 255, 255, 0.15)',
           padding: '32px 24px',
@@ -368,13 +368,13 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
           }}>
             <h2 style={{
               fontSize: '2.5rem',
-              fontWeight: '900',
+              fontWeight: '100',
               color: '#ffffff',
               margin: '0',
               textTransform: 'uppercase',
-              letterSpacing: '0.15em',
+              letterSpacing: '0.25em',
               fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
-              textShadow: '0 0 20px rgba(255, 255, 255, 0.3)'
+              textShadow: 'none'
             }}>
               TRECC
             </h2>
