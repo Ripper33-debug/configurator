@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo, lazy, Suspense } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 // ModelViewerScene now lazy loaded
 import ErrorBoundary from './ErrorBoundary';
 import { preloadModel, getAvailableModels, testAWSConnection } from '../lib/aws';
