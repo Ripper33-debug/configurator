@@ -38,10 +38,10 @@ export default function ShelterMenu() {
 
       const targetScroll = targetSection * sectionHeight;
 
-      // Fast smooth scroll (500ms)
+      // Very fast smooth scroll (167ms)
       const startScroll = currentScroll;
       const distance = targetScroll - startScroll;
-      const duration = 500;
+      const duration = 167;
       const startTime = performance.now();
 
       const animateScroll = (currentTime: number) => {
@@ -447,6 +447,68 @@ export default function ShelterMenu() {
               }}>
                 Rotate, zoom, and explore every detail from all angles.
               </p>
+              
+              {/* 3D Features */}
+              <div style={{
+                display: 'flex',
+                gap: '32px',
+                marginBottom: '48px',
+                justifyContent: 'center'
+              }}>
+                {[
+                  { icon: '🔄', label: '3D View' },
+                  { icon: '🔍', label: 'Zoom' },
+                  { icon: '↔️', label: 'Movement' }
+                ].map((feature, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false }}
+                    transition={{ 
+                      duration: 0.6,
+                      delay: i * 0.1,
+                      ease: [0.22, 1, 0.36, 1]
+                    }}
+                    whileHover={{ 
+                      scale: 1.1,
+                      transition: { duration: 0.2 }
+                    }}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: '12px'
+                    }}
+                  >
+                    <div style={{
+                      width: '60px',
+                      height: '60px',
+                      borderRadius: '50%',
+                      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1.5rem',
+                      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
+                      transition: 'all 0.3s ease'
+                    }}>
+                      {feature.icon}
+                    </div>
+                    <span style={{
+                      fontSize: '0.7rem',
+                      color: '#666666',
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      fontFamily: '"SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+                      fontWeight: '300'
+                    }}>
+                      {feature.label}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
               
               {/* Launch Button */}
               <Link href="/configurator/trecc" style={{ textDecoration: 'none' }}>
