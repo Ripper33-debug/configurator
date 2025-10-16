@@ -526,7 +526,6 @@ const ShelterConfigurator: React.FC<ShelterConfiguratorProps> = ({
                       } as React.CSSProperties}
                     >
                       <option value="none" style={{ background: 'rgba(20, 20, 20, 0.98)', color: 'white', padding: '12px' }}>ENVIRONMENT</option>
-                      <option value="forest" style={{ background: 'rgba(20, 20, 20, 0.98)', color: 'white', padding: '12px' }}>FOREST</option>
                     </select>
                   </div>
 
