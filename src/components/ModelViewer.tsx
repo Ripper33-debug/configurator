@@ -53,7 +53,7 @@ export function ModelViewerScene({
   return (
     <>
       {/* Camera */}
-      <PerspectiveCamera makeDefault position={[6, 4, 6]} fov={60} near={0.1} far={200} />
+      <PerspectiveCamera makeDefault position={[5, 3.5, 5]} fov={60} near={0.1} far={200} />
 
       {/* Ground Plane */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.1, 0]} receiveShadow>
@@ -201,7 +201,7 @@ function Scene({ color = '#3C3B2E' }: { color?: string }) {
   return (
     <>
       {/* Camera */}
-      <PerspectiveCamera makeDefault position={[6, 4, 6]} fov={60} near={0.1} far={200} />
+      <PerspectiveCamera makeDefault position={[5, 3.5, 5]} fov={60} near={0.1} far={200} />
 
       {/* Ground Plane */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.1, 0]} receiveShadow>
