@@ -6,8 +6,8 @@ A professional interactive 3D configurator for Weatherhaven's deployable shelter
 
 ## 👥 Contributors
 
-- **Aleksandar Cridge** - CAD designer and full stack developer
-- **Barry Castelli** - Full stack developer
+- **Aleksandar Cridge** - CAD designer, full stack developer, and AI integration
+- **Barry Castelli** - Full stack developer and AI integration
 
 *Both programmers logged into ripper33debug account*
 
