@@ -1,90 +1,94 @@
 'use client';
 
-import React, { Component, ErrorInfo } from 'react';
-import { ErrorBoundaryProps, ErrorBoundaryState } from '../types';
+import React from 'react';
 
-class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  public state: ErrorBoundaryState = {
-    hasError: false
-  };
+interface ErrorBoundaryState {
+  hasError: boolean;
+  error?: Error;
+}
 
-  public static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+interface ErrorBoundaryProps {
+  children: React.ReactNode;
+  fallback?: React.ComponentType<{ error?: Error; resetError: () => void }>;
+}
+
+class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: ErrorBoundaryProps) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
     return { hasError: true, error };
   }
 
-  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('ErrorBoundary caught an error:', error, errorInfo);
   }
 
-  public render() {
+  resetError = () => {
+    this.setState({ hasError: false, error: undefined });
+  };
+
+  render() {
     if (this.state.hasError) {
-      return this.props.fallback || (
+      if (this.props.fallback) {
+        const FallbackComponent = this.props.fallback;
+        return <FallbackComponent error={this.state.error} resetError={this.resetError} />;
+      }
+
+      return (
         <div style={{
+          height: '100vh',
+          width: '100vw',
+          background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          height: '100%',
-          background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
           color: 'white',
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+          flexDirection: 'column',
           textAlign: 'center',
-          padding: '40px'
+          padding: '20px'
         }}>
           <div style={{
-            background: 'rgba(239, 68, 68, 0.1)',
-            border: '1px solid rgba(239, 68, 68, 0.3)',
+            maxWidth: '600px',
+            padding: '40px',
+            background: 'rgba(255, 255, 255, 0.1)',
             borderRadius: '16px',
-            padding: '32px',
-            maxWidth: '400px'
+            backdropFilter: 'blur(20px)',
+            border: '1px solid rgba(255, 255, 255, 0.2)'
           }}>
-            <div style={{
-              fontSize: '48px',
-              marginBottom: '16px'
-            }}>
-              ⚠️
-            </div>
-            <h3 style={{
-              fontSize: '20px',
-              fontWeight: '700',
-              marginBottom: '12px',
-              color: '#fca5a5'
-            }}>
-              Model Loading Error
-            </h3>
-            <p style={{
-              fontSize: '14px',
-              color: '#d1d5db',
-              marginBottom: '20px',
-              lineHeight: '1.5'
-            }}>
-              There was an error loading the 3D model. This might be due to a network issue or corrupted model file.
+            <h2 style={{ margin: '0 0 16px', fontSize: '1.5rem' }}>
+              Something went wrong
+            </h2>
+            <p style={{ margin: '0 0 24px', opacity: 0.9, lineHeight: 1.6 }}>
+              The configurator encountered an error while loading. This usually happens when copying and pasting URLs directly.
             </p>
             <button
-              onClick={() => {
-                this.setState({ hasError: false, error: undefined });
-                window.location.reload();
-              }}
+              onClick={this.resetError}
               style={{
-                background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+                background: 'rgba(255, 255, 255, 0.2)',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
                 color: 'white',
-                border: 'none',
-                borderRadius: '8px',
                 padding: '12px 24px',
-                fontSize: '14px',
-                fontWeight: '600',
+                borderRadius: '8px',
                 cursor: 'pointer',
+                fontSize: '1rem',
                 transition: 'all 0.3s ease'
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.4)';
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.3)';
               }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
               }}
             >
-              Reload Page
+              Try Again
             </button>
+            <p style={{ margin: '16px 0 0', fontSize: '0.9rem', opacity: 0.7 }}>
+              If the problem persists, try refreshing the page
+            </p>
           </div>
         </div>
       );

@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { Suspense, useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import ErrorBoundary from '../../../components/ErrorBoundary';
 
 // Animated percentage component - fluid natural progression
 function AnimatedPercentage() {
@@ -212,10 +213,13 @@ export default function ConfiguratorPage() {
   const [shelterId, setShelterId] = useState<string>('');
   const [shelter, setShelter] = useState<any>(null);
   const [showInitialLoading, setShowInitialLoading] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
-  // Prevent hydration mismatch
+  // Prevent hydration mismatch with improved client-side detection
   useEffect(() => {
+    setIsClient(true);
     setMounted(true);
+    
     if (params.shelterId) {
       const id = params.shelterId as string;
       setShelterId(id);
@@ -229,9 +233,36 @@ export default function ConfiguratorPage() {
     setShowInitialLoading(false);
   }, [mounted, shelter]);
 
-  // Don't render until client-side to prevent hydration mismatch
-  if (!mounted) {
-    return null;
+  // Enhanced hydration check with better fallback
+  if (!isClient || !mounted) {
+    return (
+      <div style={{
+        height: '100vh',
+        width: '100vw',
+        background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontFamily: 'system-ui, -apple-system, sans-serif'
+      }}>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{
+            width: '40px',
+            height: '40px',
+            border: '2px solid rgba(255,255,255,0.3)',
+            borderTop: '2px solid white',
+            borderRadius: '50%',
+            animation: 'spin 1s linear infinite',
+            margin: '0 auto 16px'
+          }} />
+          <h3 style={{ margin: 0, fontSize: '1.1rem' }}>Loading Configurator</h3>
+          <p style={{ margin: '8px 0 0', opacity: 0.8, fontSize: '0.9rem' }}>
+            Initializing 3D environment...
+          </p>
+        </div>
+      </div>
+    );
   }
 
   if (!shelter) {
@@ -273,53 +304,55 @@ export default function ConfiguratorPage() {
   // Do not render a full-screen loading screen in configurator
 
   return (
-    <div style={{ position: 'relative' }}>
-      {/* Header with Back Button */}
-      <div style={{
-        position: 'absolute',
-        top: '20px',
-        left: '20px',
-        zIndex: 1000,
-        display: 'flex',
-        alignItems: 'center',
-        gap: '15px'
-      }}>
-        <Link href="/">
-          <button style={{
+    <ErrorBoundary>
+      <div style={{ position: 'relative' }}>
+        {/* Header with Back Button */}
+        <div style={{
+          position: 'absolute',
+          top: '20px',
+          left: '20px',
+          zIndex: 1000,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '15px'
+        }}>
+          <Link href="/">
+            <button style={{
+              padding: '10px 20px',
+              background: 'rgba(0, 0, 0, 0.7)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '8px',
+              color: 'white',
+              cursor: 'pointer',
+              fontSize: '0.9rem',
+              fontWeight: '500',
+              transition: 'all 0.3s ease'
+            }}>
+              ← Back to Menu
+            </button>
+          </Link>
+          
+          <div style={{
             padding: '10px 20px',
             background: 'rgba(0, 0, 0, 0.7)',
             backdropFilter: 'blur(10px)',
             border: '1px solid rgba(255, 255, 255, 0.2)',
             borderRadius: '8px',
             color: 'white',
-            cursor: 'pointer',
             fontSize: '0.9rem',
-            fontWeight: '500',
-            transition: 'all 0.3s ease'
+            fontWeight: '500'
           }}>
-            ← Back to Menu
-          </button>
-        </Link>
-        
-        <div style={{
-          padding: '10px 20px',
-          background: 'rgba(0, 0, 0, 0.7)',
-          backdropFilter: 'blur(10px)',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          borderRadius: '8px',
-          color: 'white',
-          fontSize: '0.9rem',
-          fontWeight: '500'
-        }}>
-          {shelter.name}
+            {shelter.name}
+          </div>
         </div>
-      </div>
 
-      <ShelterConfigurator 
-        shelterId={shelterId}
-        defaultModel={shelter.defaultModel}
-        shelterName={shelter.name}
-      />
-    </div>
+        <ShelterConfigurator 
+          shelterId={shelterId}
+          defaultModel={shelter.defaultModel}
+          shelterName={shelter.name}
+        />
+      </div>
+    </ErrorBoundary>
   );
 }
